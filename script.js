@@ -1,0 +1,367 @@
+// ============================================
+// GLOBAL STATE & CONFIGURATION
+// ============================================
+
+const CONFIG = {
+    dataPath: 'data/species.json',
+    itemsPerPage: 12,
+    animationDuration: 300
+};
+
+let speciesData = [];
+
+// ============================================
+// THEME MANAGEMENT
+// ============================================
+
+function initTheme() {
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Add smooth transition
+    document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+    setTimeout(() => {
+        document.body.style.transition = '';
+    }, 300);
+}
+
+// ============================================
+// MOBILE NAVIGATION
+// ============================================
+
+function initMobileNav() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-menu') && !e.target.closest('.mobile-menu-toggle')) {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            }
+        });
+    }
+}
+
+// ============================================
+// LOAD SPECIES DATA
+// ============================================
+
+async function loadSpeciesData() {
+    try {
+        console.log('Loading species data from:', CONFIG.dataPath);
+        const response = await fetch(CONFIG.dataPath);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        speciesData = data.species;
+
+        console.log('Successfully loaded', speciesData.length, 'species');
+        return speciesData;
+    } catch (error) {
+        console.error('Error loading species data:', error);
+
+        // Check for CORS error
+        if (error.message.includes('Failed to fetch') || error.name === 'TypeError') {
+            console.error('⚠️ CORS ERROR DETECTED! ⚠️');
+            console.error('Solusi: Jalankan website dengan local server, jangan buka file HTML langsung!');
+            console.error('Gunakan: python3 -m http.server 8000');
+            console.error('Lalu buka: http://localhost:8000');
+        }
+
+        return [];
+    }
+}
+
+// ============================================
+// UTILITY FUNCTIONS
+// ============================================
+
+// Format conservation status for display
+function formatConservationStatus(status) {
+    const statusMap = {
+        'Critically Endangered': { abbr: 'CR', class: 'status-cr' },
+        'Endangered': { abbr: 'EN', class: 'status-en' },
+        'Vulnerable': { abbr: 'VU', class: 'status-vu' },
+        'Near Threatened': { abbr: 'NT', class: 'status-nt' },
+        'Least Concern': { abbr: 'LC', class: 'status-lc' }
+    };
+    return statusMap[status] || { abbr: status, class: '' };
+}
+
+// Get conservation status priority (for sorting)
+function getStatusPriority(status) {
+    const priorities = {
+        'Critically Endangered': 1,
+        'Endangered': 2,
+        'Vulnerable': 3,
+        'Near Threatened': 4,
+        'Least Concern': 5
+    };
+    return priorities[status] || 999;
+}
+
+// Debounce function for search
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Smooth scroll to element
+function smoothScroll(target) {
+    const element = document.querySelector(target);
+    if (element) {
+        element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
+// Format habitat name
+function formatHabitat(habitat) {
+    const habitatMap = {
+        'rainforest': '🌳 Hutan Hujan',
+        'coastal': '🏖️ Pesisir',
+        'mangrove': '🌴 Mangrove',
+        'mountain-forest': '⛰️ Hutan Pegunungan',
+        'savanna': '🌾 Savana',
+        'freshwater': '💧 Air Tawar',
+        'peat-swamp': '🌿 Rawa Gambut',
+        'lowland-forest': '🌲 Hutan Dataran Rendah',
+        'forest': '🌳 Hutan',
+        'grassland': '🌾 Padang Rumput',
+        'coral-reef': '🐠 Terumbu Karang',
+        'river': '🏞️ Sungai',
+        'wetland': '💦 Lahan Basah',
+        'urban': '🏙️ Urban',
+        'agricultural': '🌾 Pertanian'
+    };
+    return habitatMap[habitat] || habitat;
+}
+
+// Get tag icon
+function getTagIcon(tag) {
+    const iconMap = {
+        'endemic': '⭐',
+        'mammal': '🦁',
+        'bird': '🦅',
+        'reptile': '🦎',
+        'amphibian': '🐸',
+        'fish': '🐟',
+        'insect': '🦋',
+        'plant': '🌺',
+        'nocturnal': '🌙',
+        'migratory': '✈️',
+        'primate': '🐵',
+        'carnivore': '🥩',
+        'herbivore': '🌿',
+        'marine': '🌊'
+    };
+    return iconMap[tag] || '';
+}
+
+// Create species card HTML
+function createSpeciesCard(species) {
+    const statusInfo = formatConservationStatus(species.conservationStatus);
+    const primaryTag = species.tags[0] || '';
+    
+    return `
+        <div class="species-card" data-species-id="${species.id}" onclick="openSpeciesModal('${species.id}')">
+            <div class="species-image">
+                <img src="assets/images/species/${species.id}.jpg" 
+                     alt="${species.commonName}"
+                     onerror="this.src='assets/images/placeholder.jpg'">
+                <div class="species-tags">
+                    ${primaryTag ? `<span class="species-tag">${getTagIcon(primaryTag)} ${primaryTag}</span>` : ''}
+                </div>
+            </div>
+            <div class="species-info">
+                <div class="species-header">
+                    <h3 class="species-name">${species.commonName}</h3>
+                    <p class="species-scientific">${species.scientificName}</p>
+                </div>
+                <p class="species-description">${species.shortDescription}</p>
+                <div class="species-meta">
+                    <span class="status-badge ${statusInfo.class}">${statusInfo.abbr}</span>
+                    <span class="species-link">Lihat Detail →</span>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Counter animation
+function animateCounter(element, target) {
+    const duration = 2000;
+    const start = 0;
+    const increment = target / (duration / 16);
+    let current = start;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 16);
+}
+
+// Intersection Observer for animations
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                
+                // Trigger counter animation for stat cards
+                if (entry.target.classList.contains('stat-card')) {
+                    const countElement = entry.target.querySelector('.stat-number');
+                    const targetValue = parseInt(entry.target.getAttribute('data-count'));
+                    if (countElement && targetValue) {
+                        animateCounter(countElement, targetValue);
+                    }
+                }
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements
+    document.querySelectorAll('.stat-card, .species-card, .step-card').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// Search functionality with autocomplete
+function initSearch() {
+    const searchInput = document.getElementById('heroSearch');
+    const suggestions = document.getElementById('searchSuggestions');
+    
+    if (!searchInput || !suggestions) return;
+    
+    const debouncedSearch = debounce((query) => {
+        if (query.length < 2) {
+            suggestions.innerHTML = '';
+            suggestions.style.display = 'none';
+            return;
+        }
+        
+        const results = speciesData.filter(species => 
+            species.commonName.toLowerCase().includes(query.toLowerCase()) ||
+            species.scientificName.toLowerCase().includes(query.toLowerCase())
+        ).slice(0, 5);
+        
+        if (results.length > 0) {
+            suggestions.innerHTML = results.map(species => `
+                <div class="suggestion-item" onclick="window.location.href='catalog.html?search=${encodeURIComponent(species.commonName)}'">
+                    <span class="suggestion-name">${species.commonName}</span>
+                    <span class="suggestion-scientific">${species.scientificName}</span>
+                </div>
+            `).join('');
+            suggestions.style.display = 'block';
+        } else {
+            suggestions.innerHTML = '<div class="suggestion-item">Tidak ditemukan</div>';
+            suggestions.style.display = 'block';
+        }
+    }, 300);
+    
+    searchInput.addEventListener('input', (e) => {
+        debouncedSearch(e.target.value);
+    });
+    
+    // Close suggestions when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.hero-search')) {
+            suggestions.style.display = 'none';
+        }
+    });
+}
+
+// ============================================
+// INITIALIZATION
+// ============================================
+
+document.addEventListener('DOMContentLoaded', async () => {
+    // Initialize theme
+    initTheme();
+    
+    // Initialize mobile navigation
+    initMobileNav();
+    
+    // Load species data
+    await loadSpeciesData();
+    
+    // Initialize search
+    initSearch();
+    
+    // Initialize scroll animations
+    setTimeout(() => {
+        initScrollAnimations();
+    }, 100);
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = this.getAttribute('href');
+            if (target !== '#') {
+                smoothScroll(target);
+            }
+        });
+    });
+});
+
+// ============================================
+// EXPORT FOR OTHER SCRIPTS
+// ============================================
+
+window.BiodiversityAtlas = {
+    get speciesData() { return speciesData; },
+    loadSpeciesData,
+    formatConservationStatus,
+    getStatusPriority,
+    formatHabitat,
+    getTagIcon,
+    createSpeciesCard,
+    debounce,
+    animateCounter
+};

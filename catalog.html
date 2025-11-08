@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Spesies - Biodiversity Atlas Indonesia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="catalog-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon">🌿</span>
+                        <span class="logo-text">Biodiversity<span class="highlight">Atlas</span></span>
+                    </a>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="catalog.html" class="nav-link active">Katalog</a>
+                    <a href="explorer.html" class="nav-link">Peta</a>
+                    <a href="submit.html" class="nav-link">Submit Temuan</a>
+                    <a href="quiz.html" class="nav-link">Kuis</a>
+                    <a href="dashboard.html" class="nav-link">Statistik</a>
+                </div>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Beranda</a>
+                <span class="separator">›</span>
+                <span class="current">Katalog</span>
+            </div>
+            <h1 class="page-title">Katalog Spesies</h1>
+            <p class="page-description">
+                Jelajahi koleksi lengkap spesies endemik dan terancam di Indonesia. Gunakan filter untuk menemukan spesies berdasarkan habitat, status konservasi, atau karakteristik lainnya.
+            </p>
+        </div>
+    </section>
+
+    <!-- Catalog Content -->
+    <section class="catalog-section">
+        <div class="container">
+            <div class="catalog-layout">
+                <!-- Sidebar Filters -->
+                <aside class="catalog-sidebar" id="catalogSidebar">
+                    <div class="sidebar-header">
+                        <h3 class="sidebar-title">
+                            <span class="sidebar-icon">🔍</span>
+                            Filter & Pencarian
+                        </h3>
+                        <button class="filter-reset" id="resetFilters">Reset</button>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="filter-group">
+                        <label class="filter-label">Pencarian</label>
+                        <div class="search-input-wrapper">
+                            <span class="search-icon">🔎</span>
+                            <input type="text" class="search-input" id="catalogSearch" placeholder="Cari nama spesies...">
+                        </div>
+                    </div>
+
+                    <!-- Conservation Status -->
+                    <div class="filter-group">
+                        <label class="filter-label">
+                            <span>Status Konservasi</span>
+                            <span class="filter-count" id="statusCount">0</span>
+                        </label>
+                        <div class="filter-options" id="statusFilters">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="status" value="Critically Endangered">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">
+                                    <span class="status-badge status-cr">CR</span>
+                                    Critically Endangered
+                                </span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="status" value="Endangered">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">
+                                    <span class="status-badge status-en">EN</span>
+                                    Endangered
+                                </span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="status" value="Vulnerable">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">
+                                    <span class="status-badge status-vu">VU</span>
+                                    Vulnerable
+                                </span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="status" value="Near Threatened">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">
+                                    <span class="status-badge status-nt">NT</span>
+                                    Near Threatened
+                                </span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="status" value="Least Concern">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">
+                                    <span class="status-badge status-lc">LC</span>
+                                    Least Concern
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Habitat -->
+                    <div class="filter-group">
+                        <label class="filter-label">
+                            <span>Habitat</span>
+                            <span class="filter-count" id="habitatCount">0</span>
+                        </label>
+                        <div class="filter-options" id="habitatFilters">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="habitat" value="rainforest">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🌳 Hutan Hujan</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="habitat" value="coastal">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🏖️ Pesisir</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="habitat" value="mangrove">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🌴 Mangrove</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="habitat" value="mountain-forest">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">⛰️ Hutan Pegunungan</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="habitat" value="savanna">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🌾 Savana</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="habitat" value="freshwater">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">💧 Air Tawar</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="habitat" value="peat-swamp">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🌿 Rawa Gambut</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Tags/Categories -->
+                    <div class="filter-group">
+                        <label class="filter-label">
+                            <span>Kategori</span>
+                            <span class="filter-count" id="tagsCount">0</span>
+                        </label>
+                        <div class="filter-options" id="tagsFilters">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="tags" value="endemic">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">⭐ Endemik</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="tags" value="mammal">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🦁 Mamalia</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="tags" value="bird">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🦅 Burung</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="tags" value="reptile">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🦎 Reptil</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="tags" value="amphibian">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🐸 Amfibi</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="tags" value="fish">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🐟 Ikan</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="tags" value="insect">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🦋 Serangga</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="tags" value="plant">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🌺 Tumbuhan</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="tags" value="nocturnal">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">🌙 Nokturnal</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="tags" value="migratory">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">✈️ Migrasi</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Active Filters Summary -->
+                    <div class="active-filters" id="activeFilters">
+                        <div class="active-filters-header">
+                            <span class="filter-label">Filter Aktif</span>
+                            <button class="clear-all" id="clearAllFilters">Hapus Semua</button>
+                        </div>
+                        <div class="filter-chips" id="filterChips">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="catalog-main">
+                    <!-- Toolbar -->
+                    <div class="catalog-toolbar">
+                        <div class="toolbar-left">
+                            <button class="mobile-filter-toggle" id="mobileFilterToggle">
+                                <span class="icon">⚙️</span>
+                                <span>Filter</span>
+                            </button>
+                            <div class="results-info">
+                                <span class="results-count" id="resultsCount">0</span>
+                                <span class="results-text">spesies ditemukan</span>
+                            </div>
+                        </div>
+                        <div class="toolbar-right">
+                            <label class="sort-label">Urutkan:</label>
+                            <select class="sort-select" id="sortSelect">
+                                <option value="name-asc">Nama (A-Z)</option>
+                                <option value="name-desc">Nama (Z-A)</option>
+                                <option value="status-critical">Status (Kritis → Aman)</option>
+                                <option value="status-safe">Status (Aman → Kritis)</option>
+                            </select>
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid" id="gridView" aria-label="Grid view">
+                                    <span>⊞</span>
+                                </button>
+                                <button class="view-btn" data-view="list" id="listView" aria-label="List view">
+                                    <span>☰</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Species Grid -->
+                    <div class="species-grid" id="speciesGrid">
+                        <!-- Populated by JavaScript -->
+                    </div>
+
+                    <!-- Empty State -->
+                    <div class="empty-state" id="emptyState" style="display: none;">
+                        <div class="empty-icon">🔍</div>
+                        <h3 class="empty-title">Tidak ada spesies ditemukan</h3>
+                        <p class="empty-description">Coba ubah filter atau kata kunci pencarian Anda</p>
+                        <button class="btn btn-primary" id="resetEmptyState">Reset Semua Filter</button>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div class="loading-state" id="loadingState">
+                        <div class="spinner"></div>
+                        <p>Memuat data spesies...</p>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination" id="pagination">
+                        <button class="pagination-btn" id="prevPage" disabled>
+                            <span>←</span>
+                            <span>Sebelumnya</span>
+                        </button>
+                        <div class="pagination-pages" id="paginationPages">
+                            <!-- Populated by JS -->
+                        </div>
+                        <button class="pagination-btn" id="nextPage">
+                            <span>Selanjutnya</span>
+                            <span>→</span>
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Species Detail Modal -->
+    <div class="modal" id="speciesModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">×</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🌿</span>
+                        <span class="logo-text">Biodiversity<span class="highlight">Atlas</span></span>
+                    </div>
+                    <p class="footer-description">
+                        Platform digital untuk eksplorasi, edukasi, dan konservasi keanekaragaman hayati Indonesia
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Jelajahi</h4>
+                    <ul class="footer-links">
+                        <li><a href="catalog.html">Katalog Spesies</a></li>
+                        <li><a href="explorer.html">Peta Interaktif</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Berkontribusi</h4>
+                    <ul class="footer-links">
+                        <li><a href="submit.html">Submit Temuan</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Biodiversity Atlas Indonesia. Dibuat untuk INVOFEST 2025.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="catalog.js"></script>
+</body>
+</html>

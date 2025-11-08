@@ -1,0 +1,624 @@
+{
+  "species": [
+    {
+      "id": "sp001",
+      "commonName": "Komodo Dragon",
+      "scientificName": "Varanus komodoensis",
+      "conservationStatus": "Endangered",
+      "habitat": ["savanna", "grassland", "forest"],
+      "tags": ["endemic", "reptile", "flagship-species", "carnivore"],
+      "shortDescription": "Kadal terbesar di dunia yang hanya ditemukan di pulau-pulau Nusa Tenggara.",
+      "longDescription": "Komodo (Varanus komodoensis) adalah spesies kadal terbesar di dunia yang dapat mencapai panjang hingga 3 meter. Endemik Indonesia, hewan ini hanya ditemukan di Pulau Komodo, Rinca, Flores, dan Gili Motang. Komodo memiliki gigitan beracun dan merupakan predator puncak di habitatnya. Ancaman utama meliputi hilangnya habitat, berkurangnya mangsa, dan aktivitas manusia. Upaya konservasi dilakukan melalui Taman Nasional Komodo yang melindungi populasi dan habitatnya.",
+      "images": [
+        {"file": "komodo-01.jpg", "credit": "Photo by David Clode on Unsplash", "license": "CC0"},
+        {"file": "komodo-02.jpg", "credit": "National Geographic Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Komodo", "lat": -8.5569, "lng": 119.4889, "precision": "generalized"},
+        {"name": "Pulau Rinca", "lat": -8.6481, "lng": 119.7053, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "2-3 meters length, 70-90 kg weight",
+        "diet": "Carnivore - deer, wild boar, water buffalo",
+        "lifespan": "30-50 years in wild",
+        "reproduction": "Oviparous, 15-30 eggs per clutch"
+      },
+      "conservationActions": "Lindungi habitat, edukasi masyarakat lokal, patrol anti-perburuan, program breeding di penangkaran"
+    },
+    {
+      "id": "sp002",
+      "commonName": "Orangutan Sumatera",
+      "scientificName": "Pongo abelii",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["rainforest", "lowland-forest", "peat-swamp"],
+      "tags": ["endemic", "primate", "critically-endangered", "arboreal"],
+      "shortDescription": "Kera besar endemik Sumatera yang terancam punah akibat deforestasi.",
+      "longDescription": "Orangutan Sumatera adalah salah satu dari tiga spesies orangutan yang hanya ditemukan di pulau Sumatera, Indonesia. Mereka menghabiskan sebagian besar waktu di pohon dan memiliki lengan yang panjang untuk berayun. Populasi mengalami penurunan drastis hingga tersisa sekitar 14.000 individu di alam liar. Ancaman utama adalah hilangnya habitat hutan tropis, perburuan ilegal, dan konflik manusia-satwa. Orangutan memainkan peran penting dalam regenerasi hutan melalui penyebaran biji.",
+      "images": [
+        {"file": "orangutan-01.jpg", "credit": "Sumatran Orangutan Society", "license": "CC BY-NC 4.0"},
+        {"file": "orangutan-02.jpg", "credit": "Photo by Dulce Ruiz on Unsplash", "license": "CC0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Gunung Leuser", "lat": 3.5833, "lng": 97.5000, "precision": "generalized"},
+        {"name": "Bukit Lawang", "lat": 3.5500, "lng": 98.1333, "precision": "exact"}
+      ],
+      "quickFacts": {
+        "size": "1.2-1.4 meters height, 30-50 kg (female), 50-90 kg (male)",
+        "diet": "Frugivore - fruits, leaves, bark, insects",
+        "lifespan": "30-40 years in wild",
+        "reproduction": "1 offspring every 8-9 years"
+      },
+      "conservationActions": "Rehabilitasi habitat, patroli hutan, program translokasi, edukasi konservasi, ecotourism berkelanjutan"
+    },
+    {
+      "id": "sp003",
+      "commonName": "Burung Cenderawasih",
+      "scientificName": "Paradisaea raggiana",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rainforest", "mountain-forest"],
+      "tags": ["endemic", "bird", "iconic", "papua"],
+      "shortDescription": "Burung surga Papua dengan bulu ekor spektakuler yang menjadi ikon Indonesia Timur.",
+      "longDescription": "Cenderawasih Raggiana adalah salah satu dari 42 spesies burung cenderawasih yang ditemukan di Papua. Jantan memiliki bulu ekor berwarna merah oranye yang spektakuler dan digunakan dalam tarian kawin yang rumit. Burung ini memainkan peran penting dalam ekosistem hutan sebagai penyebar biji buah-buahan. Meskipun statusnya saat ini relatif aman, ancaman dari perdagangan ilegal dan hilangnya habitat tetap menjadi perhatian.",
+      "images": [
+        {"file": "cenderawasih-01.jpg", "credit": "Tim Laman/Cornell Lab", "license": "CC BY-NC-SA 4.0"},
+        {"file": "cenderawasih-02.jpg", "credit": "Birds of Paradise Project", "license": "CC BY 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Lorentz", "lat": -4.5000, "lng": 137.5000, "precision": "generalized"},
+        {"name": "Raja Ampat", "lat": -0.5000, "lng": 130.5000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "33-34 cm length including tail",
+        "diet": "Frugivore - fruits, arthropods",
+        "lifespan": "5-8 years in wild",
+        "reproduction": "1-2 eggs per clutch, breed in forest canopy"
+      },
+      "conservationActions": "Perlindungan habitat, monitoring populasi, kampanye stop perdagangan illegal, ecotourism berbasis masyarakat"
+    },
+    {
+      "id": "sp004",
+      "commonName": "Harimau Sumatera",
+      "scientificName": "Panthera tigris sumatrae",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["rainforest", "peat-swamp", "lowland-forest"],
+      "tags": ["endemic", "carnivore", "critically-endangered", "flagship-species"],
+      "shortDescription": "Subspesies harimau terkecil yang hanya tersisa di Sumatera dengan populasi kritis.",
+      "longDescription": "Harimau Sumatera adalah subspesies harimau terkecil dan satu-satunya yang tersisa di Indonesia setelah punahnya Harimau Jawa dan Bali. Populasi diperkirakan hanya sekitar 400-600 individu di alam liar. Mereka berperan sebagai apex predator yang menjaga keseimbangan ekosistem hutan. Ancaman utama adalah deforestasi, perburuan ilegal untuk perdagangan bagian tubuh, konflik dengan manusia, dan penyakit. Upaya konservasi intensif dilakukan melalui patroli anti-perburuan dan koridor satwa.",
+      "images": [
+        {"file": "harimau-01.jpg", "credit": "WWF Indonesia", "license": "CC BY-NC-ND 4.0"},
+        {"file": "harimau-02.jpg", "credit": "Photo by Frida Lannerström on Unsplash", "license": "CC0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Kerinci Seblat", "lat": -2.0833, "lng": 101.3667, "precision": "generalized"},
+        {"name": "Taman Nasional Way Kambas", "lat": -4.9333, "lng": 105.7667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "2.2-2.5 meters length, 100-140 kg weight",
+        "diet": "Carnivore - deer, wild boar, primates",
+        "lifespan": "15-20 years in wild",
+        "reproduction": "2-3 cubs per litter"
+      },
+      "conservationActions": "Patroli hutan 24/7, camera trap monitoring, mitigasi konflik manusia-harimau, law enforcement, habitat restoration"
+    },
+    {
+      "id": "sp005",
+      "commonName": "Anoa",
+      "scientificName": "Bubalus depressicornis",
+      "conservationStatus": "Endangered",
+      "habitat": ["rainforest", "lowland-forest", "mountain-forest"],
+      "tags": ["endemic", "mammal", "sulawesi", "herbivore"],
+      "shortDescription": "Kerbau kerdil endemik Sulawesi yang terancam punah.",
+      "longDescription": "Anoa adalah kerbau terkecil di dunia yang hanya ditemukan di pulau Sulawesi. Terdapat dua spesies: Anoa Dataran Rendah dan Anoa Pegunungan. Tinggi mereka hanya sekitar 75-90 cm di pundak dengan berat 150-300 kg. Anoa memiliki tanduk lurus yang khas dan berperan penting dalam ekosistem hutan sebagai browser. Populasi menurun drastis akibat perburuan untuk daging dan tanduk, serta konversi habitat menjadi lahan pertanian.",
+      "images": [
+        {"file": "anoa-01.jpg", "credit": "Wildlife Conservation Society", "license": "CC BY-SA 4.0"},
+        {"file": "anoa-02.jpg", "credit": "Taman Safari Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Bogani Nani Wartabone", "lat": 0.5833, "lng": 123.5000, "precision": "generalized"},
+        {"name": "Taman Nasional Lore Lindu", "lat": -1.4167, "lng": 120.2500, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "75-90 cm shoulder height, 150-300 kg weight",
+        "diet": "Herbivore - fruits, leaves, grasses",
+        "lifespan": "20-30 years",
+        "reproduction": "1 calf every 1-2 years"
+      },
+      "conservationActions": "Protected area management, anti-poaching patrols, breeding programs, community conservation initiatives"
+    },
+    {
+      "id": "sp006",
+      "commonName": "Tarsius",
+      "scientificName": "Tarsius tarsier",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["rainforest", "secondary-forest", "scrubland"],
+      "tags": ["endemic", "primate", "nocturnal", "sulawesi"],
+      "shortDescription": "Primata mungil bermata besar yang aktif di malam hari, endemik Sulawesi.",
+      "longDescription": "Tarsius adalah primata terkecil di dunia dengan mata yang sangat besar dibandingkan ukuran tubuhnya. Mereka memiliki kemampuan memutar kepala hingga 180 derajat dan melompat hingga 40 kali panjang tubuhnya. Tarsius adalah insektivor obligat yang berburu serangga di malam hari. Spesies ini sangat sensitif terhadap perubahan habitat dan stres, sehingga sulit untuk dipelihara. Ancaman utama adalah hilangnya habitat hutan dan fragmentasi.",
+      "images": [
+        {"file": "tarsius-01.jpg", "credit": "Photo by David Hablützel on Pexels", "license": "CC0"},
+        {"file": "tarsius-02.jpg", "credit": "Tangkoko Nature Reserve", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Tangkoko Nature Reserve", "lat": 1.5500, "lng": 125.2000, "precision": "exact"},
+        {"name": "Bantimurung-Bulusaraung", "lat": -5.0167, "lng": 119.7000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "10-15 cm body length, 80-140 grams",
+        "diet": "Insectivore - insects, small lizards",
+        "lifespan": "12-20 years",
+        "reproduction": "1 offspring per year"
+      },
+      "conservationActions": "Habitat protection, ecotourism regulations, research on population dynamics, community engagement"
+    },
+    {
+      "id": "sp007",
+      "commonName": "Rafflesia Arnoldii",
+      "scientificName": "Rafflesia arnoldii",
+      "conservationStatus": "Endangered",
+      "habitat": ["rainforest", "lowland-forest"],
+      "tags": ["endemic", "plant", "parasitic", "sumatra"],
+      "shortDescription": "Bunga terbesar di dunia yang hanya tumbuh di Sumatera dan Kalimantan.",
+      "longDescription": "Rafflesia arnoldii adalah bunga tunggal terbesar di dunia dengan diameter hingga 1 meter dan berat mencapai 11 kg. Bunga ini bersifat parasit pada tanaman Tetrastigma dan tidak memiliki akar, batang, atau daun. Rafflesia mengeluarkan bau bangkai untuk menarik lalat penyerbuk. Bunga hanya mekar selama 5-7 hari dan sangat jarang ditemukan. Ancaman utama adalah deforestasi dan perubahan iklim yang mengganggu siklus hidupnya yang unik.",
+      "images": [
+        {"file": "rafflesia-01.jpg", "credit": "Photo by Fadlan Fadilah on Unsplash", "license": "CC0"},
+        {"file": "rafflesia-02.jpg", "credit": "Bengkulu Tourism Board", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Bengkulu", "lat": -3.8000, "lng": 102.2667, "precision": "generalized"},
+        {"name": "Kerinci Seblat", "lat": -2.0833, "lng": 101.3667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "Up to 1 meter diameter, 11 kg weight",
+        "diet": "Parasitic - derives nutrients from host vine",
+        "lifespan": "9-21 months before flowering",
+        "reproduction": "Sexual reproduction via fly pollination"
+      },
+      "conservationActions": "Protected forest areas, cultivation research, ecotourism development, monitoring programs"
+    },
+    {
+      "id": "sp008",
+      "commonName": "Jalak Bali",
+      "scientificName": "Leucopsar rothschildi",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["savanna", "open-woodland", "grassland"],
+      "tags": ["endemic", "bird", "critically-endangered", "bali"],
+      "shortDescription": "Burung putih cantik endemik Bali yang hampir punah di alam liar.",
+      "longDescription": "Jalak Bali adalah satu-satunya spesies endemik pulau Bali dan menjadi fauna identitas provinsi. Burung ini memiliki bulu putih bersih dengan ujung sayap dan ekor berwarna hitam, serta kulit biru di sekitar mata. Populasi di alam liar diperkirakan hanya tinggal 50-100 individu, menjadikannya salah satu burung paling langka di dunia. Ancaman utama adalah perburuan untuk perdagangan burung hias ilegal. Program breeding dan pelepasliaran intensif dilakukan untuk menyelamatkan spesies ini.",
+      "images": [
+        {"file": "jalak-bali-01.jpg", "credit": "Bali Bird Park", "license": "CC BY-NC 4.0"},
+        {"file": "jalak-bali-02.jpg", "credit": "Photo by imansyah muhamad putera on Unsplash", "license": "CC0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Bali Barat", "lat": -8.1500, "lng": 114.4500, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "25 cm length",
+        "diet": "Omnivore - insects, fruits, seeds",
+        "lifespan": "8-10 years in wild",
+        "reproduction": "2-3 eggs per clutch"
+      },
+      "conservationActions": "Intensive breeding programs, anti-poaching enforcement, habitat restoration, education campaigns"
+    },
+    {
+      "id": "sp009",
+      "commonName": "Badak Jawa",
+      "scientificName": "Rhinoceros sondaicus",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["rainforest", "lowland-forest"],
+      "tags": ["endemic", "mammal", "critically-endangered", "megafauna"],
+      "shortDescription": "Badak bercula satu yang merupakan mamalia besar paling langka di dunia.",
+      "longDescription": "Badak Jawa adalah salah satu mamalia besar paling langka di planet ini dengan hanya sekitar 76 individu yang tersisa di Taman Nasional Ujung Kulon. Badak ini memiliki satu cula dan kulit yang berlipat-lipat menyerupai baju zirah. Mereka adalah browser yang memakan berbagai jenis tumbuhan. Kepunahan populasi Vietnam pada 2010 membuat Ujung Kulon menjadi satu-satunya habitat tersisa. Ancaman meliputi penyakit, bencana alam, dan kapasitas habitat yang terbatas.",
+      "images": [
+        {"file": "badak-jawa-01.jpg", "credit": "WWF Indonesia Camera Trap", "license": "CC BY-NC-ND 4.0"},
+        {"file": "badak-jawa-02.jpg", "credit": "Ujung Kulon National Park", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Ujung Kulon", "lat": -6.7500, "lng": 105.3333, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "2-4 meters length, 900-2300 kg weight",
+        "diet": "Herbivore - shoots, leaves, fruits",
+        "lifespan": "30-45 years",
+        "reproduction": "1 calf every 4-5 years"
+      },
+      "conservationActions": "24/7 monitoring, habitat expansion research, disease surveillance, disaster risk management"
+    },
+    {
+      "id": "sp010",
+      "commonName": "Penyu Hijau",
+      "scientificName": "Chelonia mydas",
+      "conservationStatus": "Endangered",
+      "habitat": ["coastal", "coral-reef", "seagrass"],
+      "tags": ["marine", "reptile", "migratory"],
+      "shortDescription": "Penyu laut yang bermigrasi ribuan kilometer untuk bertelur di pantai kelahirannya.",
+      "longDescription": "Penyu Hijau dinamakan demikian karena lemak di bawah karapasnya berwarna hijau. Mereka bermigrasi ribuan kilometer antara area makan dan pantai bertelur. Indonesia memiliki beberapa lokasi peneluran penting seperti Pulau Derawan dan Kepulauan Seribu. Penyu hijau dewasa adalah herbivora yang memakan lamun dan alga, memainkan peran penting dalam menjaga kesehatan ekosistem lamun. Ancaman meliputi penangkapan ilegal, plastik laut, dan kerusakan habitat peneluran.",
+      "images": [
+        {"file": "penyu-01.jpg", "credit": "Photo by Belle Co on Pexels", "license": "CC0"},
+        {"file": "penyu-02.jpg", "credit": "Coral Triangle Center", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Pulau Derawan", "lat": 2.2833, "lng": 118.2500, "precision": "exact"},
+        {"name": "Kepulauan Seribu", "lat": -5.6167, "lng": 106.5333, "precision": "exact"}
+      ],
+      "quickFacts": {
+        "size": "1-1.5 meters carapace length, 150-230 kg",
+        "diet": "Herbivore - seagrass, algae",
+        "lifespan": "60-80 years",
+        "reproduction": "100-200 eggs per nest, 2-4 clutches per season"
+      },
+      "conservationActions": "Nesting beach protection, marine protected areas, fishing gear modification, plastic reduction campaigns"
+    },
+    {
+      "id": "sp011",
+      "commonName": "Kupu-kupu Sayap Burung",
+      "scientificName": "Ornithoptera goliath",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["rainforest", "mountain-forest"],
+      "tags": ["endemic", "insect", "papua", "iconic"],
+      "shortDescription": "Kupu-kupu terbesar di dunia dengan sayap seperti burung dari Papua.",
+      "longDescription": "Ornithoptera goliath adalah salah satu kupu-kupu terbesar di dunia dengan lebar sayap hingga 28 cm. Kupu-kupu jantan memiliki warna hijau metalik yang berkilauan, sementara betina lebih besar dengan warna coklat dan putih. Mereka hidup di hutan pegunungan Papua dan memakan nektar dari berbagai bunga tropis. Larva memakan tanaman Aristolochia yang mengandung racun sebagai pertahanan. Ancaman utama adalah hilangnya habitat dan perdagangan ilegal untuk koleksi.",
+      "images": [
+        {"file": "kupu-burung-01.jpg", "credit": "Papua Insect Foundation", "license": "CC BY-SA 4.0"},
+        {"file": "kupu-burung-02.jpg", "credit": "Museum Zoologicum Bogoriense", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Pegunungan Arfak", "lat": -1.3000, "lng": 133.9000, "precision": "generalized"},
+        {"name": "Taman Nasional Lorentz", "lat": -4.5000, "lng": 137.5000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "Up to 28 cm wingspan",
+        "diet": "Nectarivore - flower nectar",
+        "lifespan": "3-6 months as adult",
+        "reproduction": "Eggs laid on Aristolochia vines"
+      },
+      "conservationActions": "Protected forest areas, butterfly farming for sustainable income, trade regulations"
+    },
+    {
+      "id": "sp012",
+      "commonName": "Elang Jawa",
+      "scientificName": "Nisaetus bartelsi",
+      "conservationStatus": "Endangered",
+      "habitat": ["rainforest", "mountain-forest"],
+      "tags": ["endemic", "bird", "raptor", "jawa"],
+      "shortDescription": "Elang nasional Indonesia yang hanya ditemukan di pulau Jawa.",
+      "longDescription": "Elang Jawa adalah burung nasional Indonesia dan simbol Garuda Pancasila. Spesies endemik ini hanya ditemukan di hutan-hutan Jawa dengan populasi diperkirakan kurang dari 500 pasang. Elang Jawa memiliki jambul khas di kepala dan merupakan predator puncak di ekosistem hutan. Mereka berburu mamalia kecil, burung, dan reptil. Ancaman terbesar adalah kehilangan habitat hutan yang tersisa di Jawa dan konflik dengan aktivitas manusia.",
+      "images": [
+        {"file": "elang-jawa-01.jpg", "credit": "Raptor Indonesia", "license": "CC BY-NC-SA 4.0"},
+        {"file": "elang-jawa-02.jpg", "credit": "Taman Nasional Gunung Halimun-Salak", "license": "CC BY 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Gunung Gede Pangrango", "lat": -6.7333, "lng": 106.9833, "precision": "generalized"},
+        {"name": "Taman Nasional Halimun-Salak", "lat": -6.7167, "lng": 106.5333, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "61-71 cm length, wingspan up to 110 cm",
+        "diet": "Carnivore - small mammals, birds, reptiles",
+        "lifespan": "20-30 years",
+        "reproduction": "1 egg per breeding season"
+      },
+      "conservationActions": "Forest protection, nest monitoring, public awareness, ecotourism development"
+    },
+    {
+      "id": "sp013",
+      "commonName": "Bekantan",
+      "scientificName": "Nasalis larvatus",
+      "conservationStatus": "Endangered",
+      "habitat": ["mangrove", "peat-swamp", "riverine-forest"],
+      "tags": ["endemic", "primate", "borneo", "arboreal"],
+      "shortDescription": "Monyet berhidung panjang khas Kalimantan yang hidup di hutan bakau.",
+      "longDescription": "Bekantan adalah primata endemik pulau Kalimantan yang terkenal dengan hidung panjangnya, terutama pada jantan dewasa. Hidung ini berfungsi sebagai resonator untuk memperkuat suara panggilan. Bekantan adalah perenang handal dan hidup berkelompok di hutan bakau dan riparian. Mereka memakan daun, buah, dan biji. Populasi menurun drastis akibat konversi hutan bakau menjadi tambak dan perkebunan sawit. Bekantan juga sangat sensitif terhadap stres dan sulit untuk dipelihara.",
+      "images": [
+        {"file": "bekantan-01.jpg", "credit": "Photo by Robert Thiemann on Unsplash", "license": "CC0"},
+        {"file": "bekantan-02.jpg", "credit": "Borneo Orangutan Survival", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Tanjung Puting", "lat": -2.8333, "lng": 111.9167, "precision": "generalized"},
+        {"name": "Sungai Kahayan", "lat": -1.5667, "lng": 113.9167, "precision": "exact"}
+      ],
+      "quickFacts": {
+        "size": "53-76 cm body length, 7-22 kg weight",
+        "diet": "Folivore - leaves, fruits, seeds, flowers",
+        "lifespan": "13-23 years",
+        "reproduction": "1 offspring every 2 years"
+      },
+      "conservationActions": "Mangrove reforestation, protected riverine corridors, community-based ecotourism, anti-poaching patrols"
+    },
+    {
+      "id": "sp014",
+      "commonName": "Kura-kura Leher Ular",
+      "scientificName": "Chelodina mccordi",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["freshwater", "wetland", "pond"],
+      "tags": ["endemic", "reptile", "rote", "critically-endangered"],
+      "shortDescription": "Kura-kura air tawar endemik Pulau Rote yang sangat terancam punah.",
+      "longDescription": "Chelodina mccordi adalah kura-kura leher ular yang hanya ditemukan di Pulau Rote, Nusa Tenggara Timur. Spesies ini memiliki leher yang sangat panjang yang dapat ditarik ke samping di bawah karapas. Populasi di alam liar sangat kritis dengan perkiraan kurang dari 250 individu dewasa. Ancaman utama adalah penangkapan untuk perdagangan hewan peliharaan eksotis internasional, serta kekeringan dan degradasi habitat akibat perubahan iklim.",
+      "images": [
+        {"file": "kura-rote-01.jpg", "credit": "Turtle Survival Alliance", "license": "CC BY-NC-ND 4.0"},
+        {"file": "kura-rote-02.jpg", "credit": "Indonesian Chelonian Conservation", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Danau Peto, Pulau Rote", "lat": -10.7333, "lng": 123.0833, "precision": "exact"}
+      ],
+      "quickFacts": {
+        "size": "18-24 cm carapace length",
+        "diet": "Carnivore - fish, aquatic invertebrates",
+        "lifespan": "30-50 years",
+        "reproduction": "6-14 eggs per clutch"
+      },
+      "conservationActions": "Captive breeding programs, habitat protection, anti-smuggling operations, community engagement"
+    },
+    {
+      "id": "sp015",
+      "commonName": "Maleo",
+      "scientificName": "Macrocephalon maleo",
+      "conservationStatus": "Endangered",
+      "habitat": ["rainforest", "coastal", "volcanic-soil"],
+      "tags": ["endemic", "bird", "sulawesi", "megapode"],
+      "shortDescription": "Burung unik Sulawesi yang mengubur telurnya di tanah panas vulkanik atau pasir pantai.",
+      "longDescription": "Maleo adalah burung megapoda endemik Sulawesi yang memiliki kebiasaan reproduksi unik. Mereka tidak mengerami telur, melainkan menguburnya di tanah yang dipanaskan oleh aktivitas vulkanik atau panas matahari di pantai. Anak maleo yang menetas sudah bisa terbang sendiri. Maleo bertelur sepanjang tahun dengan 8-12 telur per tahun. Telur Maleo berukuran besar (5 kali telur ayam) dan menjadi target perburuan. Hilangnya lokasi peneluran dan predasi menjadi ancaman serius.",
+      "images": [
+        {"file": "maleo-01.jpg", "credit": "Wildlife Conservation Society Sulawesi", "license": "CC BY-NC 4.0"},
+        {"file": "maleo-02.jpg", "credit": "Bogani Nani Wartabone NP", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Bogani Nani Wartabone", "lat": 0.5833, "lng": 123.5000, "precision": "generalized"},
+        {"name": "Pantai Pangumbahan", "lat": 0.6167, "lng": 123.2333, "precision": "exact"}
+      ],
+      "quickFacts": {
+        "size": "55 cm length",
+        "diet": "Omnivore - fruits, seeds, mollusks, insects",
+        "lifespan": "15-20 years",
+        "reproduction": "8-12 eggs per year, incubated in volcanic/sun-heated soil"
+      },
+      "conservationActions": "Nesting site protection, egg guarding programs, predator control, community-based conservation"
+    },
+    {
+      "id": "sp016",
+      "commonName": "Owa Jawa",
+      "scientificName": "Hylobates moloch",
+      "conservationStatus": "Endangered",
+      "habitat": ["rainforest", "mountain-forest"],
+      "tags": ["endemic", "primate", "jawa", "arboreal"],
+      "shortDescription": "Primata kecil endemik Jawa yang terkenal dengan suara nyanyiannya.",
+      "longDescription": "Owa Jawa atau Javan Gibbon adalah primata arboreal yang menghabiskan hampir seluruh hidupnya di kanopi hutan. Mereka terkenal dengan nyanyian duet antara jantan dan betina yang dapat terdengar hingga 1 km. Owa Jawa hidup dalam keluarga monogami dan sangat teritorial. Mereka berperan penting dalam penyebaran biji buah-buahan hutan. Populasi mengalami penurunan tajam akibat hilangnya habitat hutan dan fragmentasi. Hanya tersisa di beberapa kantong hutan di Jawa Barat dan Tengah.",
+      "images": [
+        {"file": "owa-01.jpg", "credit": "Javan Gibbon Center", "license": "CC BY-NC-SA 4.0"},
+        {"file": "owa-02.jpg", "credit": "Photo by cuatrok77 on Flickr", "license": "CC BY-SA 2.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Gunung Gede Pangrango", "lat": -6.7333, "lng": 106.9833, "precision": "generalized"},
+        {"name": "Cagar Alam Leuweung Sancang", "lat": -7.5667, "lng": 108.4500, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "44-64 cm length, 4-8 kg weight",
+        "diet": "Frugivore - fruits, leaves, flowers",
+        "lifespan": "25-30 years",
+        "reproduction": "1 offspring every 2-3 years"
+      },
+      "conservationActions": "Forest corridor creation, gibbon rescue and rehabilitation, acoustic monitoring, ecotourism"
+    },
+    {
+      "id": "sp017",
+      "commonName": "Buaya Senyulong",
+      "scientificName": "Tomistoma schlegelii",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["freshwater", "peat-swamp", "river"],
+      "tags": ["endemic", "reptile", "sumatra-borneo", "carnivore"],
+      "shortDescription": "Buaya berhidung panjang yang hidup di sungai dan rawa gambut Sumatra dan Kalimantan.",
+      "longDescription": "Tomistoma atau Buaya Senyulong adalah spesies buaya dengan moncong yang sangat panjang dan ramping, mirip gharial India. Mereka hidup di sungai dan rawa gambut di Sumatra dan Kalimantan. Tomistoma adalah predator yang memakan ikan dan kadang mamalia kecil. Mereka lebih suka menghindari manusia dan jarang terlibat konflik. Ancaman utama adalah hilangnya habitat rawa gambut akibat konversi untuk perkebunan sawit dan penangkapan untuk kulit.",
+      "images": [
+        {"file": "tomistoma-01.jpg", "credit": "Photo by Taman Safari Indonesia", "license": "CC BY-NC 4.0"},
+        {"file": "tomistoma-02.jpg", "credit": "Crocodile Specialist Group", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sungai Kampar", "lat": 0.3333, "lng": 101.1500, "precision": "exact"},
+        {"name": "Danau Sentarum", "lat": 0.8000, "lng": 112.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "3-5 meters length, up to 250 kg",
+        "diet": "Carnivore - fish, small mammals, birds",
+        "lifespan": "50-70 years",
+        "reproduction": "20-60 eggs per clutch"
+      },
+      "conservationActions": "Peatland conservation, anti-poaching patrols, research on population genetics, community education"
+    },
+    {
+      "id": "sp018",
+      "commonName": "Burung Rangkong Gading",
+      "scientificName": "Rhinoplax vigil",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["rainforest", "lowland-forest"],
+      "tags": ["endemic", "bird", "sumatra-borneo", "critically-endangered"],
+      "shortDescription": "Rangkong dengan helm gading padat yang diburu untuk perdagangan illegal.",
+      "longDescription": "Rangkong Gading adalah burung rangkong terbesar di Asia Tenggara dengan casque (helm) padat yang terbuat dari keratin padat seperti gading. Helm ini sangat berharga di pasar gelap Asia dan menjadi penyebab utama perburuan intensif. Burung ini memainkan peran ekologis penting sebagai penyebar biji pohon-pohon besar. Populasi menurun drastis hingga 80% dalam tiga generasi terakhir. Mereka memerlukan pohon besar berlubang untuk bersarang yang kini semakin langka.",
+      "images": [
+        {"file": "rangkong-01.jpg", "credit": "Photo by Ron Knight on Flickr", "license": "CC BY 2.0"},
+        {"file": "rangkong-02.jpg", "credit": "Hornbill Research Foundation", "license": "CC BY-NC-ND 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Bukit Barisan Selatan", "lat": -5.0833, "lng": 104.3333, "precision": "generalized"},
+        {"name": "Heart of Borneo", "lat": 1.0000, "lng": 114.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "110-120 cm length, up to 3.1 kg",
+        "diet": "Frugivore - large forest fruits, small animals",
+        "lifespan": "35-40 years",
+        "reproduction": "1-2 eggs per breeding season"
+      },
+      "conservationActions": "Anti-trafficking operations, nest protection, large tree conservation, demand reduction campaigns in consumer countries"
+    },
+    {
+      "id": "sp019",
+      "commonName": "Kuskus Beruang",
+      "scientificName": "Ailurops ursinus",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["rainforest", "mountain-forest"],
+      "tags": ["endemic", "marsupial", "sulawesi", "arboreal", "nocturnal"],
+      "shortDescription": "Marsupial arboreal yang menyerupai beruang kecil, endemik Sulawesi.",
+      "longDescription": "Kuskus Beruang adalah marsupial arboreal terbesar di Sulawesi yang aktif di malam hari. Mereka memiliki ekor prehensile yang kuat untuk membantu bergerak di kanopi. Kuskus Beruang memakan daun, buah, dan bunga. Berbeda dengan kebanyakan marsupial lain, mereka tidak memiliki kantung yang jelas. Populasi terancam oleh hilangnya habitat hutan dan perburuan untuk daging dan perdagangan hewan peliharaan. Kuskus berperan penting dalam penyebaran biji dan penyerbukan.",
+      "images": [
+        {"file": "kuskus-01.jpg", "credit": "Tangkoko Conservation Education", "license": "CC BY-NC-SA 4.0"},
+        {"file": "kuskus-02.jpg", "credit": "Photo by Bernard DUPONT on Flickr", "license": "CC BY-SA 2.0"}
+      ],
+      "locations": [
+        {"name": "Tangkoko Nature Reserve", "lat": 1.5500, "lng": 125.2000, "precision": "exact"},
+        {"name": "Taman Nasional Lore Lindu", "lat": -1.4167, "lng": 120.2500, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "56-65 cm body length, 7-10 kg",
+        "diet": "Folivore - leaves, fruits, flowers",
+        "lifespan": "11-15 years",
+        "reproduction": "1 offspring per year"
+      },
+      "conservationActions": "Protected forest management, wildlife corridors, sustainable hunting regulations, captive breeding research"
+    },
+    {
+      "id": "sp020",
+      "commonName": "Ikan Arwana Merah",
+      "scientificName": "Scleropages formosus",
+      "conservationStatus": "Endangered",
+      "habitat": ["freshwater", "river", "black-water"],
+      "tags": ["endemic", "fish", "borneo", "aquarium-trade"],
+      "shortDescription": "Ikan hias premium dengan warna merah menyala yang sangat dicari kolektor.",
+      "longDescription": "Arwana Merah adalah ikan air tawar endemik sungai-sungai blackwater di Kalimantan Barat. Ikan ini sangat berharga dalam perdagangan ikan hias karena warna merahnya yang intens dan kepercayaan budaya di Asia sebagai pembawa keberuntungan. Arwana adalah predator permukaan yang dapat melompat tinggi untuk menangkap serangga. Penangkapan berlebihan untuk perdagangan telah membuat populasi liar menurun drastis. Saat ini perdagangan diatur ketat melalui sistem CITES.",
+      "images": [
+        {"file": "arwana-01.jpg", "credit": "Aquarium Fish International", "license": "CC BY-NC 4.0"},
+        {"file": "arwana-02.jpg", "credit": "Photo by Jean-Marie Gradot on Flickr", "license": "CC BY 2.0"}
+      ],
+      "locations": [
+        {"name": "Sungai Kapuas", "lat": -0.0333, "lng": 109.3500, "precision": "exact"},
+        {"name": "Danau Sentarum", "lat": 0.8000, "lng": 112.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "60-90 cm length, up to 7 kg",
+        "diet": "Carnivore - insects, small fish, shrimp",
+        "lifespan": "10-20 years in wild",
+        "reproduction": "Mouthbrooder, 30-100 eggs per spawn"
+      },
+      "conservationActions": "Sustainable aquaculture development, CITES microchip tagging, habitat protection, illegal trade monitoring"
+    },
+    {
+      "id": "sp021",
+      "commonName": "Landak Sulawesi",
+      "scientificName": "Hystrix pumila",
+      "conservationStatus": "Near Threatened",
+      "habitat": ["rainforest", "agricultural", "scrubland"],
+      "tags": ["endemic", "mammal", "sulawesi", "nocturnal"],
+      "shortDescription": "Landak berukuran kecil endemik Sulawesi dengan duri-duri pelindung.",
+      "longDescription": "Landak Sulawesi adalah spesies landak terkecil di Asia Tenggara yang hanya ditemukan di pulau Sulawesi. Mereka memiliki duri-duri tajam yang digunakan untuk pertahanan dari predator. Landak ini adalah hewan nokturnal yang mencari makan di malam hari, memakan akar, umbi, buah, dan kadang serangga. Mereka cukup adaptif dan dapat hidup di berbagai habitat termasuk area pertanian. Ancaman meliputi perburuan untuk daging dan obat tradisional serta fragmentasi habitat.",
+      "images": [
+        {"file": "landak-01.jpg", "credit": "Sulawesi Wildlife Conservation", "license": "CC BY-NC-SA 4.0"},
+        {"file": "landak-02.jpg", "credit": "Museum Zoologi Unhas", "license": "CC BY 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Lore Lindu", "lat": -1.4167, "lng": 120.2500, "precision": "generalized"},
+        {"name": "Pegunungan Latimojong", "lat": -3.3000, "lng": 119.9833, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "40-55 cm length, 4-6 kg weight",
+        "diet": "Herbivore - roots, tubers, fruits, bark",
+        "lifespan": "10-15 years",
+        "reproduction": "1-2 offspring per litter"
+      },
+      "conservationActions": "Population monitoring, habitat connectivity, sustainable use regulations, community awareness"
+    },
+    {
+      "id": "sp022",
+      "commonName": "Rusa Bawean",
+      "scientificName": "Axis kuhlii",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["forest", "scrubland", "grassland"],
+      "tags": ["endemic", "mammal", "bawean", "critically-endangered"],
+      "shortDescription": "Rusa terkecil di Indonesia yang hanya ada di Pulau Bawean.",
+      "longDescription": "Rusa Bawean adalah spesies rusa endemik Pulau Bawean yang terletak di Laut Jawa. Ini adalah salah satu rusa terkecil di dunia dengan tinggi bahu hanya sekitar 60-70 cm. Populasi diperkirakan hanya sekitar 250-300 individu di alam liar. Ancaman utama adalah habitat yang terbatas di pulau kecil, perburuan, dan penyakit dari hewan domestik. Rusa Bawean aktif di siang dan malam hari, memakan rumput, daun, dan buah-buahan.",
+      "images": [
+        {"file": "rusa-bawean-01.jpg", "credit": "Indonesian Deer Conservation", "license": "CC BY-NC-ND 4.0"},
+        {"file": "rusa-bawean-02.jpg", "credit": "Bawean Island Conservation", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Pulau Bawean", "lat": -5.7333, "lng": 112.6667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "105-115 cm length, 50-60 kg weight",
+        "diet": "Herbivore - grass, leaves, fruits",
+        "lifespan": "8-12 years",
+        "reproduction": "1 fawn per year"
+      },
+      "conservationActions": "Total population monitoring, captive breeding program, habitat restoration, biosecurity measures"
+    },
+    {
+      "id": "sp023",
+      "commonName": "Burung Maleo Senkawor",
+      "scientificName": "Macrocephalon maleo senkawor",
+      "conservationStatus": "Endangered",
+      "habitat": ["coastal", "beach", "lowland-forest"],
+      "tags": ["endemic", "bird", "sulawesi", "megapode"],
+      "shortDescription": "Subspesies Maleo yang bersarang di pasir pantai yang dipanaskan matahari.",
+      "longDescription": "Maleo Senkawor adalah subspesies Maleo yang lebih sering bersarang di pantai berpasir hitam dibanding di lokasi vulkanik. Mereka memiliki perilaku unik dimana pasangan monogami akan kembali ke lokasi peneluran yang sama setiap tahun. Telur dikubur sedalam 50 cm di pasir yang dipanaskan oleh matahari. Anak yang menetas harus menggali sendiri keluar dan langsung mandiri. Ancaman termasuk pencurian telur, predasi oleh biawak dan babi, serta erosi pantai.",
+      "images": [
+        {"file": "maleo-senkawor-01.jpg", "credit": "Alliance for Tompotika Conservation", "license": "CC BY-NC 4.0"},
+        {"file": "maleo-senkawor-02.jpg", "credit": "Sulawesi Endemic Bird Conservation", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Pantai Tanjung Matop", "lat": 0.7500, "lng": 123.4167, "precision": "exact"},
+        {"name": "Pulau Mantehage", "lat": 1.6667, "lng": 124.7500, "precision": "exact"}
+      ],
+      "quickFacts": {
+        "size": "55 cm length, 1.4-1.7 kg",
+        "diet": "Omnivore - fruits, seeds, invertebrates",
+        "lifespan": "15-20 years",
+        "reproduction": "8-12 eggs per year in beach sand nests"
+      },
+      "conservationActions": "Beach nesting site guards, predator management, community egg adoption program, habitat protection"
+    },
+    {
+      "id": "sp024",
+      "commonName": "Pesut Mahakam",
+      "scientificName": "Orcaella brevirostris",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["freshwater", "river", "estuary"],
+      "tags": ["endemic", "mammal", "borneo", "critically-endangered", "aquatic"],
+      "shortDescription": "Lumba-lumba air tawar yang hanya hidup di Sungai Mahakam, Kalimantan.",
+      "longDescription": "Pesut Mahakam adalah populasi lumba-lumba air tawar yang terisolasi di Sungai Mahakam, Kalimantan Timur. Mereka adalah subpopulasi dari lumba-lumba irrawaddy yang beradaptasi dengan kehidupan air tawar. Populasi diperkirakan hanya tersisa 70-80 individu, menjadikannya salah satu cetacea paling terancam di dunia. Ancaman meliputi tangkapan bycatch di jaring ikan, polusi air, pembangunan bendungan, dan lalu lintas kapal. Pesut memainkan peran penting dalam ekosistem sungai.",
+      "images": [
+        {"file": "pesut-01.jpg", "credit": "WWF Indonesia", "license": "CC BY-NC-ND 4.0"},
+        {"file": "pesut-02.jpg", "credit": "Mahakam Dolphin Conservation Program", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sungai Mahakam", "lat": -0.5000, "lng": 117.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "2-2.5 meters length, 90-150 kg",
+        "diet": "Carnivore - fish, squid, crustaceans",
+        "lifespan": "25-30 years",
+        "reproduction": "1 calf every 2-3 years"
+      },
+      "conservationActions": "Fishing gear modification, water quality monitoring, sustainable fisheries, river management planning, public engagement"
+    },
+    {
+      "id": "sp025",
+      "commonName": "Katak Merah Sulawesi",
+      "scientificName": "Leptophryne cruentata",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["mountain-forest", "stream", "waterfall"],
+      "tags": ["endemic", "amphibian", "sulawesi", "critically-endangered"],
+      "shortDescription": "Katak kecil berwarna merah cerah yang hanya ditemukan di pegunungan Sulawesi.",
+      "longDescription": "Katak Merah Sulawesi adalah spesies katak kecil dengan warna merah cerah yang mencolok. Mereka hidup di sekitar sungai dan air terjun di hutan pegunungan Sulawesi pada ketinggian 1.500-2.000 mdpl. Katak ini sangat sensitif terhadap perubahan kualitas air dan suhu. Populasi mengalami penurunan drastis akibat penyakit chytrid fungus, perubahan iklim, dan degradasi habitat. Mereka adalah indikator kesehatan ekosistem sungai pegunungan.",
+      "images": [
+        {"file": "katak-merah-01.jpg", "credit": "Amphibian Survival Alliance", "license": "CC BY-NC-SA 4.0"},
+        {"file": "katak-merah-02.jpg", "credit": "Photo by Amir Hamzah on Indonesian Herpetology", "license": "CC BY 4.0"}
+      ],
+      "locations": [
+        {"name": "Gunung Ambang", "lat": 0.7500, "lng": 124.4167, "precision": "generalized"},
+        {"name": "Taman Nasional Lore Lindu", "lat": -1.4167, "lng": 120.2500, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "2-3 cm length",
+        "diet": "Insectivore - small insects, mites",
+        "lifespan": "3-5 years",
+        "reproduction": "Eggs laid in mountain streams"
+      },
+      "conservationActions": "Disease surveillance, climate monitoring, stream habitat protection, captive assurance colony, research on threats"
+    }
+  ]
+}
