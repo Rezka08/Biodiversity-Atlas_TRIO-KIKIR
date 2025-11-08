@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Statistik - Biodiversity Atlas Indonesia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <style>
+        .dashboard-section {
+            padding: var(--spacing-3xl) 0;
+            background: var(--color-background);
+        }
+        
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .dashboard-title {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .dashboard-description {
+            color: var(--color-text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .stat-card {
+            background: var(--color-surface);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stat-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+        }
+        
+        .stat-trend {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .stat-trend.up {
+            color: var(--color-success);
+        }
+        
+        .stat-trend.down {
+            color: var(--color-danger);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+        }
+        
+        /* Charts Grid */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .chart-card {
+            background: var(--color-surface);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .chart-card.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .chart-header {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .chart-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .chart-subtitle {
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+        
+        .chart-container canvas {
+            max-height: 100%;
+        }
+        
+        /* Top Species Table */
+        .top-species-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .top-species-table thead {
+            background: var(--color-background);
+        }
+        
+        .top-species-table th {
+            padding: var(--spacing-md);
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+            border-bottom: 2px solid var(--color-border);
+        }
+        
+        .top-species-table td {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .top-species-table tr:hover {
+            background: var(--color-background);
+        }
+        
+        .species-rank {
+            width: 40px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        
+        .species-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .species-common-name {
+            font-weight: 600;
+        }
+        
+        .species-scientific-name {
+            font-size: 0.875rem;
+            font-style: italic;
+            color: var(--color-text-secondary);
+        }
+        
+        .species-views {
+            font-weight: 600;
+            text-align: right;
+        }
+        
+        /* Activity Log */
+        .activity-log {
+            background: var(--color-surface);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .activity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .activity-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .activity-timeline {
+            position: relative;
+            padding-left: var(--spacing-xl);
+        }
+        
+        .activity-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-border);
+        }
+        
+        .activity-item {
+            position: relative;
+            padding-bottom: var(--spacing-lg);
+        }
+        
+        .activity-item:last-child {
+            padding-bottom: 0;
+        }
+        
+        .activity-dot {
+            position: absolute;
+            left: -26px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            border: 3px solid var(--color-surface);
+            box-shadow: 0 0 0 3px var(--color-border);
+        }
+        
+        .activity-content {
+            background: var(--color-background);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+        }
+        
+        .activity-type {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .activity-description {
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .activity-time {
+            font-size: 0.75rem;
+            color: var(--color-text-tertiary);
+        }
+        
+        @media (max-width: 768px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon">🌿</span>
+                        <span class="logo-text">Biodiversity<span class="highlight">Atlas</span></span>
+                    </a>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="catalog.html" class="nav-link">Katalog</a>
+                    <a href="explorer.html" class="nav-link">Peta</a>
+                    <a href="submit.html" class="nav-link">Submit Temuan</a>
+                    <a href="quiz.html" class="nav-link">Kuis</a>
+                    <a href="dashboard.html" class="nav-link active">Statistik</a>
+                </div>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+        <div class="container">
+            <!-- Header -->
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">Dashboard Statistik</h1>
+                <p class="dashboard-description">
+                    Visualisasi data keanekaragaman hayati Indonesia dan aktivitas platform
+                </p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-icon">🦎</div>
+                        <div class="stat-trend up">
+                            <span>↑</span>
+                            <span>+5</span>
+                        </div>
+                    </div>
+                    <div class="stat-value" id="totalSpecies">0</div>
+                    <div class="stat-label">Total Spesies</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-icon">⚠️</div>
+                        <div class="stat-trend down">
+                            <span>↓</span>
+                            <span>18%</span>
+                        </div>
+                    </div>
+                    <div class="stat-value" id="endangeredSpecies">0</div>
+                    <div class="stat-label">Spesies Terancam</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-icon">📍</div>
+                        <div class="stat-trend up">
+                            <span>↑</span>
+                            <span>+12</span>
+                        </div>
+                    </div>
+                    <div class="stat-value" id="totalLocations">0</div>
+                    <div class="stat-label">Lokasi Observasi</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-icon">📸</div>
+                        <div class="stat-trend up">
+                            <span>↑</span>
+                            <span>+23</span>
+                        </div>
+                    </div>
+                    <div class="stat-value" id="totalFindings">0</div>
+                    <div class="stat-label">Temuan Dilaporkan</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-grid">
+                <!-- Conservation Status Distribution -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Distribusi Status Konservasi</h3>
+                        <p class="chart-subtitle">Jumlah spesies berdasarkan status IUCN</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="conservationChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Habitat Distribution -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Distribusi Habitat</h3>
+                        <p class="chart-subtitle">Sebaran spesies di berbagai tipe habitat</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="habitatChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Species by Category -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Kategori Spesies</h3>
+                        <p class="chart-subtitle">Klasifikasi berdasarkan jenis</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Monthly Findings -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Temuan per Bulan</h3>
+                        <p class="chart-subtitle">Tren pelaporan temuan 6 bulan terakhir</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="findingsChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Top 10 Species -->
+                <div class="chart-card full-width">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Top 10 Spesies Paling Dilihat</h3>
+                        <p class="chart-subtitle">Spesies dengan views tertinggi di platform</p>
+                    </div>
+                    <table class="top-species-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Spesies</th>
+                                <th>Status</th>
+                                <th>Views</th>
+                            </tr>
+                        </thead>
+                        <tbody id="topSpeciesTable">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Activity Log -->
+            <div class="activity-log">
+                <div class="activity-header">
+                    <h3 class="activity-title">Aktivitas Terkini</h3>
+                    <button class="btn btn-secondary btn-small" onclick="window.location.reload()">
+                        🔄 Refresh
+                    </button>
+                </div>
+                <div class="activity-timeline" id="activityTimeline">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🌿</span>
+                        <span class="logo-text">Biodiversity<span class="highlight">Atlas</span></span>
+                    </div>
+                    <p class="footer-description">
+                        Platform digital untuk eksplorasi, edukasi, dan konservasi keanekaragaman hayati Indonesia
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Jelajahi</h4>
+                    <ul class="footer-links">
+                        <li><a href="catalog.html">Katalog Spesies</a></li>
+                        <li><a href="explorer.html">Peta Interaktif</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Berkontribusi</h4>
+                    <ul class="footer-links">
+                        <li><a href="submit.html">Submit Temuan</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Biodiversity Atlas Indonesia. Dibuat untuk INVOFEST 2025.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
