@@ -4,42 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biodiversity Atlas Indonesia - Katalog Keanekaragaman Hayati</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <span class="logo-icon">🌿</span>
-                    <span class="logo-text">Biodiversity<span class="highlight">Atlas</span></span>
-                </div>
-                <div class="nav-menu" id="navMenu">
-                    <a href="index.html" class="nav-link active">Beranda</a>
-                    <a href="catalog.html" class="nav-link">Katalog</a>
-                    <a href="explorer.html" class="nav-link">Peta</a>
-                    <a href="submit.html" class="nav-link">Submit Temuan</a>
-                    <a href="quiz.html" class="nav-link">Kuis</a>
-                    <a href="dashboard.html" class="nav-link">Statistik</a>
-                </div>
-                <div class="nav-actions">
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                        <span class="sun-icon">☀️</span>
-                        <span class="moon-icon">🌙</span>
-                    </button>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -277,60 +248,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <span class="logo-icon">🌿</span>
-                        <span class="logo-text">Biodiversity<span class="highlight">Atlas</span></span>
-                    </div>
-                    <p class="footer-description">
-                        Platform digital untuk eksplorasi, edukasi, dan konservasi keanekaragaman hayati Indonesia
-                    </p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="Twitter">🐦</a>
-                        <a href="#" aria-label="Facebook">👍</a>
-                        <a href="#" aria-label="YouTube">📹</a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4 class="footer-title">Jelajahi</h4>
-                    <ul class="footer-links">
-                        <li><a href="catalog.html">Katalog Spesies</a></li>
-                        <li><a href="explorer.html">Peta Interaktif</a></li>
-                        <li><a href="dashboard.html">Dashboard</a></li>
-                        <li><a href="quiz.html">Kuis Edukasi</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4 class="footer-title">Berkontribusi</h4>
-                    <ul class="footer-links">
-                        <li><a href="submit.html">Submit Temuan</a></li>
-                        <li><a href="about.html">Tentang Kami</a></li>
-                        <li><a href="methodology.html">Metodologi</a></li>
-                        <li><a href="contact.html">Kontak</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4 class="footer-title">Sumber Data</h4>
-                    <ul class="footer-links">
-                        <li><a href="https://www.iucnredlist.org" target="_blank">IUCN Red List</a></li>
-                        <li><a href="#" target="_blank">LIPI Indonesia</a></li>
-                        <li><a href="#" target="_blank">WWF Indonesia</a></li>
-                        <li><a href="credits.html">Lisensi & Kredit</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Biodiversity Atlas Indonesia. Dibuat untuk INVOFEST 2025 Web Design Competition.</p>
-                <p class="footer-note">All species data sourced from reputable conservation organizations. Images used under CC licenses.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <!-- Load component loader first, then other scripts -->
+    <script src="js/components-loader.js"></script>
     <script src="js/script.js"></script>
     <script src="js/home.js"></script>
 </body>

@@ -17,11 +17,17 @@ let speciesData = [];
 function initTheme() {
     const themeToggle = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('theme') || 'light';
-    
+
     document.documentElement.setAttribute('data-theme', savedTheme);
-    
+
     if (themeToggle) {
+        // Remove existing listener if any (prevent duplicate listeners)
+        themeToggle.removeEventListener('click', toggleTheme);
+        // Add new listener
         themeToggle.addEventListener('click', toggleTheme);
+        console.log('✅ Theme toggle initialized');
+    } else {
+        console.warn('⚠️ Theme toggle button not found - navbar might not be loaded yet');
     }
 }
 
@@ -43,23 +49,45 @@ function toggleTheme() {
 // MOBILE NAVIGATION
 // ============================================
 
+// Store click handler to remove it later if needed
+let mobileNavClickHandler = null;
+let mobileNavOutsideClickHandler = null;
+
 function initMobileNav() {
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const navMenu = document.getElementById('navMenu');
-    
+
     if (mobileMenuToggle && navMenu) {
-        mobileMenuToggle.addEventListener('click', () => {
+        // Remove existing listeners if any
+        if (mobileNavClickHandler) {
+            mobileMenuToggle.removeEventListener('click', mobileNavClickHandler);
+        }
+        if (mobileNavOutsideClickHandler) {
+            document.removeEventListener('click', mobileNavOutsideClickHandler);
+        }
+
+        // Create new handler
+        mobileNavClickHandler = () => {
             navMenu.classList.toggle('active');
             mobileMenuToggle.classList.toggle('active');
-        });
-        
+        };
+
+        // Add click handler
+        mobileMenuToggle.addEventListener('click', mobileNavClickHandler);
+
         // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
+        mobileNavOutsideClickHandler = (e) => {
             if (!e.target.closest('.nav-menu') && !e.target.closest('.mobile-menu-toggle')) {
                 navMenu.classList.remove('active');
                 mobileMenuToggle.classList.remove('active');
             }
-        });
+        };
+
+        document.addEventListener('click', mobileNavOutsideClickHandler);
+
+        console.log('✅ Mobile navigation initialized');
+    } else {
+        console.warn('⚠️ Mobile nav elements not found - navbar might not be loaded yet');
     }
 }
 
@@ -353,6 +381,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 // ============================================
 // EXPORT FOR OTHER SCRIPTS
 // ============================================
+
+// Make functions globally available for components-loader.js
+window.initTheme = initTheme;
+window.initMobileNav = initMobileNav;
 
 window.BiodiversityAtlas = {
     get speciesData() { return speciesData; },
