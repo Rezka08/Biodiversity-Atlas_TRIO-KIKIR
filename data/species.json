@@ -619,6 +619,2237 @@
         "reproduction": "Eggs laid in mountain streams"
       },
       "conservationActions": "Disease surveillance, climate monitoring, stream habitat protection, captive assurance colony, research on threats"
+    },
+    {
+      "id": "sp026",
+      "commonName": "Bangau Tongtong",
+      "scientificName": "Leptoptilos javanicus",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["wetland", "grassland", "coastal"],
+      "tags": ["bird", "wading-bird", "java-sumatra"],
+      "shortDescription": "Bangau besar pemakan bangkai yang berperan penting dalam ekosistem.",
+      "longDescription": "Bangau Tongtong adalah burung bangau besar yang ditemukan di Jawa dan Sumatra. Mereka memiliki kepala botak dan kantung tenggorokan yang besar. Sebagai pemakan bangkai, mereka berperan penting dalam sanitasi ekosistem. Populasi menurun akibat hilangnya lahan basah dan gangguan di lokasi bersarang.",
+      "images": [
+        {"file": "bangau-tongtong-01.jpg", "credit": "Wetlands International", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Rawa Pening", "lat": -7.3333, "lng": 110.6667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "19-21 cm length",
+        "diet": "Carnivore - insects, small rodents",
+        "lifespan": "8-10 years",
+        "reproduction": "3-5 eggs per clutch"
+      },
+      "conservationActions": "Habitat conservation, nest box programs"
+    },
+
+    {
+      "id": "sp027",
+      "commonName": "Lutung Jawa",
+      "scientificName": "Trachypithecus auratus",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["rainforest", "mangrove", "plantation"],
+      "tags": ["endemic", "primate", "jawa", "arboreal"],
+      "shortDescription": "Monyet berwarna hitam atau oranye yang hidup di hutan Jawa dan Bali.",
+      "longDescription": "Lutung Jawa memiliki dua variasi warna: hitam dan oranye keemasan. Bayi lahir dengan warna oranye terang dan berubah seiring dewasa. Mereka hidup berkelompok dan memakan daun sebagai makanan utama. Populasi terancam oleh hilangnya habitat dan perburuan.",
+      "images": [
+        {"file": "lutung-01.jpg", "credit": "Primate Conservation", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Baluran", "lat": -7.8333, "lng": 114.3667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "45-65 cm body length, 6-8 kg",
+        "diet": "Folivore - leaves, fruits, flowers",
+        "lifespan": "20-25 years",
+        "reproduction": "1 offspring per year"
+      },
+      "conservationActions": "Forest protection, population monitoring, conflict mitigation"
+    },
+    {
+      "id": "sp028",
+      "commonName": "Kakatua Jambul Kuning",
+      "scientificName": "Cacatua sulphurea",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["forest", "woodland", "savanna"],
+      "tags": ["endemic", "bird", "critically-endangered", "parrot"],
+      "shortDescription": "Kakatua dengan jambul kuning cerah yang terancam perdagangan ilegal.",
+      "longDescription": "Kakatua Jambul Kuning adalah burung endemik Indonesia dengan jambul kuning yang ikonik. Populasi menurun drastis hingga 90% akibat perdagangan burung hias ilegal. Mereka hidup berpasangan atau kelompok kecil dan membuat sarang di lubang pohon tinggi.",
+      "images": [
+        {"file": "kakatua-kuning-01.jpg", "credit": "BirdLife Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Pulau Komodo", "lat": -8.5569, "lng": 119.4889, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "33 cm length",
+        "diet": "Granivore - seeds, nuts, fruits",
+        "lifespan": "40-60 years",
+        "reproduction": "2 eggs per clutch"
+      },
+      "conservationActions": "Anti-trafficking enforcement, breeding programs, habitat protection"
+    },
+    {
+      "id": "sp029",
+      "commonName": "Musang Sulawesi",
+      "scientificName": "Macrogalidia musschenbroekii",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["rainforest", "mountain-forest"],
+      "tags": ["endemic", "mammal", "sulawesi", "carnivore"],
+      "shortDescription": "Musang besar endemik Sulawesi yang jarang terlihat.",
+      "longDescription": "Musang Sulawesi adalah viverrid terbesar di Sulawesi dengan tubuh panjang dan ekor lebat. Mereka adalah predator nokturnal yang berburu mamalia kecil, burung, dan serangga. Spesies ini sangat jarang dipelajari dan terancam oleh hilangnya habitat hutan pegunungan.",
+      "images": [
+        {"file": "musang-sulawesi-01.jpg", "credit": "Camera Trap Survey Sulawesi", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Lore Lindu", "lat": -1.4167, "lng": 120.2500, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "85-100 cm including tail, 5-7 kg",
+        "diet": "Carnivore - small mammals, birds, insects",
+        "lifespan": "10-15 years",
+        "reproduction": "1-2 offspring per litter"
+      },
+      "conservationActions": "Camera trap monitoring, habitat conservation, research programs"
+    },
+    {
+      "id": "sp030",
+      "commonName": "Kantong Semar Raksasa",
+      "scientificName": "Nepenthes rajah",
+      "conservationStatus": "Endangered",
+      "habitat": ["mountain-forest", "ultramafic-soil"],
+      "tags": ["plant", "carnivorous", "borneo"],
+      "shortDescription": "Kantong semar terbesar di dunia yang dapat menangkap tikus.",
+      "longDescription": "Nepenthes rajah adalah kantong semar terbesar di dunia dengan kantong bervolume hingga 3.5 liter. Tumbuhan ini hanya ditemukan di Gunung Kinabalu dan sekitarnya. Kantongnya dapat menangkap mangsa sebesar tikus. Terancam oleh pengambilan liar untuk koleksi dan perubahan iklim.",
+      "images": [
+        {"file": "nepenthes-rajah-01.jpg", "credit": "Borneo Carnivorous Plants", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Gunung Kinabalu", "lat": 6.0750, "lng": 116.5583, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "Pitchers up to 41 cm tall, 20 cm wide",
+        "diet": "Carnivorous - insects, small vertebrates",
+        "lifespan": "10-20 years",
+        "reproduction": "Seeds dispersed by wind"
+      },
+      "conservationActions": "Protected area enforcement, cultivation programs, anti-poaching"
+    },
+    {
+      "id": "sp031",
+      "commonName": "Ular Sanca Kembang",
+      "scientificName": "Malayopython reticulatus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rainforest", "grassland", "wetland"],
+      "tags": ["reptile", "snake", "constrictor"],
+      "shortDescription": "Ular terpanjang di dunia yang dapat mencapai 7 meter.",
+      "longDescription": "Sanca Kembang adalah ular terpanjang di dunia dengan rekor mencapai 7.67 meter. Mereka adalah konstriktor yang membunuh mangsa dengan membelitnya. Ular ini berperan penting dalam mengendalikan populasi hewan pengerat. Meski populasi stabil, mereka terancam oleh perdagangan kulit.",
+      "images": [
+        {"file": "sanca-01.jpg", "credit": "Indonesian Reptile Society", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Way Kambas", "lat": -4.9333, "lng": 105.7667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "3-7 meters length, 75-150 kg",
+        "diet": "Carnivore - mammals, birds",
+        "lifespan": "20-25 years in wild",
+        "reproduction": "25-80 eggs per clutch"
+      },
+      "conservationActions": "Sustainable use regulations, trade monitoring, habitat conservation"
+    },
+    {
+      "id": "sp032",
+      "commonName": "Siamang",
+      "scientificName": "Symphalangus syndactylus",
+      "conservationStatus": "Endangered",
+      "habitat": ["rainforest", "mountain-forest"],
+      "tags": ["primate", "sumatra", "arboreal"],
+      "shortDescription": "Owa terbesar dengan kantung tenggorokan yang menghasilkan suara keras.",
+      "longDescription": "Siamang adalah gibbon terbesar dengan kantung tenggorokan besar yang digunakan untuk menghasilkan panggilan keras hingga 5 km. Mereka hidup monogami dan bernyanyi duet di pagi hari. Siamang memainkan peran penting dalam penyebaran biji buah-buahan besar.",
+      "images": [
+        {"file": "siamang-01.jpg", "credit": "Gibbon Conservation Alliance", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Gunung Leuser", "lat": 3.5833, "lng": 97.5000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "75-90 cm length, 10-14 kg",
+        "diet": "Frugivore - fruits, leaves, flowers",
+        "lifespan": "25-35 years",
+        "reproduction": "1 offspring every 2-3 years"
+      },
+      "conservationActions": "Forest corridor protection, gibbon monitoring, ecotourism"
+    },
+    {
+      "id": "sp033",
+      "commonName": "Burung Enggang Papan",
+      "scientificName": "Buceros bicornis",
+      "conservationStatus": "Near Threatened",
+      "habitat": ["rainforest", "lowland-forest"],
+      "tags": ["bird", "hornbill", "sumatra"],
+      "shortDescription": "Rangkong dengan casque ganda yang hidup di hutan Sumatra.",
+      "longDescription": "Enggang Papan memiliki casque ganda yang khas berbentuk seperti papan. Mereka adalah frugivora penting yang menyebarkan biji pohon-pohon besar. Burung ini bersarang di lubang pohon besar dan betina akan disegel di dalam selama masa inkubasi.",
+      "images": [
+        {"file": "enggang-papan-01.jpg", "credit": "Sumatra Hornbill Project", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Bukit Barisan Selatan", "lat": -5.0833, "lng": 104.3333, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "95-105 cm length",
+        "diet": "Frugivore - fruits, small animals",
+        "lifespan": "35-40 years",
+        "reproduction": "1-2 eggs per year"
+      },
+      "conservationActions": "Nest tree protection, forest conservation, monitoring programs"
+    },
+    {
+      "id": "sp034",
+      "commonName": "Babirusa",
+      "scientificName": "Babyrousa celebensis",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["rainforest", "riverine-forest"],
+      "tags": ["endemic", "mammal", "sulawesi", "ungulate"],
+      "shortDescription": "Babi hutan dengan taring melengkung yang menembus moncong.",
+      "longDescription": "Babirusa adalah babi hutan unik dengan taring atas jantan yang tumbuh menembus kulit moncong dan melengkung ke belakang. Nama 'babirusa' berarti 'babi rusa'. Mereka hidup di hutan dekat sungai dan makan buah-buahan. Ancaman utama adalah perburuan dan hilangnya habitat.",
+      "images": [
+        {"file": "babirusa-01.jpg", "credit": "Sulawesi Wildlife Conservation", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Bogani Nani Wartabone", "lat": 0.5833, "lng": 123.5000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "85-110 cm length, 40-100 kg",
+        "diet": "Omnivore - fruits, leaves, roots",
+        "lifespan": "10-15 years",
+        "reproduction": "1-2 piglets per litter"
+      },
+      "conservationActions": "Anti-hunting patrols, habitat protection, breeding research"
+    },
+    {
+      "id": "sp035",
+      "commonName": "Kelelawar Buah Kalong",
+      "scientificName": "Pteropus vampyrus",
+      "conservationStatus": "Near Threatened",
+      "habitat": ["rainforest", "mangrove", "plantation"],
+      "tags": ["mammal", "flying-fox", "nocturnal"],
+      "shortDescription": "Kelelawar buah terbesar dengan peran penting sebagai penyerbuk.",
+      "longDescription": "Kalong adalah kelelawar buah terbesar dengan rentang sayap hingga 1.5 meter. Mereka terbang puluhan kilometer setiap malam untuk mencari buah. Kalong adalah penyerbuk utama durian dan pohon ekonomis lainnya. Populasi menurun akibat perburuan dan gangguan di roosting sites.",
+      "images": [
+        {"file": "kalong-01.jpg", "credit": "Bat Conservation Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Pulau Kalong, Flores", "lat": -8.5000, "lng": 119.8667, "precision": "exact"}
+      ],
+      "quickFacts": {
+        "size": "1.5 meter wingspan, 600-1100 grams",
+        "diet": "Frugivore - fruits, nectar, pollen",
+        "lifespan": "15-20 years",
+        "reproduction": "1 pup per year"
+      },
+      "conservationActions": "Roosting site protection, education on ecological role, sustainable management"
+    },
+    {
+      "id": "sp036",
+      "commonName": "Elang Flores",
+      "scientificName": "Nisaetus floris",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["rainforest", "savanna"],
+      "tags": ["endemic", "bird", "raptor", "flores", "critically-endangered"],
+      "shortDescription": "Elang endemik Flores dengan populasi sangat kritis.",
+      "longDescription": "Elang Flores adalah raptor endemik pulau Flores dengan populasi diperkirakan kurang dari 250 individu dewasa. Mereka berburu mamalia kecil dan burung di hutan dan savanna. Ancaman utama adalah deforestasi dan perburuan. Spesies ini memerlukan perlindungan segera untuk menghindari kepunahan.",
+      "images": [
+        {"file": "elang-flores-01.jpg", "credit": "Flores Raptor Conservation", "license": "CC BY-NC-ND 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Kelimutu", "lat": -8.7667, "lng": 121.8167, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "55 cm length, 800-1200 grams",
+        "diet": "Carnivore - small mammals, birds",
+        "lifespan": "15-20 years",
+        "reproduction": "1 egg per breeding season"
+      },
+      "conservationActions": "Habitat protection, nest monitoring, community education"
+    },
+    {
+      "id": "sp037",
+      "commonName": "Ikan Pari Manta",
+      "scientificName": "Mobula birostris",
+      "conservationStatus": "Endangered",
+      "habitat": ["coral-reef", "open-ocean"],
+      "tags": ["marine", "fish", "migratory"],
+      "shortDescription": "Ikan pari terbesar yang bermigrasi melintasi lautan untuk makan plankton.",
+      "longDescription": "Pari Manta adalah ikan pari terbesar dengan lebar hingga 7 meter. Mereka filter feeder yang memakan plankton dan crustacea kecil. Indonesia memiliki populasi manta terbesar di dunia, terutama di Raja Ampat dan Komodo. Ancaman meliputi tangkapan bycatch dan perdagangan gill plates.",
+      "images": [
+        {"file": "manta-01.jpg", "credit": "Marine Megafauna Foundation", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Raja Ampat", "lat": -0.5000, "lng": 130.5000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "5-7 meters wingspan, 1400-2000 kg",
+        "diet": "Planktivore - plankton, small fish",
+        "lifespan": "40-50 years",
+        "reproduction": "1 pup every 2-5 years"
+      },
+      "conservationActions": "Marine protected areas, tourism management, bycatch reduction"
+    },
+    {
+      "id": "sp038",
+      "commonName": "Gajah Sumatera",
+      "scientificName": "Elephas maximus sumatranus",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["rainforest", "peat-swamp"],
+      "tags": ["endemic", "mammal", "sumatra", "critically-endangered", "megafauna"],
+      "shortDescription": "Subspesies gajah Asia terkecil yang terancam punah di Sumatra.",
+      "longDescription": "Gajah Sumatera adalah subspesies gajah Asia terkecil dengan populasi diperkirakan kurang dari 2000 individu. Mereka berperan penting sebagai ecosystem engineer yang membuka jalur di hutan dan menyebarkan biji. Konflik manusia-gajah meningkat akibat fragmentasi habitat.",
+      "images": [
+        {"file": "gajah-sumatra-01.jpg", "credit": "WWF Indonesia", "license": "CC BY-NC-ND 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Way Kambas", "lat": -4.9333, "lng": 105.7667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "2-3.2 meters shoulder height, 2000-4000 kg",
+        "diet": "Herbivore - grass, bark, fruits",
+        "lifespan": "55-70 years",
+        "reproduction": "1 calf every 4-6 years"
+      },
+      "conservationActions": "Corridor creation, conflict mitigation, patrol teams, habitat restoration"
+    },
+    {
+      "id": "sp039",
+      "commonName": "Monyet Hitam Sulawesi",
+      "scientificName": "Macaca nigra",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["rainforest", "agricultural"],
+      "tags": ["endemic", "primate", "sulawesi", "critically-endangered"],
+      "shortDescription": "Monyet berjambul hitam yang terkenal dengan foto 'selfie' viral.",
+      "longDescription": "Monyet Hitam Sulawesi atau Yaki memiliki jambul rambut hitam khas dan wajah yang ekspresif. Populasi menurun drastis hingga 90% dalam 40 tahun terakhir akibat perburuan untuk daging (rintek wuuk) dan hilangnya habitat. Mereka hidup dalam kelompok besar dengan struktur sosial kompleks.",
+      "images": [
+        {"file": "yaki-01.jpg", "credit": "Macaca Nigra Project", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Tangkoko Nature Reserve", "lat": 1.5500, "lng": 125.2000, "precision": "exact"}
+      ],
+      "quickFacts": {
+        "size": "44-60 cm body length, 7-10 kg",
+        "diet": "Omnivore - fruits, seeds, insects",
+        "lifespan": "15-20 years",
+        "reproduction": "1 offspring per year"
+      },
+      "conservationActions": "Community conservation programs, anti-hunting campaigns, habitat protection"
+    },
+    {
+      "id": "sp040",
+      "commonName": "Ular Kobra Jawa",
+      "scientificName": "Naja sputatrix",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "agricultural", "grassland"],
+      "tags": ["endemic", "reptile", "venomous", "jawa"],
+      "shortDescription": "Kobra berbisa yang dapat menyemprotkan racun ke mata predator.",
+      "longDescription": "Kobra Jawa dapat menyemprotkan racun hingga jarak 2 meter ke mata predator sebagai pertahanan. Mereka adalah predator penting yang mengendalikan populasi tikus di area pertanian. Meski berbisa, mereka lebih memilih menghindari manusia dan jarang menyerang tanpa provokasi.",
+      "images": [
+        {"file": "kobra-jawa-01.jpg", "credit": "Indonesian Snake Conservation", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Ujung Kulon", "lat": -6.7500, "lng": 105.3333, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "1.2-1.8 meters length",
+        "diet": "Carnivore - rodents, frogs, lizards",
+        "lifespan": "15-20 years",
+        "reproduction": "12-20 eggs per clutch"
+      },
+      "conservationActions": "Education on coexistence, snake rescue programs, habitat conservation"
+    },
+    {
+      "id": "sp041",
+      "commonName": "Amorphophallus Titanum",
+      "scientificName": "Amorphophallus titanum",
+      "conservationStatus": "Endangered",
+      "habitat": ["rainforest"],
+      "tags": ["endemic", "plant", "sumatra"],
+      "shortDescription": "Bunga bangkai raksasa dengan bau menyengat yang spektakuler.",
+      "longDescription": "Bunga Bangkai adalah tumbuhan dengan perbungaan terbesar di dunia, dapat mencapai tinggi 3 meter. Bunga mengeluarkan bau bangkai busuk untuk menarik penyerbuk. Bunga hanya mekar 2-3 hari setelah bertahun-tahun dorman. Populasi di alam liar terus menurun akibat deforestasi.",
+      "images": [
+        {"file": "bunga-bangkai-01.jpg", "credit": "Kebun Raya Bogor", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan Sumatra Barat", "lat": -1.0000, "lng": 100.3667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "Up to 3 meters tall",
+        "diet": "Autotrophic",
+        "lifespan": "40+ years (including dormancy periods)",
+        "reproduction": "Insect pollination during brief blooming"
+      },
+      "conservationActions": "Ex-situ conservation in botanical gardens, habitat protection, research"
+    },
+    {
+      "id": "sp042",
+      "commonName": "Kukang Jawa",
+      "scientificName": "Nycticebus javanicus",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["rainforest", "plantation", "secondary-forest"],
+      "tags": ["endemic", "primate", "jawa", "nocturnal", "critically-endangered"],
+      "shortDescription": "Primata nokturnal berbisa yang diperdagangkan ilegal sebagai hewan peliharaan.",
+      "longDescription": "Kukang Jawa adalah primata nokturnal yang memiliki racun di kelenjar siku yang dapat menyebabkan syok anafilaksis pada manusia. Mereka adalah primata bergerak lambat yang mudah ditangkap. Perdagangan hewan peliharaan ilegal sangat mengancam populasi. Gigi taring sering dicabut pedagang, menyebabkan infeksi fatal.",
+      "images": [
+        {"file": "kukang-01.jpg", "credit": "Little Fireface Project", "license": "CC BY-NC-ND 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Gunung Halimun-Salak", "lat": -6.7167, "lng": 106.5333, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "27-38 cm length, 600-800 grams",
+        "diet": "Omnivore - tree gum, insects, nectar",
+        "lifespan": "12-15 years",
+        "reproduction": "1 offspring every 12-18 months"
+      },
+      "conservationActions": "Anti-trafficking enforcement, rescue centers, public awareness campaigns"
+    },
+    {
+      "id": "sp043",
+      "commonName": "Burung Nuri Merah Kepala Hitam",
+      "scientificName": "Lorius lory",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["rainforest", "lowland-forest"],
+      "tags": ["bird", "parrot", "papua"],
+      "shortDescription": "Nuri berwarna cerah dari Papua dengan kepala hitam kontras.",
+      "longDescription": "Nuri Merah Kepala Hitam memiliki bulu merah cerah dengan kepala dan sayap hitam. Mereka hidup di hutan Papua dan Maluku, memakan nektar, pollen, dan buah. Burung ini berperan sebagai penyerbuk penting. Populasi terancam oleh perdagangan burung hias dan hilangnya habitat.",
+      "images": [
+        {"file": "nuri-merah-01.jpg", "credit": "Papua Bird Conservation", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Pulau Biak", "lat": -1.1000, "lng": 136.0833, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "31 cm length",
+        "diet": "Nectarivore - nectar, pollen, fruits",
+        "lifespan": "25-30 years",
+        "reproduction": "2 eggs per clutch"
+      },
+      "conservationActions": "Trade regulations, habitat protection, captive breeding"
+    },
+    {
+      "id": "sp044",
+      "commonName": "Babi Kutil Jawa",
+      "scientificName": "Sus verrucosus",
+      "conservationStatus": "Endangered",
+      "habitat": ["rainforest", "grassland"],
+      "tags": ["endemic", "mammal", "jawa"],
+      "shortDescription": "Babi hutan endemik Jawa dengan tiga pasang kutil wajah.",
+      "longDescription": "Babi Kutil Jawa memiliki tiga pasang kutil di wajah yang khas. Mereka adalah omnivora yang berperan penting dalam ekosistem sebagai pengurai dan penyebar biji. Populasi menurun akibat perburuan, hilangnya habitat, dan hibridisasi dengan babi domestik yang lepas.",
+      "images": [
+        {"file": "babi-kutil-01.jpg", "credit": "Javan Wildlife Survey", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Meru Betiri", "lat": -8.5000, "lng": 113.8333, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "90-190 cm length, 50-150 kg",
+        "diet": "Omnivore - roots, fruits, insects",
+        "lifespan": "10-15 years",
+        "reproduction": "4-6 piglets per litter"
+      },
+      "conservationActions": "Habitat protection, anti-hunting patrols, genetic conservation"
+    },
+    {
+      "id": "sp045",
+      "commonName": "Burung Gosong Kaki Oranye",
+      "scientificName": "Megapodius reinwardt",
+      "conservationStatus": "Least Concern",
+      "habitat": ["coastal", "forest", "scrubland"],
+      "tags": ["bird", "megapode", "indonesia"],
+      "shortDescription": "Burung megapoda dengan kaki oranye yang mengerami telur di pasir panas.",
+      "longDescription": "Gosong Kaki Oranye adalah burung megapoda yang tidak mengerami telur dengan tubuhnya, melainkan mengubur telur di pasir pantai yang dipanaskan matahari atau tanah vulkanik. Anak yang menetas sudah mandiri dan bisa terbang. Mereka tersebar luas di Indonesia bagian timur.",
+      "images": [
+        {"file": "gosong-01.jpg", "credit": "Indonesian Bird Society", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Pulau Komodo", "lat": -8.5569, "lng": 119.4889, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "43-47 cm length",
+        "diet": "Omnivore - seeds, fruits, insects",
+        "lifespan": "15-20 years",
+        "reproduction": "6-8 eggs per year"
+      },
+      "conservationActions": "Nesting beach protection, monitoring programs"
+    },
+    {
+      "id": "sp046",
+      "commonName": "Rusa Timor",
+      "scientificName": "Rusa timorensis",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["savanna", "grassland", "forest"],
+      "tags": ["mammal", "ungulate", "nusa-tenggara"],
+      "shortDescription": "Rusa asli Nusa Tenggara yang beradaptasi dengan iklim kering.",
+      "longDescription": "Rusa Timor adalah rusa berukuran sedang yang beradaptasi dengan habitat savanna kering Nusa Tenggara. Jantan memiliki tanduk bercabang yang gugur setiap tahun. Mereka hidup berkelompok dan aktif saat senja. Populasi terancam oleh perburuan berlebihan dan kompetisi dengan ternak.",
+      "images": [
+        {"file": "rusa-timor-01.jpg", "credit": "Nusa Tenggara Wildlife", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Baluran", "lat": -7.8333, "lng": 114.3667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "160-185 cm length, 80-120 kg",
+        "diet": "Herbivore - grass, leaves, shoots",
+        "lifespan": "15-20 years",
+        "reproduction": "1 fawn per year"
+      },
+      "conservationActions": "Population management, habitat restoration, anti-poaching"
+    },
+    {
+      "id": "sp047",
+      "commonName": "Kadal Terbang Kalimantan",
+      "scientificName": "Draco melanopogon",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rainforest", "plantation"],
+      "tags": ["reptile", "borneo", "arboreal"],
+      "shortDescription": "Kadal kecil dengan membran samping yang memungkinkan meluncur antar pohon.",
+      "longDescription": "Kadal Terbang memiliki membran kulit di sisi tubuh yang dapat dikembangkan untuk meluncur hingga 60 meter antar pohon. Mereka berburu serangga di batang pohon dan sangat territorial. Warna cerah jantan digunakan untuk menarik betina dan mengusir rival.",
+      "images": [
+        {"file": "kadal-terbang-01.jpg", "credit": "Borneo Herpetology", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan Kalimantan Tengah", "lat": -1.5000, "lng": 113.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "19-24 cm including tail",
+        "diet": "Insectivore - ants, termites",
+        "lifespan": "5-7 years",
+        "reproduction": "1-4 eggs buried in soil"
+      },
+      "conservationActions": "Habitat conservation, research on forest ecology"
+    },
+    {
+      "id": "sp048",
+      "commonName": "Biawak Air Seram",
+      "scientificName": "Varanus salvator",
+      "conservationStatus": "Least Concern",
+      "habitat": ["wetland", "mangrove", "river"],
+      "tags": ["reptile", "semi-aquatic", "carnivore"],
+      "shortDescription": "Biawak besar semi-akuatik yang pandai berenang dan menyelam.",
+      "longDescription": "Biawak Air adalah kadal terbesar kedua di Indonesia setelah Komodo. Mereka adalah perenang handal yang berburu ikan, kepiting, dan bangkai di sungai dan mangrove. Biawak Air berperan penting sebagai scavenger yang membersihkan ekosistem. Mereka dapat menahan napas hingga 30 menit di bawah air.",
+      "images": [
+        {"file": "biawak-air-01.jpg", "credit": "Indonesian Reptile Project", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Sembilang", "lat": -2.0000, "lng": 104.7500, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "1.5-2 meters length, 20-25 kg",
+        "diet": "Carnivore - fish, crabs, carrion",
+        "lifespan": "12-15 years in wild",
+        "reproduction": "15-30 eggs per clutch"
+      },
+      "conservationActions": "Wetland conservation, human-wildlife conflict mitigation"
+    },
+    {
+      "id": "sp049",
+      "commonName": "Kupu-kupu Raja",
+      "scientificName": "Troides helena",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rainforest", "garden", "secondary-forest"],
+      "tags": ["insect", "butterfly", "protected"],
+      "shortDescription": "Kupu-kupu besar berwarna hitam dan kuning yang dilindungi hukum.",
+      "longDescription": "Kupu-kupu Raja adalah salah satu kupu-kupu terbesar di Indonesia dengan sayap berwarna hitam dan kuning cerah. Larva memakan tanaman Aristolochia yang beracun, membuat kupu-kupu dewasa juga beracun bagi predator. Dilindungi oleh PP No. 7/1999 tentang Pengawetan Jenis Tumbuhan dan Satwa.",
+      "images": [
+        {"file": "kupu-raja-01.jpg", "credit": "Indonesia Butterfly Conservation", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Gunung Halimun-Salak", "lat": -6.7167, "lng": 106.5333, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "12-17 cm wingspan",
+        "diet": "Nectarivore - flower nectar",
+        "lifespan": "3-4 months as adult",
+        "reproduction": "Eggs on Aristolochia vines"
+      },
+      "conservationActions": "Legal protection, butterfly gardens, habitat conservation"
+    },
+    {
+      "id": "sp050",
+      "commonName": "Ikan Botia Badut",
+      "scientificName": "Chromobotia macracanthus",
+      "conservationStatus": "Endangered",
+      "habitat": ["freshwater", "river"],
+      "tags": ["endemic", "fish", "sumatra-borneo", "aquarium-trade"],
+      "shortDescription": "Ikan air tawar berwarna oranye bergaris hitam yang populer sebagai ikan hias.",
+      "longDescription": "Botia Badut adalah ikan air tawar endemik Sumatra dan Kalimantan dengan warna oranye cerah dan tiga garis hitam vertikal. Mereka hidup berkelompok di sungai jernih dengan arus deras. Populasi menurun drastis akibat penangkapan berlebihan untuk perdagangan ikan hias internasional.",
+      "images": [
+        {"file": "botia-01.jpg", "credit": "Freshwater Fish Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Sungai Batang Hari", "lat": -1.6167, "lng": 103.6167, "precision": "exact"}
+      ],
+      "quickFacts": {
+        "size": "25-30 cm length",
+        "diet": "Omnivore - worms, insects, plant matter",
+        "lifespan": "15-20 years",
+        "reproduction": "Spawning in river tributaries"
+      },
+      "conservationActions": "Sustainable aquaculture, harvest quotas, river conservation"
+    },
+    {
+      "id": "sp051",
+      "commonName": "Merak Hijau",
+      "scientificName": "Pavo muticus",
+      "conservationStatus": "Endangered",
+      "habitat": ["forest", "grassland", "agricultural"],
+      "tags": ["bird", "jawa", "iconic"],
+      "shortDescription": "Burung merak dengan bulu hijau metalik yang menjadi fauna nasional.",
+      "longDescription": "Merak Hijau memiliki bulu hijau metalik yang berkilauan dan ekor panjang spektakuler pada jantan. Mereka adalah fauna identitas provinsi Jawa Timur. Populasi menurun akibat hilangnya habitat hutan dan perburuan. Jantan menari dan mengembangkan bulu ekor dalam ritual kawin yang memukau.",
+      "images": [
+        {"file": "merak-hijau-01.jpg", "credit": "Java Bird Watchers", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Alas Purwo", "lat": -8.6667, "lng": 114.3667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "180-230 cm including tail (male)",
+        "diet": "Omnivore - seeds, insects, small reptiles",
+        "lifespan": "15-20 years",
+        "reproduction": "4-6 eggs per clutch"
+      },
+      "conservationActions": "Habitat protection, captive breeding, anti-poaching patrols"
+    },
+    {
+      "id": "sp052",
+      "commonName": "Monyet Ekor Panjang",
+      "scientificName": "Macaca fascicularis",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["forest", "mangrove", "urban"],
+      "tags": ["primate", "adaptable"],
+      "shortDescription": "Monyet yang sangat adaptif, sering ditemui di area wisata dan kota.",
+      "longDescription": "Monyet Ekor Panjang adalah primata paling adaptif di Indonesia, dapat hidup di berbagai habitat termasuk kota. Mereka hidup dalam kelompok besar dengan hierarki sosial kompleks. Meski populasi masih banyak, mereka menghadapi konflik dengan manusia dan eksploitasi untuk penelitian biomedis.",
+      "images": [
+        {"file": "monyet-ekor-panjang-01.jpg", "credit": "Primate Research Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan Wisata Alas Kedaton", "lat": -8.5333, "lng": 115.1667, "precision": "exact"}
+      ],
+      "quickFacts": {
+        "size": "38-55 cm body length, 3-9 kg",
+        "diet": "Omnivore - fruits, seeds, insects",
+        "lifespan": "15-30 years",
+        "reproduction": "1 offspring per year"
+      },
+      "conservationActions": "Conflict management, sustainable tourism, population monitoring"
+    },
+    {
+      "id": "sp053",
+      "commonName": "Burung Madu Sriganti",
+      "scientificName": "Nectarinia jugularis",
+      "conservationStatus": "Least Concern",
+      "habitat": ["garden", "mangrove", "coastal"],
+      "tags": ["bird", "nectarivore", "common"],
+      "shortDescription": "Burung kecil berkilau yang meminum nektar dan menyerbuki bunga.",
+      "longDescription": "Burung Madu Sriganti adalah burung kecil dengan bulu yang berkilauan. Jantan memiliki dada kuning cerah dan tenggorokan biru metalik. Mereka berperan penting sebagai penyerbuk berbagai tanaman tropis. Sangat adaptif dan sering ditemukan di taman kota.",
+      "images": [
+        {"file": "madu-sriganti-01.jpg", "credit": "Indonesian Bird Photography", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Pulau Bali", "lat": -8.3405, "lng": 115.0920, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "10-11 cm length, 7-8 grams",
+        "diet": "Nectarivore - nectar, small insects",
+        "lifespan": "3-5 years",
+        "reproduction": "2 eggs per clutch"
+      },
+      "conservationActions": "Garden habitat creation, pesticide reduction"
+    },
+    {
+      "id": "sp054",
+      "commonName": "Kera Hitam Mentawai",
+      "scientificName": "Simias concolor",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["rainforest", "swamp-forest"],
+      "tags": ["endemic", "primate", "mentawai", "critically-endangered"],
+      "shortDescription": "Primata unik berhidung pesek endemik Kepulauan Mentawai.",
+      "longDescription": "Kera Hitam Mentawai atau Simakobu memiliki hidung pesek yang khas dan ekor pendek. Mereka hidup di hutan rawa dan memakan terutama daun. Populasi diperkirakan kurang dari 6000 individu dan terus menurun akibat deforestasi dan perburuan. Endemik Kepulauan Mentawai.",
+      "images": [
+        {"file": "simakobu-01.jpg", "credit": "Mentawai Primate Conservation", "license": "CC BY-NC-ND 4.0"}
+      ],
+      "locations": [
+        {"name": "Pulau Siberut", "lat": -1.5000, "lng": 99.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "50 cm body length, 6-8 kg",
+        "diet": "Folivore - leaves, fruits",
+        "lifespan": "15-20 years",
+        "reproduction": "1 offspring every 2 years"
+      },
+      "conservationActions": "Protected areas, anti-logging enforcement, community conservation"
+    },
+    {
+      "id": "sp055",
+      "commonName": "Beruk Mentawai",
+      "scientificName": "Macaca pagensis",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["rainforest", "swamp-forest"],
+      "tags": ["endemic", "primate", "mentawai", "critically-endangered"],
+      "shortDescription": "Monyet endemik Mentawai dengan ekor yang sangat pendek.",
+      "longDescription": "Beruk Mentawai adalah monyet endemik Kepulauan Mentawai dengan ekor yang sangat pendek atau hampir tidak ada. Mereka hidup dalam kelompok kecil di hutan primer. Populasi sangat terancam dengan perkiraan kurang dari 2500 individu akibat deforestasi untuk kelapa sawit dan logging.",
+      "images": [
+        {"file": "beruk-mentawai-01.jpg", "credit": "Mentawai Wildlife Project", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Pulau Pagai", "lat": -3.0000, "lng": 100.2500, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "45-55 cm body length, 4-10 kg",
+        "diet": "Omnivore - fruits, insects, leaves",
+        "lifespan": "20-25 years",
+        "reproduction": "1 offspring per year"
+      },
+      "conservationActions": "Habitat protection, sustainable forestry, population monitoring"
+    },
+    {
+      "id": "sp056",
+      "commonName": "Tupai Terbang Merah",
+      "scientificName": "Petaurista petaurista",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rainforest", "plantation"],
+      "tags": ["mammal", "arboreal", "nocturnal"],
+      "shortDescription": "Tupai besar dengan membran untuk meluncur antar pohon di malam hari.",
+      "longDescription": "Tupai Terbang Merah adalah tupai nokturnal terbesar dengan membran yang memungkinkan meluncur hingga 100 meter. Mereka hidup di kanopi hutan dan memakan buah, daun muda, dan getah. Tupai ini berperan penting dalam penyebaran biji pohon-pohon besar.",
+      "images": [
+        {"file": "tupai-terbang-01.jpg", "credit": "Small Mammal Survey Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Gunung Leuser", "lat": 3.5833, "lng": 97.5000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "40 cm body + 50 cm tail, 1.5-2 kg",
+        "diet": "Herbivore - fruits, leaves, bark",
+        "lifespan": "8-10 years",
+        "reproduction": "2 offspring per year"
+      },
+      "conservationActions": "Forest conservation, research on ecological role"
+    },
+    {
+      "id": "sp057",
+      "commonName": "Burung Cekakak Jawa",
+      "scientificName": "Halcyon cyanoventris",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "mangrove", "garden"],
+      "tags": ["endemic", "bird", "jawa-bali"],
+      "shortDescription": "Burung raja udang berwarna biru terang endemik Jawa dan Bali.",
+      "longDescription": "Cekakak Jawa adalah burung kingfisher dengan bulu biru terang di sayap dan punggung. Mereka berburu serangga, kadal kecil, dan kadang ikan di tepi sungai. Burung ini sering terdengar dengan suara panggilannya yang keras. Relatif adaptif dan dapat hidup di area perkotaan.",
+      "images": [
+        {"file": "cekakak-jawa-01.jpg", "credit": "Java Bird Photography", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Ujung Kulon", "lat": -6.7500, "lng": 105.3333, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "28 cm length",
+        "diet": "Carnivore - insects, small reptiles",
+        "lifespan": "10-15 years",
+        "reproduction": "3-4 eggs in tree holes"
+      },
+      "conservationActions": "Habitat conservation, nesting site protection"
+    },
+    {
+      "id": "sp058",
+      "commonName": "Ikan Arwana Irian",
+      "scientificName": "Scleropages jardinii",
+      "conservationStatus": "Least Concern",
+      "habitat": ["freshwater", "river", "swamp"],
+      "tags": ["fish", "papua", "aquarium-trade"],
+      "shortDescription": "Arwana dari Papua dengan warna keemasan dan sisik berkilau.",
+      "longDescription": "Arwana Irian adalah ikan predator permukaan yang dapat melompat tinggi untuk menangkap mangsa. Mereka memiliki warna keemasan dengan sisik yang berkilau. Ikan ini berperan sebagai predator puncak di sungai-sungai Papua. Relatif lebih melimpah dibanding Arwana Merah.",
+      "images": [
+        {"file": "arwana-irian-01.jpg", "credit": "Papua Freshwater Fishes", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Sungai Digul", "lat": -6.0000, "lng": 140.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "50-60 cm length",
+        "diet": "Carnivore - insects, small fish",
+        "lifespan": "10-15 years",
+        "reproduction": "Mouthbrooder, 50-100 eggs"
+      },
+      "conservationActions": "Sustainable fisheries, river habitat protection"
+    },
+    {
+      "id": "sp059",
+      "commonName": "Katak Pohon Bergaris",
+      "scientificName": "Polypedates leucomystax",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "agricultural", "urban"],
+      "tags": ["amphibian", "common", "adaptable"],
+      "shortDescription": "Katak pohon yang sangat adaptif dan sering ditemui di sekitar pemukiman.",
+      "longDescription": "Katak Pohon Bergaris adalah katak yang sangat umum dan adaptif di Indonesia. Mereka memiliki bantalan lengket di jari-jari untuk memanjat. Telur diletakkan dalam busa yang digantung di atas air. Katak ini berperan penting dalam mengendalikan populasi serangga.",
+      "images": [
+        {"file": "katak-pohon-01.jpg", "credit": "Indonesian Amphibian Society", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "4-8 cm length",
+        "diet": "Insectivore - insects, spiders",
+        "lifespan": "5-8 years",
+        "reproduction": "Foam nests with 300-800 eggs"
+      },
+      "conservationActions": "Wetland conservation, pesticide reduction"
+    },
+    {
+      "id": "sp060",
+      "commonName": "Ular Welang",
+      "scientificName": "Bungarus candidus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "agricultural", "grassland"],
+      "tags": ["reptile", "venomous", "nocturnal"],
+      "shortDescription": "Ular berbisa dengan pola belang hitam-putih yang aktif di malam hari.",
+      "longDescription": "Ular Welang memiliki pola belang hitam dan putih yang mencolok. Mereka adalah ular berbisa yang sangat potent namun sifatnya pemalu dan jarang menggigit. Aktif berburu di malam hari, memakan ular lain, kadal, dan katak. Berperan penting dalam ekosistem sebagai predator.",
+      "images": [
+        {"file": "welang-01.jpg", "credit": "Southeast Asian Reptile Conservation", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Jawa dan Bali", "lat": -7.5000, "lng": 110.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "100-150 cm length",
+        "diet": "Carnivore - snakes, lizards, frogs",
+        "lifespan": "10-15 years",
+        "reproduction": "6-10 eggs per clutch"
+      },
+      "conservationActions": "Education on snake safety, habitat conservation"
+    },
+    {
+      "id": "sp061",
+      "commonName": "Trenggiling Jawa",
+      "scientificName": "Manis javanica",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["rainforest", "plantation", "secondary-forest"],
+      "tags": ["mammal", "critically-endangered", "nocturnal"],
+      "shortDescription": "Mamalia bersisik yang paling banyak diperdagangkan ilegal di dunia.",
+      "longDescription": "Trenggiling Jawa adalah mamalia nocturnal yang tubuhnya ditutupi sisik keratin. Mereka memakan semut dan rayap dengan lidah panjang yang lengket. Trenggiling adalah mamalia paling banyak diperdagangkan ilegal di dunia untuk sisik (obat tradisional) dan dagingnya. Populasi menurun drastis.",
+      "images": [
+        {"file": "trenggiling-01.jpg", "credit": "Pangolin Conservation", "license": "CC BY-NC-ND 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Ujung Kulon", "lat": -6.7500, "lng": 105.3333, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "40-65 cm body + 35-56 cm tail, 2-10 kg",
+        "diet": "Insectivore - ants, termites",
+        "lifespan": "10-15 years",
+        "reproduction": "1 offspring per year"
+      },
+      "conservationActions": "Anti-trafficking operations, rehabilitation centers, demand reduction"
+    },
+    {
+      "id": "sp062",
+      "commonName": "Elang Ular Bido",
+      "scientificName": "Spilornis cheela",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "plantation"],
+      "tags": ["bird", "raptor"],
+      "shortDescription": "Elang pemakan ular dengan jambul yang khas.",
+      "longDescription": "Elang Ular Bido adalah raptor berukuran sedang dengan jambul hitam yang tegak. Mereka adalah spesialis pemakan ular dan reptil lainnya. Elang ini dapat ditemui di hutan dan perkebunan di seluruh Indonesia. Suara panggilannya yang khas sering terdengar di pagi hari.",
+      "images": [
+        {"file": "elang-ular-01.jpg", "credit": "Raptor Watch Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Gunung Gede Pangrango", "lat": -6.7333, "lng": 106.9833, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "50-75 cm length, 420-1800 grams",
+        "diet": "Carnivore - snakes, lizards, frogs",
+        "lifespan": "15-20 years",
+        "reproduction": "1 egg per breeding season"
+      },
+      "conservationActions": "Forest conservation, nest protection"
+    },
+    {
+      "id": "sp063",
+      "commonName": "Buaya Muara",
+      "scientificName": "Crocodylus porosus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["river", "mangrove", "coastal"],
+      "tags": ["reptile", "apex-predator", "marine"],
+      "shortDescription": "Reptil terbesar di dunia yang dapat hidup di air asin dan tawar.",
+      "longDescription": "Buaya Muara adalah reptil terbesar di dunia dengan jantan dapat mencapai 6 meter. Mereka dapat hidup di air asin dan tawar, sering ditemui di muara sungai dan mangrove. Sebagai apex predator, mereka penting untuk ekosistem. Konflik dengan manusia meningkat karena hilangnya habitat.",
+      "images": [
+        {"file": "buaya-muara-01.jpg", "credit": "Crocodile Research Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Sembilang", "lat": -2.0000, "lng": 104.7500, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "4-6 meters length, 400-1000 kg",
+        "diet": "Carnivore - fish, mammals, birds",
+        "lifespan": "70-100 years",
+        "reproduction": "40-60 eggs per clutch"
+      },
+      "conservationActions": "Conflict mitigation, sustainable ranching, habitat protection"
+      },
+      {
+      "id": "sp064",
+      "commonName": "Burung Hantu Celepuk",
+      "scientificName": "Otus lempiji",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "plantation", "garden"],
+      "tags": ["bird", "owl", "nocturnal"],
+      "shortDescription": "Burung hantu kecil yang sering terdengar di malam hari.",
+      "longDescription": "Celepuk adalah burung hantu kecil dengan jumbai telinga yang pendek. Mereka berburu serangga dan hewan kecil di malam hari. Suara panggilannya yang khas pluk-pluk sering terdengar di malam hari di area perkebunan dan hutan. Berperan dalam mengendalikan hama.",
+      "images": [
+        {"file": "celepuk-01.jpg", "credit": "Owl Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "20-25 cm length",
+        "diet": "Carnivore - insects, small mammals",
+        "lifespan": "10-15 years",
+        "reproduction": "2-4 eggs per clutch"
+      }
+    },
+    {
+      "id": "sp065",
+      "commonName": "Belibis Kembang",
+      "scientificName": "Dendrocygna arcuata",
+      "conservationStatus": "Least Concern",
+      "habitat": ["wetland", "rice-field", "lake"],
+      "tags": ["bird", "waterfowl"],
+      "shortDescription": "Itik liar yang hidup berkelompok di lahan basah dan sawah.",
+      "longDescription": "Belibis Kembang adalah itik liar yang sering terlihat berkelompok besar di sawah dan rawa. Mereka memiliki leher panjang dan bulu coklat dengan garis-garis putih. Burung ini nokturnal dan sering terbang mencari makan di malam hari. Berperan dalam pengendalian hama padi.",
+      "images": [
+        {"file": "belibis-01.jpg", "credit": "Wetland Bird Survey", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Rawa Danau, Banten", "lat": -6.2500, "lng": 106.2000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "40-45 cm length",
+        "diet": "Omnivore - seeds, aquatic plants, insects",
+        "lifespan": "10-15 years",
+        "reproduction": "8-12 eggs per clutch"
+      },
+      "conservationActions": "Wetland conservation, sustainable rice farming practices"
+    },
+    {
+      "id": "sp066",
+      "commonName": "Kancil",
+      "scientificName": "Tragulus javanicus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "scrubland"],
+      "tags": ["mammal", "ungulate", "jawa-sumatra"],
+      "shortDescription": "Rusa terkecil yang menjadi tokoh dalam cerita rakyat Indonesia.",
+      "longDescription": "Kancil adalah chevrotain atau rusa kerdil terkecil dengan tinggi hanya 20-25 cm. Mereka adalah hewan soliter dan pemalu yang aktif di malam hari. Kancil terkenal dalam cerita rakyat sebagai hewan cerdik. Mereka berperan dalam penyebaran biji buah-buahan kecil.",
+      "images": [
+        {"file": "kancil-01.jpg", "credit": "Small Mammal Research Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Ujung Kulon", "lat": -6.7500, "lng": 105.3333, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "40-45 cm length, 2-2.5 kg",
+        "diet": "Herbivore - fruits, leaves, shoots",
+        "lifespan": "10-14 years",
+        "reproduction": "1-2 offspring per year"
+      },
+      "conservationActions": "Forest habitat protection, anti-snaring patrols"
+    },
+    {
+      "id": "sp067",
+      "commonName": "Walang Kekek",
+      "scientificName": "Leptocorisa acuta",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rice-field", "grassland"],
+      "tags": ["insect", "agricultural-pest"],
+      "shortDescription": "Serangga hama padi yang menghisap bulir padi muda.",
+      "longDescription": "Walang Kekek adalah kepik berwarna hijau atau coklat yang menjadi hama utama tanaman padi. Mereka menghisap bulir padi yang sedang matang, menyebabkan kerugian pada petani. Meski dianggap hama, mereka adalah bagian dari ekosistem sawah dan menjadi makanan burung pemakan serangga.",
+      "images": [
+        {"file": "walang-kekek-01.jpg", "credit": "Indonesian Agricultural Research", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sawah di seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "1.5-2 cm length",
+        "diet": "Herbivore - rice grain, grass seeds",
+        "lifespan": "30-45 days as adult",
+        "reproduction": "Multiple generations per year"
+      },
+      "conservationActions": "Integrated pest management, biological control"
+    },
+    {
+      "id": "sp068",
+      "commonName": "Biawak Pohon Hijau",
+      "scientificName": "Varanus prasinus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rainforest"],
+      "tags": ["reptile", "arboreal", "papua"],
+      "shortDescription": "Biawak arboreal berwarna hijau cerah dari Papua.",
+      "longDescription": "Biawak Pohon Hijau adalah biawak arboreal dengan warna hijau cerah yang membantu kamuflase di kanopi hutan. Mereka memiliki cakar tajam dan ekor prehensile untuk memanjat. Diet mereka terdiri dari serangga, telur burung, dan kadal kecil. Jarang turun ke tanah.",
+      "images": [
+        {"file": "biawak-hijau-01.jpg", "credit": "Papua Herpetology", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan Papua", "lat": -4.0000, "lng": 138.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "75-100 cm including tail",
+        "diet": "Carnivore - insects, small vertebrates",
+        "lifespan": "10-15 years",
+        "reproduction": "4-8 eggs per clutch"
+      },
+      "conservationActions": "Forest conservation, trade monitoring"
+    },
+    {
+      "id": "sp069",
+      "commonName": "Rusa Sambar",
+      "scientificName": "Rusa unicolor",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["forest", "grassland"],
+      "tags": ["mammal", "ungulate"],
+      "shortDescription": "Rusa terbesar di Indonesia yang hidup di hutan dan savanna.",
+      "longDescription": "Rusa Sambar adalah spesies rusa terbesar di Indonesia dengan jantan memiliki tanduk bercabang tiga. Mereka adalah hewan nokturnal yang mencari makan di malam hari. Rusa Sambar berperan penting dalam ekosistem sebagai herbivora besar dan mangsa predator seperti harimau.",
+      "images": [
+        {"file": "sambar-01.jpg", "credit": "Deer Conservation Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Baluran", "lat": -7.8333, "lng": 114.3667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "200-270 cm length, 150-315 kg",
+        "diet": "Herbivore - grass, leaves, fruits",
+        "lifespan": "15-20 years",
+        "reproduction": "1 fawn per year"
+      },
+      "conservationActions": "Habitat protection, anti-poaching patrols, population monitoring"
+    },
+    {
+      "id": "sp070",
+      "commonName": "Burung Manyar",
+      "scientificName": "Ploceus manyar",
+      "conservationStatus": "Least Concern",
+      "habitat": ["wetland", "rice-field", "grassland"],
+      "tags": ["bird", "weaver"],
+      "shortDescription": "Burung pembangun sarang anyaman yang rumit di atas air.",
+      "longDescription": "Burung Manyar adalah burung pipit yang terkenal dengan kemampuan membangun sarang berbentuk bulat anyaman yang rumit. Sarang digantung di ujung ranting di atas air sebagai perlindungan dari predator. Jantan membangun beberapa sarang untuk menarik betina. Hidup berkoloni.",
+      "images": [
+        {"file": "manyar-01.jpg", "credit": "Indonesian Bird Society", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Rawa di Jawa", "lat": -7.5000, "lng": 110.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "15 cm length",
+        "diet": "Omnivore - seeds, insects",
+        "lifespan": "5-7 years",
+        "reproduction": "2-3 eggs per clutch"
+      },
+      "conservationActions": "Wetland conservation, nest colony protection"
+    },
+    {
+      "id": "sp071",
+      "commonName": "Landak Jawa",
+      "scientificName": "Hystrix javanica",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "agricultural", "scrubland"],
+      "tags": ["mammal", "jawa-sumatra-bali", "nocturnal"],
+      "shortDescription": "Landak besar dengan duri tajam yang aktif di malam hari.",
+      "longDescription": "Landak Jawa adalah rodent besar dengan duri-duri tajam sebagai pertahanan. Mereka adalah hewan nokturnal yang mencari makan umbi, akar, dan buah-buahan. Ketika terancam, mereka mengeluarkan duri yang dapat ditancapkan ke predator. Berperan dalam mengontrol vegetasi bawah.",
+      "images": [
+        {"file": "landak-jawa-01.jpg", "credit": "Java Wildlife Survey", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Meru Betiri", "lat": -8.5000, "lng": 113.8333, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "65-75 cm length, 10-18 kg",
+        "diet": "Herbivore - roots, tubers, fruits",
+        "lifespan": "12-20 years",
+        "reproduction": "1-2 offspring per litter"
+      },
+      "conservationActions": "Habitat conservation, conflict mitigation with farmers"
+    },
+    {
+      "id": "sp072",
+      "commonName": "Ular Sanca Bodo",
+      "scientificName": "Malayopython breitensteini",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rainforest", "plantation"],
+      "tags": ["reptile", "snake", "borneo"],
+      "shortDescription": "Ular sanca Kalimantan dengan warna lebih gelap dibanding sanca kembang.",
+      "longDescription": "Sanca Bodo adalah ular konstriktor endemik Kalimantan dengan warna lebih gelap dan lebih kecil dari Sanca Kembang. Mereka berburu mamalia kecil hingga sedang di hutan dan perkebunan. Ular ini berperan penting dalam mengendalikan populasi tikus dan hewan pengerat lainnya.",
+      "images": [
+        {"file": "sanca-bodo-01.jpg", "credit": "Borneo Snake Research", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan Kalimantan", "lat": 0.0000, "lng": 114.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "2-3 meters length",
+        "diet": "Carnivore - mammals, birds",
+        "lifespan": "20-25 years",
+        "reproduction": "15-30 eggs per clutch"
+      },
+      "conservationActions": "Forest conservation, education on ecological importance"
+    },
+    {
+      "id": "sp073",
+      "commonName": "Kura-kura Garis Tiga",
+      "scientificName": "Melanochelys tricarinata",
+      "conservationStatus": "Near Threatened",
+      "habitat": ["freshwater", "stream", "forest"],
+      "tags": ["reptile", "turtle", "sumatra"],
+      "shortDescription": "Kura-kura air tawar dengan tiga garis memanjang di karapasnya.",
+      "longDescription": "Kura-kura Garis Tiga memiliki tiga ridge memanjang di karapasnya yang menjadi ciri khas. Mereka hidup di sungai-sungai kecil dan stream di hutan Sumatra. Diet mereka terdiri dari hewan invertebrata air dan tumbuhan. Populasi terancam oleh penangkapan untuk konsumsi dan perdagangan.",
+      "images": [
+        {"file": "kura-garis-tiga-01.jpg", "credit": "Sumatra Turtle Conservation", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sungai di Sumatra Barat", "lat": -1.0000, "lng": 100.3667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "15-20 cm carapace length",
+        "diet": "Omnivore - aquatic invertebrates, plants",
+        "lifespan": "30-40 years",
+        "reproduction": "4-8 eggs per clutch"
+      },
+      "conservationActions": "Trade regulation, habitat protection, community education"
+    },
+    {
+      "id": "sp074",
+      "commonName": "Burung Perkutut Jawa",
+      "scientificName": "Geopelia striata",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "agricultural", "urban"],
+      "tags": ["bird", "dove"],
+      "shortDescription": "Burung dara kecil yang populer dipelihara untuk suara kicauannya.",
+      "longDescription": "Perkutut Jawa adalah burung dara kecil dengan suara kicauan yang merdu. Mereka sangat populer dipelihara di Indonesia untuk lomba burung berkicau. Di alam liar, mereka hidup berpasangan atau kelompok kecil di area terbuka. Sangat adaptif dengan habitat manusia.",
+      "images": [
+        {"file": "perkutut-01.jpg", "credit": "Indonesian Bird Breeders", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Jawa, Bali, Sumatra", "lat": -7.0000, "lng": 110.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "20-23 cm length",
+        "diet": "Granivore - seeds, grains",
+        "lifespan": "10-15 years",
+        "reproduction": "2 eggs per clutch, multiple clutches per year"
+      },
+      "conservationActions": "Sustainable captive breeding, wild population monitoring"
+    },
+    {
+      "id": "sp075",
+      "commonName": "Musang Luwak",
+      "scientificName": "Paradoxurus hermaphroditus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "plantation", "garden"],
+      "tags": ["mammal", "nocturnal", "omnivore"],
+      "shortDescription": "Musang yang terkenal karena kopi luwak yang dihasilkan dari kotorannya.",
+      "longDescription": "Musang Luwak adalah mamalia nokturnal yang memakan buah-buahan, terutama kopi. Biji kopi yang melewati sistem pencernaannya dijadikan kopi luwak yang mahal. Mereka berperan penting sebagai penyebar biji. Eksploitasi untuk industri kopi luwak menjadi ancaman kesejahteraan hewan.",
+      "images": [
+        {"file": "luwak-01.jpg", "credit": "Small Carnivore Conservation", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "53 cm body + 48 cm tail, 2-5 kg",
+        "diet": "Omnivore - fruits, insects, small animals",
+        "lifespan": "15-20 years",
+        "reproduction": "2-5 offspring per litter"
+      },
+      "conservationActions": "Ethical civet coffee certification, wild population protection"
+    },
+    {
+      "id": "sp076",
+      "commonName": "Kucing Hutan",
+      "scientificName": "Prionailurus bengalensis",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "plantation", "scrubland"],
+      "tags": ["mammal", "carnivore", "nocturnal"],
+      "shortDescription": "Kucing liar kecil dengan bintik-bintik seperti macan tutul.",
+      "longDescription": "Kucing Hutan atau Leopard Cat adalah kucing liar kecil dengan bulu berbintik seperti macan tutul. Mereka adalah pemburu nokturnal yang tangkas, memakan tikus, burung, dan serangga. Berperan penting dalam mengendalikan hama. Populasi stabil namun terancam oleh perdagangan ilegal.",
+      "images": [
+        {"file": "kucing-hutan-01.jpg", "credit": "Wild Cat Conservation", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "45-65 cm body length, 2-7 kg",
+        "diet": "Carnivore - rodents, birds, insects",
+        "lifespan": "10-15 years in wild",
+        "reproduction": "2-4 kittens per litter"
+      },
+      "conservationActions": "Anti-trafficking enforcement, habitat conservation"
+    },
+    {
+      "id": "sp077",
+      "commonName": "Ikan Patin",
+      "scientificName": "Pangasius djambal",
+      "conservationStatus": "Least Concern",
+      "habitat": ["freshwater", "river"],
+      "tags": ["fish", "sumatra-borneo", "aquaculture"],
+      "shortDescription": "Ikan air tawar yang penting untuk budidaya dan konsumsi.",
+      "longDescription": "Ikan Patin adalah ikan catfish air tawar yang penting secara ekonomi. Mereka hidup di sungai-sungai besar dengan arus sedang. Patin omnivora yang memakan detritus, plankton, dan invertebrata kecil. Sangat populer dibudidayakan dan menjadi sumber protein penting.",
+      "images": [
+        {"file": "patin-01.jpg", "credit": "Indonesian Aquaculture", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sungai Musi", "lat": -2.9906, "lng": 104.7567, "precision": "exact"}
+      ],
+      "quickFacts": {
+        "size": "80-120 cm length, up to 15 kg",
+        "diet": "Omnivore - detritus, plankton, small fish",
+        "lifespan": "15-20 years",
+        "reproduction": "Spawning in river tributaries"
+      },
+      "conservationActions": "Sustainable aquaculture, river habitat conservation"
+    },
+    {
+      "id": "sp078",
+      "commonName": "Burung Walet",
+      "scientificName": "Aerodramus fuciphagus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["cave", "coastal", "urban"],
+      "tags": ["bird", "swiftlet", "commercial"],
+      "shortDescription": "Burung penghasil sarang walet yang bernilai ekonomi tinggi.",
+      "longDescription": "Burung Walet adalah burung kecil yang membuat sarang dari air liurnya yang mengeras. Sarang walet sangat berharga untuk sup sarang burung. Mereka menggunakan ekolokasi untuk navigasi di gua gelap. Industri sarang walet besar di Indonesia namun perlu regulasi untuk keberlanjutan.",
+      "images": [
+        {"file": "walet-01.jpg", "credit": "Swiftlet Research Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Gua Karang di Kalimantan", "lat": 0.0000, "lng": 114.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "12 cm length",
+        "diet": "Insectivore - flying insects",
+        "lifespan": "10-15 years",
+        "reproduction": "2 eggs per clutch, 2-3 clutches per year"
+      },
+      "conservationActions": "Sustainable harvesting practices, nest regulation, habitat protection"
+    },
+    {
+      "id": "sp079",
+      "commonName": "Udang Galah",
+      "scientificName": "Macrobrachium rosenbergii",
+      "conservationStatus": "Least Concern",
+      "habitat": ["freshwater", "river", "estuary"],
+      "tags": ["crustacean", "aquaculture"],
+      "shortDescription": "Udang air tawar terbesar yang penting untuk budidaya.",
+      "longDescription": "Udang Galah adalah udang air tawar terbesar yang dapat mencapai panjang 30 cm. Mereka hidup di sungai dan bermigrasi ke muara untuk berkembang biak. Udang ini sangat penting untuk ekonomi lokal melalui budidaya dan penangkapan. Berperan dalam ekosistem sebagai detritivor.",
+      "images": [
+        {"file": "udang-galah-01.jpg", "credit": "Freshwater Aquaculture Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sungai di Jawa", "lat": -7.0000, "lng": 110.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "15-30 cm length",
+        "diet": "Omnivore - detritus, algae, small animals",
+        "lifespan": "2-3 years",
+        "reproduction": "Larvae develop in brackish water"
+      },
+      "conservationActions": "Sustainable aquaculture, river habitat protection"
+    },
+    {
+      "id": "sp080",
+      "commonName": "Cecak Terbang",
+      "scientificName": "Ptychozoon kuhli",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "plantation", "garden"],
+      "tags": ["reptile", "gecko", "arboreal"],
+      "shortDescription": "Cicak dengan membrane untuk meluncur antar pohon.",
+      "longDescription": "Cecak Terbang memiliki selaput kulit di sisi tubuh, kaki, dan ekor yang memungkinkan meluncur hingga 60 meter. Mereka nokturnal dan berburu serangga di batang pohon. Kamuflase luar biasa membuat mereka sulit dilihat saat menempel di kulit pohon. Sangat berguna sebagai pengontrol serangga.",
+      "images": [
+        {"file": "cecak-terbang-01.jpg", "credit": "Southeast Asian Geckos", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Sumatra dan Kalimantan", "lat": 0.0000, "lng": 105.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "15-20 cm including tail",
+        "diet": "Insectivore - insects, spiders",
+        "lifespan": "5-8 years",
+        "reproduction": "2 eggs per clutch"
+      },
+      "conservationActions": "Forest conservation, education on ecological role"
+    },
+    {
+      "id": "sp081",
+      "commonName": "Burung Pelatuk Besi",
+      "scientificName": "Mulleripicus pulverulentus",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["rainforest", "lowland-forest"],
+      "tags": ["bird", "woodpecker", "threatened"],
+      "shortDescription": "Pelatuk terbesar di Asia Tenggara yang membutuhkan pohon besar.",
+      "longDescription": "Pelatuk Besi adalah pelatuk terbesar di Asia Tenggara dengan panjang hingga 50 cm. Mereka memerlukan pohon-pohon tua dan besar untuk mencari makan dan bersarang. Pelatuk ini berperan penting dalam ekosistem dengan membuat lubang yang digunakan hewan lain. Terancam oleh logging pohon besar.",
+      "images": [
+        {"file": "pelatuk-besi-01.jpg", "credit": "Woodpecker Conservation Asia", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan Sumatra", "lat": 0.0000, "lng": 102.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "48-58 cm length",
+        "diet": "Insectivore - wood-boring insects, ants",
+        "lifespan": "10-15 years",
+        "reproduction": "2-3 eggs in tree cavities"
+      },
+      "conservationActions": "Old-growth forest protection, nest tree conservation"
+    },
+    {
+      "id": "sp082",
+      "commonName": "Kelelawar Codot Jawa",
+      "scientificName": "Cynopterus brachyotis",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "plantation", "garden"],
+      "tags": ["mammal", "fruit-bat", "nocturnal"],
+      "shortDescription": "Kelelawar buah kecil yang penting untuk penyerbukan dan penyebaran biji.",
+      "longDescription": "Codot Jawa adalah kelelawar buah kecil yang sangat umum di Indonesia. Mereka memakan buah-buahan dan nektar, berperan penting sebagai penyerbuk dan penyebar biji. Codot sering bertengger di dedaunan membentuk tenda dari daun. Sangat adaptif dengan habitat manusia.",
+      "images": [
+        {"file": "codot-01.jpg", "credit": "Bat Diversity Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "8-10 cm body length, 60-75 mm forearm",
+        "diet": "Frugivore - fruits, nectar, pollen",
+        "lifespan": "10-15 years",
+        "reproduction": "1-2 pups per year"
+      },
+      "conservationActions": "Roosting site protection, education on ecological importance"
+    },
+    {
+      "id": "sp083",
+      "commonName": "Ikan Gabus",
+      "scientificName": "Channa striata",
+      "conservationStatus": "Least Concern",
+      "habitat": ["freshwater", "swamp", "rice-field"],
+      "tags": ["fish", "predator", "air-breathing"],
+      "shortDescription": "Ikan predator air tawar yang dapat bernapas di udara dan berjalan di darat.",
+      "longDescription": "Ikan Gabus adalah predator air tawar yang memiliki kemampuan bernapas di udara menggunakan organ labirin. Mereka dapat bertahan di luar air dan bahkan berjalan pendek di darat mencari perairan baru. Gabus adalah ikan penting untuk konsumsi dan dipercaya memiliki khasiat penyembuhan luka.",
+      "images": [
+        {"file": "gabus-01.jpg", "credit": "Freshwater Fish Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Rawa di Kalimantan", "lat": -2.0000, "lng": 114.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "30-100 cm length",
+        "diet": "Carnivore - small fish, frogs, insects",
+        "lifespan": "8-10 years",
+        "reproduction": "Mouth brooder, guards nest"
+      },
+      "conservationActions": "Sustainable fisheries, wetland conservation"
+    },
+    {
+      "id": "sp084",
+      "commonName": "Burung Kacamata Gunung",
+      "scientificName": "Zosterops montanus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["mountain-forest", "plantation"],
+      "tags": ["bird", "montane", "insectivore"],
+      "shortDescription": "Burung kecil dengan lingkaran putih di sekitar mata dari pegunungan.",
+      "longDescription": "Kacamata Gunung adalah burung kecil dengan lingkaran putih di sekitar mata yang khas. Mereka hidup berkelompok di pegunungan, mencari serangga dan nektar bunga. Burung ini berperan sebagai penyerbuk dan pengontrol serangga. Sangat vokal dengan suara kicauan yang merdu.",
+      "images": [
+        {"file": "kacamata-01.jpg", "credit": "Mountain Bird Survey", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Pegunungan Jawa", "lat": -7.0000, "lng": 110.5000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "11-12 cm length",
+        "diet": "Omnivore - insects, nectar, small fruits",
+        "lifespan": "5-7 years",
+        "reproduction": "2-3 eggs per clutch"
+      },
+      "conservationActions": "Mountain forest conservation, monitoring programs"
+    },
+    {
+      "id": "sp085",
+      "commonName": "Belut Sawah",
+      "scientificName": "Monopterus albus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rice-field", "wetland", "ditch"],
+      "tags": ["fish", "air-breathing"],
+      "shortDescription": "Ikan mirip ular yang hidup di sawah dan dapat bernapas di udara.",
+      "longDescription": "Belut Sawah adalah ikan tanpa sirip yang berbentuk seperti ular. Mereka dapat bernapas di udara dan bertahan di lumpur saat kekeringan. Belut adalah predator nokturnal yang memakan cacing, serangga, dan ikan kecil. Penting sebagai sumber protein dan pengontrol hama sawah.",
+      "images": [
+        {"file": "belut-01.jpg", "credit": "Rice Field Ecology Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sawah di seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "40-100 cm length",
+        "diet": "Carnivore - worms, insects, small fish",
+        "lifespan": "5-8 years",
+        "reproduction": "Protandrous hermaphrodite"
+      },
+      "conservationActions": "Sustainable rice farming, wetland conservation"
+    },
+    {
+      "id": "sp086",
+      "commonName": "Tokek",
+      "scientificName": "Gekko gecko",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "urban", "cave"],
+      "tags": ["reptile", "gecko", "nocturnal"],
+      "shortDescription": "Cicak besar dengan suara khas 'to-kek' yang keras.",
+      "longDescription": "Tokek adalah cicak terbesar di Indonesia dengan panjang hingga 35 cm. Mereka terkenal dengan suara panggilan 'to-kek' yang keras di malam hari. Tokek adalah predator serangga yang efektif dan berperan dalam pest control. Dipercaya membawa keberuntungan dalam budaya lokal.",
+      "images": [
+        {"file": "tokek-01.jpg", "credit": "Indonesian Gecko Research", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "25-35 cm length",
+        "diet": "Carnivore - insects, small lizards",
+        "lifespan": "8-10 years",
+        "reproduction": "2 eggs per clutch, multiple clutches per year"
+      },
+      "conservationActions": "Protection from illegal trade, education programs"
+    },
+    {
+      "id": "sp087",
+      "commonName": "Kalong Berkecrek",
+      "scientificName": "Pteropus alecto",
+      "conservationStatus": "Least Concern",
+      "habitat": ["mangrove", "coastal-forest"],
+      "tags": ["mammal", "flying-fox", "nocturnal"],
+      "shortDescription": "Kelelawar buah besar berwarna hitam yang hidup di mangrove.",
+      "longDescription": "Kalong Berkecrek adalah kelelawar buah besar berwarna hitam yang hidup berkoloni besar di mangrove. Mereka terbang puluhan kilometer setiap malam mencari buah. Berperan penting dalam penyerbukan dan penyebaran biji di ekosistem pesisir. Koloni dapat berisi ribuan individu.",
+      "images": [
+        {"file": "kalong-hitam-01.jpg", "credit": "Flying Fox Conservation", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Mangrove Kalimantan", "lat": -2.0000, "lng": 115.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "1 meter wingspan, 500-800 grams",
+        "diet": "Frugivore - fruits, nectar",
+        "lifespan": "15-20 years",
+        "reproduction": "1 pup per year"
+      },
+      "conservationActions": "Roosting colony protection, mangrove conservation"
+    },
+    {
+      "id": "sp088",
+      "commonName": "Burung Tekukur",
+      "scientificName": "Streptopelia chinensis",
+      "conservationStatus": "Least Concern",
+      "habitat": ["garden", "agricultural", "urban"],
+      "tags": ["bird", "dove", "common"],
+      "shortDescription": "Burung dara yang sangat umum dengan suara khas di pagi hari.",
+      "longDescription": "Tekukur adalah burung dara yang sangat umum di Indonesia dengan suara 'tekukur-tekukur' yang khas. Mereka sangat adaptif dan sering ditemukan di taman kota dan area pertanian. Tekukur memakan biji-bijian dan buah kecil. Berperan dalam penyebaran biji tumbuhan.",
+      "images": [
+        {"file": "tekukur-01.jpg", "credit": "Urban Bird Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "30 cm length",
+        "diet": "Granivore - seeds, grains, small fruits",
+        "lifespan": "10-15 years",
+        "reproduction": "2 eggs per clutch, multiple clutches per year"
+      },
+      "conservationActions": "Urban green space management"
+    },
+    {
+      "id": "sp089",
+      "commonName": "Ular Tanah Merah",
+      "scientificName": "Cylindrophis ruffus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "rice-field", "garden"],
+      "tags": ["reptile", "snake", "burrowing"],
+      "shortDescription": "Ular penggali kecil dengan perut berwarna merah cerah.",
+      "longDescription": "Ular Tanah Merah adalah ular penggali yang menghabiskan sebagian besar waktunya di dalam tanah. Ketika terancam, mereka mengangkat ekor yang berwarna merah cerah untuk mengalihkan perhatian predator dari kepala. Ular ini tidak berbahaya dan memakan cacing dan ular kecil lainnya.",
+      "images": [
+        {"file": "ular-tanah-01.jpg", "credit": "Snake Ecology Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "50-80 cm length",
+        "diet": "Carnivore - worms, small snakes",
+        "lifespan": "10-15 years",
+        "reproduction": "Live-bearing, 2-8 offspring"
+      },
+      "conservationActions": "Education on non-venomous species, habitat conservation"
+    },
+    {
+      "id": "sp090",
+      "commonName": "Kepiting Bakau",
+      "scientificName": "Scylla serrata",
+      "conservationStatus": "Least Concern",
+      "habitat": ["mangrove", "estuary", "mudflat"],
+      "tags": ["crustacean", "commercial"],
+      "shortDescription": "Kepiting besar dari mangrove yang penting secara ekonomi.",
+      "longDescription": "Kepiting Bakau adalah kepiting besar yang hidup di ekosistem mangrove. Mereka adalah omnivora yang berperan penting dalam siklus nutrisi mangrove. Kepiting ini sangat berharga secara ekonomi dan menjadi mata pencaharian nelayan pesisir. Betina yang bertelur sangat dicari.",
+      "images": [
+        {"file": "kepiting-bakau-01.jpg", "credit": "Coastal Fisheries Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Mangrove di seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "15-20 cm carapace width",
+        "diet": "Omnivore - detritus, small animals, plants",
+        "lifespan": "3-4 years",
+        "reproduction": "Millions of eggs released in ocean"
+      },
+      "conservationActions": "Sustainable harvesting, mangrove restoration, size limits"
+    },
+    {
+      "id": "sp091",
+      "commonName": "Kura-kura Pipi Putih",
+      "scientificName": "Siebenrockiella crassicollis",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["freshwater", "swamp", "rice-field"],
+      "tags": ["reptile", "turtle"],
+      "shortDescription": "Kura-kura air tawar dengan garis putih di pipi yang khas.",
+      "longDescription": "Kura-kura Pipi Putih memiliki garis putih terang di kedua sisi kepala. Mereka adalah kura-kura semi-akuatik yang hidup di perairan tenang seperti rawa dan sawah. Diet mereka terdiri dari tumbuhan air, ikan kecil, dan invertebrata. Populasi menurun akibat penangkapan untuk konsumsi.",
+      "images": [
+        {"file": "kura-pipi-putih-01.jpg", "credit": "Turtle Conservation Indonesia", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sumatra dan Kalimantan", "lat": 0.0000, "lng": 110.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "20 cm carapace length",
+        "diet": "Omnivore - aquatic plants, fish, invertebrates",
+        "lifespan": "30-40 years",
+        "reproduction": "6-12 eggs per clutch"
+      },
+      "conservationActions": "Trade regulation, habitat protection, captive breeding"
+    },
+    {
+      "id": "sp092",
+      "commonName": "Tupai Kelapa",
+      "scientificName": "Callosciurus notatus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["plantation", "garden", "forest-edge"],
+      "tags": ["mammal", "arboreal"],
+      "shortDescription": "Tupai umum yang sering terlihat di perkebunan kelapa.",
+      "longDescription": "Tupai Kelapa adalah tupai yang sangat umum dan adaptif di Indonesia. Mereka sering terlihat di perkebunan kelapa dan taman kota. Tupai ini aktif di siang hari, memakan buah, biji, dan kadang serangga. Berperan dalam penyebaran biji namun kadang dianggap hama di perkebunan.",
+      "images": [
+        {"file": "tupai-kelapa-01.jpg", "credit": "Small Mammal Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sumatra, Jawa, Kalimantan", "lat": -2.0000, "lng": 110.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "18-21 cm body length, 150-250 grams",
+        "diet": "Omnivore - fruits, seeds, insects",
+        "lifespan": "6-10 years",
+        "reproduction": "2-4 offspring per litter"
+      },
+      "conservationActions": "Conflict management in plantations, habitat connectivity"
+    },
+    {
+      "id": "sp093",
+      "commonName": "Burung Gereja",
+      "scientificName": "Passer montanus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["urban", "agricultural", "grassland"],
+      "tags": ["bird", "sparrow", "common"],
+      "shortDescription": "Burung pipit yang sangat umum di sekitar pemukiman manusia.",
+      "longDescription": "Burung Gereja adalah burung pipit kecil yang sangat adaptif dengan kehidupan dekat manusia. Mereka hidup berkelompok dan bersarang di celah-celah bangunan. Burung Gereja omnivora yang memakan biji-bijian dan serangga. Sangat umum di perkotaan dan area pertanian.",
+      "images": [
+        {"file": "gereja-01.jpg", "credit": "Urban Bird Survey", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "14-15 cm length",
+        "diet": "Omnivore - seeds, grains, insects",
+        "lifespan": "3-5 years",
+        "reproduction": "4-6 eggs per clutch, multiple clutches per year"
+      },
+      "conservationActions": "Urban biodiversity monitoring"
+    },
+    {
+      "id": "sp094",
+      "commonName": "Ikan Sepat Siam",
+      "scientificName": "Trichopodus pectoralis",
+      "conservationStatus": "Least Concern",
+      "habitat": ["freshwater", "swamp", "rice-field"],
+      "tags": ["fish", "air-breathing", "aquaculture"],
+      "shortDescription": "Ikan air tawar yang dapat bernapas di udara dan penting untuk budidaya.",
+      "longDescription": "Sepat Siam adalah ikan air tawar yang memiliki organ labirin untuk bernapas di udara. Mereka dapat bertahan di perairan dengan oksigen rendah. Ikan ini penting untuk budidaya dan konsumsi lokal. Jantan membuat sarang busa untuk telur dan menjaga anak-anaknya.",
+      "images": [
+        {"file": "sepat-01.jpg", "credit": "Freshwater Aquaculture", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Jawa, Sumatra, Kalimantan", "lat": -2.0000, "lng": 110.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "25-40 cm length",
+        "diet": "Omnivore - plankton, plants, detritus",
+        "lifespan": "5-8 years",
+        "reproduction": "Bubble nest builder, 3000-10000 eggs"
+      },
+      "conservationActions": "Sustainable aquaculture, wetland conservation"
+    },
+    {
+      "id": "sp095",
+      "commonName": "Kunang-kunang",
+      "scientificName": "Luciola sp.",
+      "conservationStatus": "Data Deficient",
+      "habitat": ["forest", "rice-field", "wetland"],
+      "tags": ["insect", "bioluminescent"],
+      "shortDescription": "Kumbang yang menghasilkan cahaya untuk komunikasi kawin.",
+      "longDescription": "Kunang-kunang adalah kumbang yang menghasilkan cahaya bioluminescent untuk menarik pasangan. Larva hidup di tanah lembab dan memakan siput. Cahaya kunang-kunang di malam hari adalah pemandangan ikonik di pedesaan Indonesia. Populasi menurun akibat polusi cahaya dan pestisida.",
+      "images": [
+        {"file": "kunang-01.jpg", "credit": "Insect Diversity Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "5-25 mm length depending on species",
+        "diet": "Carnivore (larvae) - snails; Herbivore (adult) - nectar",
+        "lifespan": "2-3 months as adult",
+        "reproduction": "Eggs laid in moist soil"
+      },
+      "conservationActions": "Light pollution reduction, pesticide-free zones, habitat protection"
+    },
+    {
+      "id": "sp096",
+      "commonName": "Bunglon Surai",
+      "scientificName": "Bronchocela jubata",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "plantation", "garden"],
+      "tags": ["reptile", "lizard", "arboreal"],
+      "shortDescription": "Kadal arboreal hijau dengan kemampuan mengubah warna.",
+      "longDescription": "Bunglon Surai adalah kadal arboreal yang dapat mengubah warna dari hijau cerah hingga coklat gelap. Jantan memiliki jambul nuchal yang besar. Mereka berburu serangga di pohon dan semak. Sangat umum di taman dan perkebunan, berperan sebagai pengontrol serangga alami.",
+      "images": [
+        {"file": "bunglon-01.jpg", "credit": "Lizard Diversity Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Sumatra, Jawa, Kalimantan", "lat": -2.0000, "lng": 110.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "40-50 cm including tail",
+        "diet": "Insectivore - insects, spiders",
+        "lifespan": "5-8 years",
+        "reproduction": "4-15 eggs buried in soil"
+      },
+      "conservationActions": "Education on beneficial species, habitat conservation"
+    },
+    {
+      "id": "sp097",
+      "commonName": "Kelinci Sumatera",
+      "scientificName": "Nesolagus netscheri",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["mountain-forest"],
+      "tags": ["endemic", "mammal", "sumatra", "nocturnal"],
+      "shortDescription": "Kelinci bergaris endemik pegunungan Sumatra yang jarang terlihat.",
+      "longDescription": "Kelinci Sumatera adalah kelinci kecil dengan garis-garis coklat gelap di tubuhnya. Mereka adalah hewan nokturnal yang hidup di hutan pegunungan Sumatra pada ketinggian 600-1600 m. Sangat pemalu dan jarang terlihat. Populasi terancam oleh hilangnya habitat hutan pegunungan.",
+      "images": [
+        {"file": "kelinci-sumatra-01.jpg", "credit": "Sumatra Mammal Research", "license": "CC BY-NC-ND 4.0"}
+      ],
+      "locations": [
+        {"name": "Bukit Barisan, Sumatra", "lat": -3.5000, "lng": 102.5000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "35-40 cm length, 1.4-1.6 kg",
+        "diet": "Herbivore - leaves, shoots, fruits",
+        "lifespan": "5-7 years",
+        "reproduction": "1-2 offspring per litter"
+      },
+      "conservationActions": "Mountain forest protection, camera trap monitoring, research"
+    },
+    {
+      "id": "sp098",
+      "commonName": "Burung Cucak Rawa",
+      "scientificName": "Pycnonotus zeylanicus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["wetland", "scrubland", "plantation"],
+      "tags": ["bird", "bulbul"],
+      "shortDescription": "Burung berkicau yang populer dipelihara untuk lomba burung.",
+      "longDescription": "Cucak Rawa adalah burung bulbul dengan kicauan merdu yang sangat populer dipelihara. Mereka hidup di area terbuka dengan semak dekat air. Burung ini omnivora yang memakan buah, serangga, dan nektar. Meski masih umum, penangkapan berlebihan untuk perdagangan burung mengancam populasi lokal.",
+      "images": [
+        {"file": "cucak-rawa-01.jpg", "credit": "Indonesian Songbird Conservation", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sumatra dan Jawa", "lat": -5.0000, "lng": 105.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "20 cm length",
+        "diet": "Omnivore - fruits, insects, nectar",
+        "lifespan": "8-10 years",
+        "reproduction": "2-3 eggs per clutch"
+      },
+      "conservationActions": "Sustainable captive breeding, wild population monitoring, trade regulation"
+    },
+    {
+      "id": "sp099",
+      "commonName": "Lintah Hutan",
+      "scientificName": "Haemadipsa zeylanica",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rainforest", "stream"],
+      "tags": ["invertebrate", "parasite"],
+      "shortDescription": "Lintah darat yang menunggu di dedaunan untuk menempel pada host.",
+      "longDescription": "Lintah Hutan adalah parasit eksternal yang hidup di hutan hujan tropis. Mereka mendeteksi getaran dan karbon dioksida untuk menemukan host. Lintah ini memakan darah mamalia termasuk manusia. Meski mengganggu, mereka berperan dalam ekosistem dan air liurnya mengandung antikoagulan yang berguna medis.",
+      "images": [
+        {"file": "lintah-01.jpg", "credit": "Forest Ecology Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan hujan di seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "3-4 cm length (unfed)",
+        "diet": "Hematophagous - blood",
+        "lifespan": "1-2 years",
+        "reproduction": "Hermaphroditic, lays eggs in moist soil"
+      },
+      "conservationActions": "Forest ecosystem conservation, research on medical applications"
+    },
+    {
+      "id": "sp100",
+      "commonName": "Ikan Nila",
+      "scientificName": "Oreochromis niloticus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["freshwater", "lake", "reservoir"],
+      "tags": ["fish", "introduced", "aquaculture"],
+      "shortDescription": "Ikan air tawar introduksi yang sangat penting untuk budidaya.",
+      "longDescription": "Ikan Nila adalah spesies introduksi dari Afrika yang menjadi ikan budidaya terpenting di Indonesia. Mereka sangat adaptif, tumbuh cepat, dan toleran terhadap kondisi air yang buruk. Nila adalah sumber protein terjangkau bagi masyarakat. Namun dapat menjadi invasif dan mengancam spesies ikan asli.",
+      "images": [
+        {"file": "nila-01.jpg", "credit": "Indonesian Aquaculture Development", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Perairan tawar di seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "30-40 cm length, up to 4 kg",
+        "diet": "Omnivore - algae, plankton, detritus",
+        "lifespan": "10 years",
+        "reproduction": "Mouth brooder, 100-1000 eggs per spawn"
+      },
+      "conservationActions": "Biosecurity management, prevent escape to natural waters, support native species"
+    },
+    {
+      "id": "sp101",
+      "commonName": "Beruk",
+      "scientificName": "Macaca nemestrina",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["rainforest", "plantation"],
+      "tags": ["primate", "sumatra-borneo"],
+      "shortDescription": "Monyet besar dengan ekor pendek yang dilatih untuk memetik kelapa.",
+      "longDescription": "Beruk atau Monyet Ekor Babi adalah primata besar dengan ekor pendek yang melengkung seperti ekor babi. Mereka hidup dalam kelompok besar di hutan Sumatra dan Kalimantan. Beruk sering dilatih untuk memetik kelapa di perkebunan. Populasi menurun akibat deforestasi dan penangkapan berlebihan.",
+      "images": [
+        {"file": "beruk-01.jpg", "credit": "Primate Welfare Indonesia", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Gunung Leuser", "lat": 3.5833, "lng": 97.5000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "47-62 cm body length, 5-14 kg",
+        "diet": "Omnivore - fruits, seeds, insects, small animals",
+        "lifespan": "25-30 years",
+        "reproduction": "1 offspring every 1-2 years"
+      },
+      "conservationActions": "End exploitative training practices, habitat protection, rehabilitation programs"
+    },
+    {
+      "id": "sp102",
+      "commonName": "Udang Windu",
+      "scientificName": "Penaeus monodon",
+      "conservationStatus": "Least Concern",
+      "habitat": ["coastal", "estuary", "mangrove"],
+      "tags": ["crustacean", "commercial", "aquaculture"],
+      "shortDescription": "Udang laut yang sangat penting untuk ekspor dan budidaya tambak.",
+      "longDescription": "Udang Windu atau Tiger Prawn adalah udang laut terbesar yang dibudidayakan di Indonesia. Mereka dapat mencapai panjang 33 cm. Udang Windu adalah komoditas ekspor utama Indonesia. Larva hidup di laut dan remaja migrasi ke mangrove sebagai nursery ground. Budidaya intensif dapat merusak ekosistem pesisir.",
+      "images": [
+        {"file": "udang-windu-01.jpg", "credit": "Marine Aquaculture Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Pantai di seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "20-33 cm length",
+        "diet": "Omnivore - detritus, algae, small animals",
+        "lifespan": "2-3 years",
+        "reproduction": "500,000-1,000,000 eggs per spawn"
+      },
+      "conservationActions": "Sustainable aquaculture practices, mangrove conservation, effluent management"
+    },
+    {
+      "id": "sp103",
+      "commonName": "Burung Prenjak",
+      "scientificName": "Prinia familiaris",
+      "conservationStatus": "Least Concern",
+      "habitat": ["grassland", "scrubland", "rice-field"],
+      "tags": ["bird", "warbler", "common"],
+      "shortDescription": "Burung kecil yang aktif mencari serangga di semak-semak.",
+      "longDescription": "Prenjak adalah burung warbler kecil dengan ekor yang sering ditegakkan. Mereka sangat aktif berburu serangga di semak dan rerumputan. Prenjak membangun sarang berbentuk botol yang digantung di semak. Suara kicauannya yang riang sering terdengar di area terbuka dan sawah.",
+      "images": [
+        {"file": "prenjak-01.jpg", "credit": "Grassland Bird Survey", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "13-15 cm length",
+        "diet": "Insectivore - insects, spiders",
+        "lifespan": "4-6 years",
+        "reproduction": "3-5 eggs per clutch"
+      },
+      "conservationActions": "Grassland habitat conservation, pesticide reduction"
+    },
+    {
+      "id": "sp104",
+      "commonName": "Bunga Bangkai Raksasa Khas Bengkulu",
+      "scientificName": "Rafflesia bengkuluensis",
+      "conservationStatus": "Endangered",
+      "habitat": ["rainforest"],
+      "tags": ["endemic", "plant", "parasitic", "sumatra"],
+      "shortDescription": "Spesies Rafflesia endemik Bengkulu dengan ukuran sangat besar.",
+      "longDescription": "Rafflesia bengkuluensis adalah salah satu spesies Rafflesia terbesar yang hanya ditemukan di hutan Bengkulu. Seperti Rafflesia lainnya, tumbuhan ini parasit pada liana Tetrastigma. Bunga dapat mencapai diameter hingga 90 cm dan mengeluarkan bau busuk untuk menarik lalat penyerbuk. Sangat terancam oleh deforestasi dan perubahan iklim.",
+      "images": [
+        {"file": "rafflesia-bengkulu-01.jpg", "credit": "Bengkulu Conservation", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan Bengkulu", "lat": -3.8000, "lng": 102.2667, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "Up to 90 cm diameter",
+        "diet": "Parasitic - derives nutrients from host vine",
+        "lifespan": "9-21 months before flowering",
+        "reproduction": "Sexual reproduction via fly pollination"
+      },
+      "conservationActions": "Protected forest areas, ecotourism management, monitoring programs"
+    },
+    {
+      "id": "sp105",
+      "commonName": "Harimau Loreng",
+      "scientificName": "Neofelis diardi",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["rainforest", "mountain-forest"],
+      "tags": ["mammal", "carnivore", "sumatra-borneo"],
+      "shortDescription": "Kucing besar arboreal dengan taring yang sangat panjang.",
+      "longDescription": "Harimau Loreng atau Clouded Leopard Sunda adalah kucing besar yang sangat pandai memanjat dengan taring paling panjang relatif terhadap ukuran tubuh dibanding kucing besar lainnya. Mereka berburu di kanopi hutan, memangsa primata, burung, dan hewan arboreal lainnya. Sangat sulit diamati dan terancam oleh deforestasi.",
+      "images": [
+        {"file": "harimau-loreng-01.jpg", "credit": "Clouded Leopard Project", "license": "CC BY-NC-ND 4.0"}
+      ],
+      "locations": [
+        {"name": "Taman Nasional Gunung Leuser", "lat": 3.5833, "lng": 97.5000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "70-110 cm body length, 11-25 kg",
+        "diet": "Carnivore - primates, birds, deer",
+        "lifespan": "15-17 years",
+        "reproduction": "1-5 cubs per litter"
+      },
+      "conservationActions": "Forest corridor protection, camera trap monitoring, anti-poaching"
+    },
+    {
+      "id": "sp106",
+      "commonName": "Ikan Arwana Hijau",
+      "scientificName": "Scleropages aureus",
+      "conservationStatus": "Endangered",
+      "habitat": ["freshwater", "river", "swamp"],
+      "tags": ["endemic", "fish", "kalimantan", "aquarium-trade"],
+      "shortDescription": "Arwana dengan warna hijau keemasan dari Kalimantan Barat.",
+      "longDescription": "Arwana Hijau adalah variasi arwana dengan warna hijau keemasan yang indah. Endemik sungai-sungai di Kalimantan Barat, spesies ini sangat dicari kolektor ikan hias. Seperti arwana lain, mereka adalah predator permukaan yang melompat tinggi. Populasi terancam oleh penangkapan berlebihan untuk perdagangan.",
+      "images": [
+        {"file": "arwana-hijau-01.jpg", "credit": "Arowana Conservation Indonesia", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sungai di Kalimantan Barat", "lat": 0.0000, "lng": 110.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "60-90 cm length",
+        "diet": "Carnivore - insects, small fish, shrimp",
+        "lifespan": "15-20 years",
+        "reproduction": "Mouthbrooder, 30-80 eggs"
+      },
+      "conservationActions": "CITES regulation, sustainable aquaculture, habitat protection"
+    },
+    {
+      "id": "sp107",
+      "commonName": "Elang Laut Perut Putih",
+      "scientificName": "Haliaeetus leucogaster",
+      "conservationStatus": "Least Concern",
+      "habitat": ["coastal", "mangrove", "island"],
+      "tags": ["bird", "raptor", "marine"],
+      "shortDescription": "Elang laut besar yang berburu ikan di perairan pesisir.",
+      "longDescription": "Elang Laut Perut Putih adalah raptor besar dengan kepala, leher, dan perut putih kontras dengan punggung abu-abu. Mereka adalah pemburu ikan yang handal, menyambar ikan dari permukaan air dengan cakar tajamnya. Sering terlihat bertengger di pohon tinggi dekat pantai. Pasangan monogami dan menggunakan sarang yang sama bertahun-tahun.",
+      "images": [
+        {"file": "elang-laut-01.jpg", "credit": "Coastal Raptor Survey", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Kepulauan Raja Ampat", "lat": -0.5000, "lng": 130.5000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "70-90 cm length, 2-4.5 kg",
+        "diet": "Carnivore - fish, sea snakes, waterbirds",
+        "lifespan": "25-30 years",
+        "reproduction": "1-2 eggs per breeding season"
+      },
+      "conservationActions": "Coastal habitat protection, nest site conservation"
+    },
+    {
+      "id": "sp108",
+      "commonName": "Kodok Pohon Jawa",
+      "scientificName": "Rhacophorus reinwardtii",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rainforest", "plantation", "garden"],
+      "tags": ["amphibian", "jawa-sumatra", "arboreal"],
+      "shortDescription": "Kodok pohon besar dengan selaput kaki untuk meluncur antar pohon.",
+      "longDescription": "Kodok Pohon Jawa adalah kodok terbang dengan selaput lebar di antara jari-jari kaki yang memungkinkan mereka meluncur hingga 15 meter. Mereka hidup di kanopi hutan dan turun untuk bertelur. Betina membuat sarang busa di atas air untuk telur. Katak ini berperan penting sebagai predator serangga kanopi.",
+      "images": [
+        {"file": "kodok-pohon-01.jpg", "credit": "Java Amphibian Research", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan Jawa dan Sumatra", "lat": -6.5000, "lng": 107.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "8-10 cm length",
+        "diet": "Insectivore - insects, spiders",
+        "lifespan": "5-8 years",
+        "reproduction": "Foam nests with 200-300 eggs"
+      },
+      "conservationActions": "Forest conservation, monitoring of amphibian diseases"
+    },
+    {
+      "id": "sp109",
+      "commonName": "Ular Pucuk",
+      "scientificName": "Ahaetulla prasina",
+      "conservationStatus": "Least Concern",
+      "habitat": ["forest", "plantation", "garden"],
+      "tags": ["reptile", "snake", "arboreal", "mildly-venomous"],
+      "shortDescription": "Ular hijau langsing yang hidup di pohon dan memiliki bisa ringan.",
+      "longDescription": "Ular Pucuk adalah ular arboreal yang sangat langsing dengan warna hijau cerah. Mereka memiliki kepala memanjang dengan moncong runcing dan pupil horizontal yang khas. Ular ini berburu kadal dan katak di pohon. Memiliki bisa ringan yang hanya efektif pada mangsa kecil. Tidak berbahaya bagi manusia.",
+      "images": [
+        {"file": "ular-pucuk-01.jpg", "credit": "Arboreal Snake Project", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "100-180 cm length",
+        "diet": "Carnivore - lizards, frogs, small birds",
+        "lifespan": "10-15 years",
+        "reproduction": "Live-bearing, 3-12 offspring"
+      },
+      "conservationActions": "Education on non-dangerous species, habitat conservation"
+    },
+    {
+      "id": "sp110",
+      "commonName": "Ikan Mas Koki",
+      "scientificName": "Carassius auratus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["freshwater", "pond", "aquarium"],
+      "tags": ["fish", "introduced", "ornamental"],
+      "shortDescription": "Ikan hias hasil domestikasi yang sangat populer di Indonesia.",
+      "longDescription": "Ikan Mas Koki adalah ikan hias hasil domestikasi dari ikan karper selama ribuan tahun. Berbagai varietas dengan bentuk tubuh, sirip, dan warna yang unik telah dikembangkan. Sangat populer sebagai ikan hias di Indonesia. Dapat hidup puluhan tahun jika dirawat dengan baik. Dapat menjadi invasif jika terlepas ke alam.",
+      "images": [
+        {"file": "mas-koki-01.jpg", "credit": "Ornamental Fish Indonesia", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Seluruh Indonesia (budidaya)", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "15-45 cm length depending on variety",
+        "diet": "Omnivore - pellets, plants, insects",
+        "lifespan": "10-30 years in captivity",
+        "reproduction": "Egg scatterer, hundreds to thousands of eggs"
+      },
+      "conservationActions": "Prevent release to natural waters, biosecurity management"
+    },
+    {
+      "id": "sp111",
+      "commonName": "Macan Dahan",
+      "scientificName": "Pardofelis marmorata",
+      "conservationStatus": "Vulnerable",
+      "habitat": ["rainforest", "mountain-forest"],
+      "tags": ["mammal", "carnivore", "arboreal"],
+      "shortDescription": "Kucing liar arboreal dengan bulu bermotif seperti marmer.",
+      "longDescription": "Macan Dahan adalah kucing liar berukuran sedang dengan bulu bermotif marmer yang indah. Mereka adalah pemburu arboreal yang sangat terampil memanjat dengan ekor panjang sebagai penyeimbang. Macan Dahan berburu burung, tupai, dan mamalia kecil lainnya di kanopi hutan. Sangat jarang terlihat dan terancam oleh deforestasi.",
+      "images": [
+        {"file": "macan-dahan-01.jpg", "credit": "Wild Cat Conservation Asia", "license": "CC BY-NC-ND 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan Sumatra dan Kalimantan", "lat": 0.0000, "lng": 105.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "45-62 cm body length, 2-5 kg",
+        "diet": "Carnivore - birds, squirrels, small mammals",
+        "lifespan": "12-14 years",
+        "reproduction": "1-4 kittens per litter"
+      },
+      "conservationActions": "Forest protection, camera trap surveys, anti-poaching"
+    },
+    {
+      "id": "sp112",
+      "commonName": "Burung Trulek Jawa",
+      "scientificName": "Vanellus macropterus",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["grassland", "wetland"],
+      "tags": ["endemic", "bird", "jawa", "critically-endangered"],
+      "shortDescription": "Burung pantai endemik Jawa yang kemungkinan sudah punah.",
+      "longDescription": "Trulek Jawa adalah burung pantai endemik Jawa yang tidak terlihat sejak tahun 1940 dan kemungkinan besar sudah punah. Mereka dahulu hidup di padang rumput dan lahan basah. Kepunahan disebabkan oleh konversi habitat menjadi lahan pertanian dan gangguan manusia. Masuk dalam daftar 100 spesies paling terancam di dunia.",
+      "images": [
+        {"file": "trulek-jawa-01.jpg", "credit": "Historical Bird Records", "license": "Public Domain"}
+      ],
+      "locations": [
+        {"name": "Jawa (historically)", "lat": -7.0000, "lng": 110.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "27-29 cm length",
+        "diet": "Insectivore - insects, worms",
+        "lifespan": "Unknown",
+        "reproduction": "Unknown, likely ground nester"
+      },
+      "conservationActions": "Search expeditions, habitat restoration if rediscovered"
+    },
+    {
+      "id": "sp113",
+      "commonName": "Kura-kura Hutan Sulawesi",
+      "scientificName": "Leucocephalon yuwonoi",
+      "conservationStatus": "Critically Endangered",
+      "habitat": ["rainforest", "stream"],
+      "tags": ["endemic", "reptile", "sulawesi", "critically-endangered"],
+      "shortDescription": "Kura-kura darat endemik Sulawesi dengan kepala berwarna kuning.",
+      "longDescription": "Kura-kura Hutan Sulawesi memiliki kepala berwarna kuning cerah yang kontras dengan karapas gelap. Mereka hidup di hutan pegunungan dekat sungai kecil. Spesies ini sangat terancam dengan populasi diperkirakan kurang dari 250 individu dewasa. Ancaman utama adalah penangkapan untuk perdagangan hewan peliharaan eksotis dan hilangnya habitat.",
+      "images": [
+        {"file": "kura-hutan-sulawesi-01.jpg", "credit": "Sulawesi Turtle Conservation", "license": "CC BY-NC-ND 4.0"}
+      ],
+      "locations": [
+        {"name": "Sulawesi Utara", "lat": 1.0000, "lng": 124.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "28 cm carapace length",
+        "diet": "Omnivore - fruits, leaves, invertebrates",
+        "lifespan": "50+ years",
+        "reproduction": "1-2 eggs per clutch"
+      },
+      "conservationActions": "Captive breeding, anti-smuggling operations, habitat protection"
+    },
+    {
+      "id": "sp114",
+      "commonName": "Ikan Gurame",
+      "scientificName": "Osphronemus goramy",
+      "conservationStatus": "Least Concern",
+      "habitat": ["freshwater", "swamp", "pond"],
+      "tags": ["fish", "air-breathing", "aquaculture"],
+      "shortDescription": "Ikan air tawar besar yang penting untuk budidaya dan konsumsi.",
+      "longDescription": "Ikan Gurame adalah ikan air tawar besar dengan organ labirin untuk bernapas di udara. Mereka dapat mencapai berat hingga 8 kg. Gurame sangat populer untuk konsumsi karena dagingnya yang gurih. Ikan ini omnivora yang mudah dibudidayakan. Jantan membangun sarang busa besar untuk telur dan menjaga anaknya.",
+      "images": [
+        {"file": "gurame-01.jpg", "credit": "Indonesia Aquaculture", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Jawa dan Sumatra", "lat": -5.0000, "lng": 108.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "45-65 cm length, up to 8 kg",
+        "diet": "Omnivore - plants, insects, small fish",
+        "lifespan": "20-25 years",
+        "reproduction": "Bubble nest builder, thousands of eggs"
+      },
+      "conservationActions": "Sustainable aquaculture practices, native habitat conservation"
+    },
+    {
+      "id": "sp115",
+      "commonName": "Bajing Tanah",
+      "scientificName": "Lariscus insignis",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rainforest", "plantation"],
+      "tags": ["mammal", "terrestrial", "sumatra-borneo"],
+      "shortDescription": "Tupai darat kecil dengan garis putih di punggung.",
+      "longDescription": "Bajing Tanah adalah tupai yang hidup di tanah hutan dengan tiga garis putih di punggung. Mereka aktif di siang hari mencari serangga, buah, dan biji di lantai hutan. Bajing Tanah membuat lubang di tanah atau celah pohon untuk bersarang. Berperan penting dalam penyebaran biji dan pengendalian serangga.",
+      "images": [
+        {"file": "bajing-tanah-01.jpg", "credit": "Small Mammal Survey Borneo", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan Sumatra dan Kalimantan", "lat": 0.0000, "lng": 110.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "12-15 cm body length, 50-80 grams",
+        "diet": "Omnivore - insects, fruits, seeds",
+        "lifespan": "4-6 years",
+        "reproduction": "2-4 offspring per litter"
+      },
+      "conservationActions": "Forest floor habitat conservation, research on ecology"
+    },
+    {
+      "id": "sp116",
+      "commonName": "Burung Cica Daun",
+      "scientificName": "Chloropsis sonnerati",
+      "conservationStatus": "Near Threatened",
+      "habitat": ["forest", "plantation"],
+      "tags": ["bird", "songbird"],
+      "shortDescription": "Burung berkicau hijau yang populer dipelihara untuk lomba.",
+      "longDescription": "Cica Daun adalah burung hijau dengan suara kicauan yang sangat merdu dan mampu menirukan suara burung lain. Mereka memakan nektar, buah kecil, dan serangga. Sangat populer dipelihara untuk lomba burung berkicau. Penangkapan berlebihan dari alam liar mengancam populasi di beberapa wilayah.",
+      "images": [
+        {"file": "cica-daun-01.jpg", "credit": "Songbird Conservation Indonesia", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sumatra dan Jawa", "lat": -5.0000, "lng": 105.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "18-20 cm length",
+        "diet": "Omnivore - nectar, fruits, insects",
+        "lifespan": "10-15 years",
+        "reproduction": "2-3 eggs per clutch"
+      },
+      "conservationActions": "Sustainable captive breeding, trade regulation, wild population protection"
+    },
+    {
+      "id": "sp117",
+      "commonName": "Kepiting Kenari",
+      "scientificName": "Birgus latro",
+      "conservationStatus": "Data Deficient",
+      "habitat": ["coastal-forest", "island"],
+      "tags": ["crustacean", "terrestrial", "large"],
+      "shortDescription": "Kepiting darat terbesar di dunia yang dapat memanjat pohon kelapa.",
+      "longDescription": "Kepiting Kenari atau Coconut Crab adalah kepiting darat terbesar di dunia dengan lebar kaki hingga 1 meter. Mereka dapat memanjat pohon kelapa untuk mendapatkan buah. Capit mereka sangat kuat dapat membuka kelapa. Larva hidup di laut, kemudian remaja kembali ke darat. Populasi menurun akibat perburuan dan hilangnya habitat.",
+      "images": [
+        {"file": "kepiting-kenari-01.jpg", "credit": "Island Biodiversity Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Pulau-pulau terpencil Indonesia Timur", "lat": -5.0000, "lng": 130.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "Up to 40 cm body length, 4 kg weight",
+        "diet": "Omnivore - coconuts, fruits, carrion",
+        "lifespan": "30-60 years",
+        "reproduction": "Eggs released in ocean, larvae develop in water"
+      },
+      "conservationActions": "Harvest regulations, habitat protection, population monitoring"
+    },
+    {
+      "id": "sp118",
+      "commonName": "Ikan Louhan",
+      "scientificName": "Hybrid cichlid",
+      "conservationStatus": "Not Evaluated",
+      "habitat": ["aquarium", "pond"],
+      "tags": ["fish", "hybrid", "ornamental"],
+      "shortDescription": "Ikan hias hasil persilangan dengan benjol khas di kepala.",
+      "longDescription": "Ikan Louhan adalah hasil persilangan beberapa spesies cichlid Amerika yang dikembangkan di Asia. Ciri khasnya adalah benjol besar di kepala (nuchal hump) dan warna cerah. Sangat populer sebagai ikan hias karena dipercaya membawa keberuntungan. Bukan spesies alami dan tidak boleh dilepas ke alam karena dapat mengganggu ekosistem.",
+      "images": [
+        {"file": "louhan-01.jpg", "credit": "Ornamental Fish Breeders", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Indonesia (captive only)", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "25-40 cm length",
+        "diet": "Omnivore - pellets, shrimp, worms",
+        "lifespan": "10-12 years",
+        "reproduction": "Substrate spawner, 1000+ eggs"
+      },
+      "conservationActions": "Prevent release to natural waters, responsible aquarium trade"
+    },
+    {
+      "id": "sp119",
+      "commonName": "Elang Hitam",
+      "scientificName": "Ictinaetus malaiensis",
+      "conservationStatus": "Least Concern",
+      "habitat": ["rainforest", "mountain-forest"],
+      "tags": ["bird", "raptor"],
+      "shortDescription": "Elang besar berwarna hitam pekat yang berburu di kanopi hutan.",
+      "longDescription": "Elang Hitam adalah raptor besar dengan bulu hitam pekat dan jambul kecil di kepala. Mereka terbang tinggi di atas kanopi mencari mangsa seperti tupai, burung, dan reptil. Elang Hitam sering terlihat meluncur dengan sayap terentang lebar. Berperan penting sebagai predator kanopi yang mengendalikan populasi hewan kecil.",
+      "images": [
+        {"file": "elang-hitam-01.jpg", "credit": "Forest Raptor Project", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan di seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "65-81 cm length, 1-1.6 kg",
+        "diet": "Carnivore - small mammals, birds, reptiles",
+        "lifespan": "20-25 years",
+        "reproduction": "1 egg per breeding season"
+      },
+      "conservationActions": "Forest conservation, nest monitoring"
+    },
+    {
+      "id": "sp120",
+      "commonName": "Kelelawar Pemakan Serangga",
+      "scientificName": "Hipposideros larvatus",
+      "conservationStatus": "Least Concern",
+      "habitat": ["cave", "forest", "agricultural"],
+      "tags": ["mammal", "bat", "insectivore", "nocturnal"],
+      "shortDescription": "Kelelawar kecil yang berkoloni di gua dan memakan serangga.",
+      "longDescription": "Kelelawar Pemakan Serangga adalah spesies kelelawar kecil yang hidup berkoloni besar di gua. Mereka menggunakan ekolokasi untuk berburu serangga di malam hari. Satu koloni dapat memakan ton serangga per tahun, berperan penting sebagai pengendali hama alami. Guano (kotoran) mereka juga penting untuk ekosistem gua.",
+      "images": [
+        {"file": "kelelawar-serangga-01.jpg", "credit": "Cave Ecology Indonesia", "license": "CC BY-NC 4.0"}
+      ],
+      "locations": [
+        {"name": "Gua di seluruh Indonesia", "lat": -2.5000, "lng": 118.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "5-7 cm body length, 10-15 grams",
+        "diet": "Insectivore - moths, beetles, mosquitoes",
+        "lifespan": "10-15 years",
+        "reproduction": "1 pup per year"
+      },
+      "conservationActions": "Cave protection, public education on ecological importance, disturbance prevention"
+    },
+    {
+      "id": "sp121",
+      "commonName": "Anggrek Bulan",
+      "scientificName": "Phalaenopsis amabilis",
+      "conservationStatus": "Near Threatened",
+      "habitat": ["rainforest", "lowland-forest"],
+      "tags": ["plant", "epiphyte", "orchid", "national-flower"],
+      "shortDescription": "Anggrek putih cantik yang menjadi bunga nasional Indonesia.",
+      "longDescription": "Anggrek Bulan adalah bunga nasional Indonesia yang tumbuh epifit di pohon hutan. Bunga putih besar seperti bulan purnama dapat mekar berbulan-bulan. Anggrek ini sangat populer dalam hortikultura dan telah dikembangkan banyak hibrida. Di alam liar terancam oleh pengambilan liar dan deforestasi.",
+      "images": [
+        {"file": "anggrek-bulan-01.jpg", "credit": "Indonesian Orchid Society", "license": "CC BY-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Hutan Indonesia bagian barat", "lat": -2.0000, "lng": 110.0000, "precision": "generalized"}
+      ],
+      "quickFacts": {
+        "size": "Flowers 8-10 cm diameter",
+        "diet": "Epiphytic - absorbs nutrients from air and rain",
+        "lifespan": "10-15 years",
+        "reproduction": "Seeds dispersed by wind, pollinated by moths"
+      },
+      "conservationActions": "Ex-situ conservation, sustainable cultivation, habitat protection"
+    },
+    {
+      "id": "sp122",
+      "commonName": "Ikan Belida",
+      "scientificName": "Chitala ornata",
+      "conservationStatus": "Near Threatened",
+      "habitat": ["freshwater", "river", "swamp"],
+      "tags": ["fish", "sumatra-borneo", "predator"],
+      "shortDescription": "Ikan predator air tawar dengan tubuh pipih seperti pisau.",
+      "longDescription": "Ikan Belida memiliki tubuh sangat pipih dan memanjang dengan sirip punggung yang sangat panjang. Mereka adalah predator nokturnal yang berburu ikan kecil. Belida dapat tumbuh hingga 1 meter dan hidup di sungai-sungai besar. Populasi menurun akibat overfishing dan degradasi habitat sungai.",
+      "images": [
+        {"file": "belida-01.jpg", "credit": "Freshwater Fish Conservation", "license": "CC BY-NC-SA 4.0"}
+      ],
+      "locations": [
+        {"name": "Sungai Musi", "lat": -2.9906, "lng": 104.7567, "precision": "exact"}
+      ],
+      "quickFacts": {
+        "size": "60-100 cm length",
+        "diet": "Carnivore - small fish, shrimp",
+        "lifespan": "10-15 years",
+        "reproduction": "Parental care of eggs and fry"
+      },
+      "conservationActions": "Fishing regulations, river habitat restoration, aquaculture development"
     }
   ]
 }
