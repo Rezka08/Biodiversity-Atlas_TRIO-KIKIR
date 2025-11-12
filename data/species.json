@@ -597,13 +597,13 @@
     },
     {
       "id": "sp025",
-      "commonName": "Katak Merah Sulawesi",
+      "commonName": "Katak Sulawesi",
       "scientificName": "Leptophryne cruentata",
       "conservationStatus": "Critically Endangered",
       "habitat": ["mountain-forest", "stream", "waterfall"],
       "tags": ["endemic", "amphibian", "sulawesi", "critically-endangered"],
-      "shortDescription": "Katak kecil berwarna merah cerah yang hanya ditemukan di pegunungan Sulawesi.",
-      "longDescription": "Katak Merah Sulawesi adalah spesies katak kecil dengan warna merah cerah yang mencolok. Mereka hidup di sekitar sungai dan air terjun di hutan pegunungan Sulawesi pada ketinggian 1.500-2.000 mdpl. Katak ini sangat sensitif terhadap perubahan kualitas air dan suhu. Populasi mengalami penurunan drastis akibat penyakit chytrid fungus, perubahan iklim, dan degradasi habitat. Mereka adalah indikator kesehatan ekosistem sungai pegunungan.",
+      "shortDescription": "Katak kecil yang hanya ditemukan di pegunungan Sulawesi.",
+      "longDescription": "Katak Sulawesi adalah spesies katak kecil dengan warna merah cerah yang mencolok. Mereka hidup di sekitar sungai dan air terjun di hutan pegunungan Sulawesi pada ketinggian 1.500-2.000 mdpl. Katak ini sangat sensitif terhadap perubahan kualitas air dan suhu. Populasi mengalami penurunan drastis akibat penyakit chytrid fungus, perubahan iklim, dan degradasi habitat. Mereka adalah indikator kesehatan ekosistem sungai pegunungan.",
       "images": [
         {"file": "katak-merah-01.jpg", "credit": "Amphibian Survival Alliance", "license": "CC BY-NC-SA 4.0"},
         {"file": "katak-merah-02.jpg", "credit": "Photo by Amir Hamzah on Indonesian Herpetology", "license": "CC BY 4.0"}
@@ -968,7 +968,7 @@
     },
     {
       "id": "sp041",
-      "commonName": "Amorphophallus Titanum",
+      "commonName": "Bunga Bangkai Raksasa",
       "scientificName": "Amorphophallus titanum",
       "conservationStatus": "Endangered",
       "habitat": ["rainforest"],
