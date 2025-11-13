@@ -59,17 +59,57 @@
                             </h3>
                             
                             <div class="form-group">
-                                <label class="form-label form-label-required" for="speciesSelect">Pilih Spesies</label>
-                                <select id="speciesSelect" class="form-select" required>
-                                    <option value="">-- Pilih spesies --</option>
-                                    <!-- Populated by JS -->
-                                </select>
-                                <div class="form-hint">Pilih spesies yang Anda temukan, atau pilih "Tidak Diketahui" jika tidak yakin</div>
+                                <label class="form-label form-label-required" for="speciesInput">Cari Spesies</label>
+                                <div class="autocomplete-wrapper">
+                                    <input
+                                        type="text"
+                                        id="speciesInput"
+                                        class="form-input"
+                                        placeholder="Ketik nama spesies..."
+                                        autocomplete="off"
+                                        required
+                                    >
+                                    <input type="hidden" id="speciesId" required>
+                                    <div class="autocomplete-dropdown" id="speciesDropdown"></div>
+                                </div>
+                                <div class="form-hint">Ketik untuk mencari spesies yang Anda temukan</div>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" for="uploaderName">Nama Pengamat</label>
                                 <input type="text" id="uploaderName" class="form-input" placeholder="Nama Anda (opsional)">
+                            </div>
+                        </div>
+
+                        <!-- Quick Facts -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span>📊</span>
+                                <span>Fakta Singkat Spesies</span>
+                            </h3>
+
+                            <div class="form-group">
+                                <label class="form-label form-label-required" for="speciesSize">Ukuran</label>
+                                <input type="text" id="speciesSize" class="form-input" placeholder="Contoh: 2-3 meter panjang" required>
+                                <div class="form-hint">Ukuran tubuh atau dimensi spesies yang diamati</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label form-label-required" for="speciesDiet">Diet</label>
+                                <input type="text" id="speciesDiet" class="form-input" placeholder="Contoh: Karnivora - rusa, babi hutan" required>
+                                <div class="form-hint">Jenis makanan atau pola makan spesies</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label form-label-required" for="speciesLifespan">Masa Hidup</label>
+                                <input type="text" id="speciesLifespan" class="form-input" placeholder="Contoh: 30-50 tahun" required>
+                                <div class="form-hint">Perkiraan umur atau masa hidup spesies</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label form-label-required" for="speciesReproduction">Reproduksi</label>
+                                <input type="text" id="speciesReproduction" class="form-input" placeholder="Contoh: Ovipar, 15-30 telur" required>
+                                <div class="form-hint">Cara reproduksi dan jumlah keturunan</div>
                             </div>
                         </div>
 
@@ -145,9 +185,18 @@
 
     <div id="footer-placeholder"></div>
 
+    <script src="js/auth.js"></script>
     <script src="js/components-loader.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/script.js"></script>
     <script src="js/submit.js"></script>
+
+    <!-- Login Protection -->
+    <script>
+        // Require login to access submit page
+        if (!requireLogin()) {
+            // Will redirect to login page if not logged in
+        }
+    </script>
 </body>
 </html>

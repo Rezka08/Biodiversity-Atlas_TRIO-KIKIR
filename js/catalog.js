@@ -548,14 +548,20 @@ window.goToPage = goToPage;
 function openSpeciesModal(speciesId) {
     const species = speciesData.find(s => s.id === speciesId);
     if (!species) return;
-    
+
     const modal = document.getElementById('speciesModal');
     const modalBody = document.getElementById('modalBody');
-    
+
     if (!modal || !modalBody) return;
-    
+
     const statusInfo = BiodiversityAtlas.formatConservationStatus(species.conservationStatus);
-    
+
+    // Detect user submission and use base64 image data
+    const isUserSubmission = species.tags && species.tags.includes('user-submission');
+    const imageSrc = isUserSubmission && species.images?.[0]?.file
+        ? species.images[0].file
+        : `assets/images/species/${species.id}.jpg`;
+
     // Build modal content
     modalBody.innerHTML = `
         <div class="modal-species">
@@ -566,40 +572,40 @@ function openSpeciesModal(speciesId) {
                 </div>
                 <span class="status-badge ${statusInfo.class} status-large">${statusInfo.abbr} ${species.conservationStatus}</span>
             </div>
-            
+
             <div class="modal-image-gallery">
-                <img src="assets/images/species/${species.id}.jpg" 
+                <img src="${imageSrc}"
                      alt="${species.commonName}"
                      onerror="this.src='assets/images/placeholder.jpg'">
             </div>
-            
+
             <div class="modal-tabs">
                 <button class="modal-tab active" data-tab="overview">Overview</button>
                 <button class="modal-tab" data-tab="habitat">Habitat</button>
                 <button class="modal-tab" data-tab="conservation">Konservasi</button>
             </div>
-            
+
             <div class="modal-tab-content active" data-content="overview">
                 <h3>Deskripsi</h3>
                 <p>${species.longDescription}</p>
-                
+
                 <h3>Fakta Singkat</h3>
                 <div class="quick-facts">
                     <div class="fact-item">
                         <strong>Ukuran:</strong>
-                        <span>${species.quickFacts.size}</span>
+                        <span>${species.quickFacts?.size || 'Tidak disebutkan'}</span>
                     </div>
                     <div class="fact-item">
                         <strong>Diet:</strong>
-                        <span>${species.quickFacts.diet}</span>
+                        <span>${species.quickFacts?.diet || 'Tidak disebutkan'}</span>
                     </div>
                     <div class="fact-item">
                         <strong>Masa Hidup:</strong>
-                        <span>${species.quickFacts.lifespan}</span>
+                        <span>${species.quickFacts?.lifespan || 'Tidak disebutkan'}</span>
                     </div>
                     <div class="fact-item">
                         <strong>Reproduksi:</strong>
-                        <span>${species.quickFacts.reproduction}</span>
+                        <span>${species.quickFacts?.reproduction || 'Tidak disebutkan'}</span>
                     </div>
                 </div>
             </div>

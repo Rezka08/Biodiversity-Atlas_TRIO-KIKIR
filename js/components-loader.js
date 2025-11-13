@@ -60,8 +60,116 @@ function initComponentDependentFeatures() {
         initMobileNav();
     }
 
+    // Initialize navbar authentication UI
+    initNavbarAuth();
+
     console.log('✅ Component-dependent features initialized');
 }
+
+/**
+ * Initialize navbar authentication UI
+ * Show/hide login button or user profile based on login status
+ */
+function initNavbarAuth() {
+    // Check if auth.js is loaded
+    if (typeof isLoggedIn !== 'function') {
+        // Auth.js not loaded yet, load it dynamically
+        const script = document.createElement('script');
+        script.src = 'js/auth.js';
+        script.onload = () => {
+            setupNavbarAuth();
+        };
+        document.body.appendChild(script);
+    } else {
+        setupNavbarAuth();
+    }
+}
+
+function setupNavbarAuth() {
+    const loginBtn = document.getElementById('loginBtn');
+    const userProfile = document.getElementById('userProfile');
+    const profileToggle = document.getElementById('profileToggle');
+    const profileDropdown = document.getElementById('profileDropdown');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    if (!loginBtn || !userProfile) {
+        console.warn('Navbar auth elements not found');
+        return;
+    }
+
+    // Check if user is logged in
+    if (typeof isLoggedIn === 'function' && isLoggedIn()) {
+        const user = getCurrentUser();
+
+        // Hide login button, show user profile
+        loginBtn.style.display = 'none';
+        userProfile.style.display = 'block';
+
+        // Populate user info
+        document.getElementById('profileName').textContent = user.name;
+        document.getElementById('dropdownName').textContent = user.name;
+        document.getElementById('dropdownEmail').textContent = user.email;
+        document.getElementById('dropdownRole').textContent = user.role;
+
+        // Show admin dashboard link if user is admin
+        if (user.role === 'admin') {
+            const adminLink = document.getElementById('adminDashboardLink');
+            if (adminLink) {
+                adminLink.classList.add('show');
+            }
+        }
+
+        // Handle profile dropdown toggle (remove old listeners first)
+        if (profileToggle && profileDropdown) {
+            // Clone to remove old event listeners
+            const newProfileToggle = profileToggle.cloneNode(true);
+            profileToggle.parentNode.replaceChild(newProfileToggle, profileToggle);
+
+            newProfileToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                newProfileToggle.classList.toggle('active');
+                profileDropdown.classList.toggle('active');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!userProfile.contains(e.target)) {
+                    newProfileToggle.classList.remove('active');
+                    profileDropdown.classList.remove('active');
+                }
+            });
+        }
+
+        // Handle logout
+        if (logoutBtn) {
+            // Clone to remove old event listeners
+            const newLogoutBtn = logoutBtn.cloneNode(true);
+            logoutBtn.parentNode.replaceChild(newLogoutBtn, logoutBtn);
+
+            newLogoutBtn.addEventListener('click', () => {
+                if (confirm('Apakah Anda yakin ingin logout?')) {
+                    logout();
+                }
+            });
+        }
+
+        console.log('✅ Navbar auth initialized for user:', user.name);
+    } else {
+        // User not logged in, show login button
+        loginBtn.style.display = 'inline-flex';
+        userProfile.style.display = 'none';
+        console.log('ℹ️ No user logged in');
+    }
+}
+
+// Listen for storage changes (sync across tabs)
+window.addEventListener('storage', (e) => {
+    if (e.key === 'currentUser') {
+        console.log('🔄 Login status changed in another tab, refreshing...');
+        // Reload the page to reflect new login state
+        location.reload();
+    }
+});
 
 /**
  * Set active class on current page's nav link

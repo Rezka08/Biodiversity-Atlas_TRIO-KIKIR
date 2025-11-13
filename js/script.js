@@ -95,6 +95,66 @@ function initMobileNav() {
 // LOAD SPECIES DATA
 // ============================================
 
+// Get approved submissions from localStorage and convert to species format
+function getApprovedSubmissions() {
+    try {
+        const submissions = JSON.parse(localStorage.getItem('submissions') || '[]');
+        const approvedSubmissions = submissions.filter(s => s.status === 'approved');
+
+        // Convert submissions to species format (matching species.json structure)
+        return approvedSubmissions.map(submission => {
+            const shortDesc = submission.observationNotes
+                ? submission.observationNotes.substring(0, 100) + (submission.observationNotes.length > 100 ? '...' : '')
+                : 'Temuan spesies baru dari kontribusi pengguna.';
+
+            const longDesc = submission.observationNotes ||
+                `Spesies ini dilaporkan oleh ${submission.userName} pada ${new Date(submission.submittedAt).toLocaleDateString('id-ID')}. ` +
+                `Lokasi penemuan: ${submission.locationName || 'Tidak disebutkan'}. ` +
+                `Observasi ini telah diverifikasi dan disetujui oleh tim admin.`;
+
+            return {
+                id: submission.id,
+                commonName: submission.speciesName || 'Spesies Baru',
+                scientificName: submission.speciesName || 'Species Unknown',
+                conservationStatus: 'Least Concern', // Default status for user submissions
+                habitat: [submission.locationName || 'unknown'], // Array format like species.json
+                tags: ['user-submission', 'approved', 'new-discovery'],
+                shortDescription: shortDesc,
+                longDescription: longDesc,
+                images: [
+                    {
+                        file: submission.image, // Base64 image data
+                        credit: `Submitted by ${submission.userName}`,
+                        license: 'User Contribution'
+                    }
+                ],
+                locations: [
+                    {
+                        name: submission.locationName || 'Lokasi tidak disebutkan',
+                        lat: parseFloat(submission.location?.lat || 0),
+                        lng: parseFloat(submission.location?.lng || 0),
+                        precision: 'exact'
+                    }
+                ],
+                quickFacts: submission.quickFacts || {
+                    size: 'Tidak disebutkan',
+                    diet: 'Tidak disebutkan',
+                    lifespan: 'Tidak disebutkan',
+                    reproduction: 'Tidak disebutkan'
+                },
+                conservationActions: 'Data tambahan diperlukan untuk menentukan status konservasi dan aksi yang tepat.',
+                isUserSubmission: true, // Mark as user submission
+                submittedBy: submission.userName,
+                submittedAt: submission.submittedAt,
+                approvedAt: submission.reviewedAt
+            };
+        });
+    } catch (error) {
+        console.error('Error loading approved submissions:', error);
+        return [];
+    }
+}
+
 async function loadSpeciesData() {
     try {
         console.log('Loading species data from:', CONFIG.dataPath);
@@ -107,7 +167,14 @@ async function loadSpeciesData() {
         const data = await response.json();
         speciesData = data.species;
 
-        console.log('Successfully loaded', speciesData.length, 'species');
+        // Load approved submissions from localStorage and add to species data
+        const approvedSubmissions = getApprovedSubmissions();
+        if (approvedSubmissions.length > 0) {
+            console.log('✅ Adding', approvedSubmissions.length, 'approved submissions to catalog');
+            speciesData = [...speciesData, ...approvedSubmissions];
+        }
+
+        console.log('Successfully loaded', speciesData.length, 'species (including approved submissions)');
         return speciesData;
     } catch (error) {
         console.error('Error loading species data:', error);
@@ -118,6 +185,14 @@ async function loadSpeciesData() {
             console.error('Solusi: Jalankan website dengan local server, jangan buka file HTML langsung!');
             console.error('Gunakan: python3 -m http.server 8000');
             console.error('Lalu buka: http://localhost:8000');
+        }
+
+        // Even if JSON loading fails, try to load approved submissions
+        const approvedSubmissions = getApprovedSubmissions();
+        if (approvedSubmissions.length > 0) {
+            console.log('✅ Loaded', approvedSubmissions.length, 'approved submissions (JSON failed to load)');
+            speciesData = approvedSubmissions;
+            return speciesData;
         }
 
         return [];
@@ -223,11 +298,17 @@ function getTagIcon(tag) {
 function createSpeciesCard(species) {
     const statusInfo = formatConservationStatus(species.conservationStatus);
     const primaryTag = species.tags[0] || '';
-    
+
+    // Detect user submission and use base64 image data
+    const isUserSubmission = species.tags.includes('user-submission');
+    const imageSrc = isUserSubmission && species.images?.[0]?.file
+        ? species.images[0].file
+        : `assets/images/species/${species.id}.jpg`;
+
     return `
         <div class="species-card" data-species-id="${species.id}" onclick="openSpeciesModal('${species.id}')">
             <div class="species-image">
-                <img src="assets/images/species/${species.id}.jpg" 
+                <img src="${imageSrc}"
                      alt="${species.commonName}"
                      onerror="this.src='assets/images/placeholder.jpg'">
                 <div class="species-tags">

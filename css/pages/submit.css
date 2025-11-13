@@ -98,6 +98,82 @@
     margin-top: var(--spacing-xs);
 }
 
+/* Autocomplete Styles */
+.autocomplete-wrapper {
+    position: relative;
+}
+
+.autocomplete-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 0;
+    right: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    background: var(--color-surface);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+}
+
+.autocomplete-dropdown.active {
+    display: block;
+}
+
+.autocomplete-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.selected {
+    background: rgba(45, 122, 62, 0.1);
+}
+
+.autocomplete-item-name {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.autocomplete-item-scientific {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: var(--color-text-secondary);
+}
+
+.autocomplete-no-results {
+    padding: 1rem;
+    text-align: center;
+    color: var(--color-text-tertiary);
+    font-size: 0.875rem;
+}
+
+.autocomplete-dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.autocomplete-dropdown::-webkit-scrollbar-track {
+    background: var(--color-background);
+}
+
+.autocomplete-dropdown::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+}
+
+.autocomplete-dropdown::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-tertiary);
+}
+
 .image-upload-area {
     border: 2px dashed var(--color-border);
     border-radius: var(--radius-lg);

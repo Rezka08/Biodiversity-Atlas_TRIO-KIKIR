@@ -130,28 +130,143 @@ function clearImage() {
 }
 
 // ============================================
-// SPECIES SELECT
+// SPECIES AUTOCOMPLETE
 // ============================================
 
+let selectedSpeciesIndex = -1;
+let filteredSpecies = [];
+
 function initSpeciesSelect() {
-    const speciesSelect = document.getElementById('speciesSelect');
-    if (!speciesSelect) return;
+    const speciesInput = document.getElementById('speciesInput');
+    const speciesDropdown = document.getElementById('speciesDropdown');
+    const speciesIdInput = document.getElementById('speciesId');
+
+    if (!speciesInput) return;
 
     // Sort species by name
-    const sortedSpecies = [...speciesData].sort((a, b) => 
+    const sortedSpecies = [...speciesData].sort((a, b) =>
         a.commonName.localeCompare(b.commonName)
     );
 
-    // Populate options
-    speciesSelect.innerHTML = `
-        <option value="">-- Pilih spesies --</option>
-        ${sortedSpecies.map(species => `
-            <option value="${species.id}">
-                ${species.commonName} (${species.scientificName})
-            </option>
-        `).join('')}
-        <option value="unknown">Tidak Diketahui / Lainnya</option>
-    `;
+    // Input event - search as user types
+    speciesInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase().trim();
+
+        if (searchTerm.length === 0) {
+            speciesDropdown.classList.remove('active');
+            speciesIdInput.value = '';
+            return;
+        }
+
+        // Filter species
+        filteredSpecies = sortedSpecies.filter(species =>
+            species.commonName.toLowerCase().includes(searchTerm) ||
+            species.scientificName.toLowerCase().includes(searchTerm)
+        );
+
+        // Add "Unknown" option if search matches
+        if ('tidak diketahui'.includes(searchTerm) || 'unknown'.includes(searchTerm)) {
+            filteredSpecies.push({
+                id: 'unknown',
+                commonName: 'Tidak Diketahui / Lainnya',
+                scientificName: 'Unknown species'
+            });
+        }
+
+        displayAutocompleteResults(filteredSpecies);
+        selectedSpeciesIndex = -1;
+    });
+
+    // Keyboard navigation
+    speciesInput.addEventListener('keydown', (e) => {
+        if (!speciesDropdown.classList.contains('active')) return;
+
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            selectedSpeciesIndex = Math.min(selectedSpeciesIndex + 1, filteredSpecies.length - 1);
+            updateSelectedItem();
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            selectedSpeciesIndex = Math.max(selectedSpeciesIndex - 1, 0);
+            updateSelectedItem();
+        } else if (e.key === 'Enter' && selectedSpeciesIndex >= 0) {
+            e.preventDefault();
+            selectSpecies(filteredSpecies[selectedSpeciesIndex]);
+        } else if (e.key === 'Escape') {
+            speciesDropdown.classList.remove('active');
+        }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!speciesInput.contains(e.target) && !speciesDropdown.contains(e.target)) {
+            speciesDropdown.classList.remove('active');
+        }
+    });
+
+    // Focus event - show dropdown if has value
+    speciesInput.addEventListener('focus', (e) => {
+        if (e.target.value.trim().length > 0) {
+            speciesInput.dispatchEvent(new Event('input'));
+        }
+    });
+}
+
+function displayAutocompleteResults(results) {
+    const speciesDropdown = document.getElementById('speciesDropdown');
+
+    if (results.length === 0) {
+        speciesDropdown.innerHTML = `
+            <div class="autocomplete-no-results">
+                Spesies tidak ditemukan. Coba kata kunci lain.
+            </div>
+        `;
+        speciesDropdown.classList.add('active');
+        return;
+    }
+
+    // Limit to 10 results for performance
+    const displayResults = results.slice(0, 10);
+
+    speciesDropdown.innerHTML = displayResults.map((species, index) => `
+        <div class="autocomplete-item" data-index="${index}" data-species-id="${species.id}">
+            <div class="autocomplete-item-name">${species.commonName}</div>
+            <div class="autocomplete-item-scientific">${species.scientificName}</div>
+        </div>
+    `).join('');
+
+    // Add click handlers
+    speciesDropdown.querySelectorAll('.autocomplete-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const speciesId = item.getAttribute('data-species-id');
+            const species = results.find(s => s.id === speciesId);
+            selectSpecies(species);
+        });
+    });
+
+    speciesDropdown.classList.add('active');
+}
+
+function updateSelectedItem() {
+    const items = document.querySelectorAll('.autocomplete-item');
+    items.forEach((item, index) => {
+        if (index === selectedSpeciesIndex) {
+            item.classList.add('selected');
+            item.scrollIntoView({ block: 'nearest' });
+        } else {
+            item.classList.remove('selected');
+        }
+    });
+}
+
+function selectSpecies(species) {
+    const speciesInput = document.getElementById('speciesInput');
+    const speciesIdInput = document.getElementById('speciesId');
+    const speciesDropdown = document.getElementById('speciesDropdown');
+
+    speciesInput.value = species.commonName;
+    speciesIdInput.value = species.id;
+    speciesDropdown.classList.remove('active');
 }
 
 // ============================================
@@ -240,7 +355,7 @@ function updateLocationDisplay() {
     const statusEl = document.getElementById('locationStatus');
 
     if (selectedLocation) {
-        coordsEl.textContent = `Lat: ${selectedLocation.lat}, Lng: ${selectedLocation.lng}`;
+        coordsEl.textContent = `${selectedLocation.lat}, ${selectedLocation.lng}`;
         statusEl.innerHTML = `
             <span>✅</span>
             <span>Lokasi dipilih</span>
@@ -279,71 +394,103 @@ function initFormHandlers() {
 }
 
 function handleFormSubmit() {
-    // Validate required fields
-    if (!uploadedImage) {
-        alert('Harap upload foto pengamatan');
+    // Check if user is logged in
+    if (typeof isLoggedIn !== 'function' || !isLoggedIn()) {
+        alert('⚠️ Anda harus login terlebih dahulu untuk submit temuan!');
+        window.location.href = 'login.html';
         return;
     }
 
-    const speciesId = document.getElementById('speciesSelect').value;
-    if (!speciesId) {
-        alert('Harap pilih spesies');
+    // Validate required fields
+    if (!uploadedImage) {
+        alert('⚠️ Harap upload foto pengamatan');
+        return;
+    }
+
+    const speciesId = document.getElementById('speciesId').value;
+    const speciesInput = document.getElementById('speciesInput').value;
+    if (!speciesId || !speciesInput) {
+        alert('⚠️ Harap pilih spesies dari daftar');
         return;
     }
 
     if (!selectedLocation) {
-        alert('Harap pilih lokasi di peta');
+        alert('⚠️ Harap pilih lokasi di peta');
+        return;
+    }
+
+    // Get species name from input
+    const speciesName = speciesInput;
+
+    // Validate Quick Facts fields
+    const speciesSize = document.getElementById('speciesSize').value;
+    const speciesDiet = document.getElementById('speciesDiet').value;
+    const speciesLifespan = document.getElementById('speciesLifespan').value;
+    const speciesReproduction = document.getElementById('speciesReproduction').value;
+
+    if (!speciesSize || !speciesDiet || !speciesLifespan || !speciesReproduction) {
+        alert('⚠️ Harap lengkapi semua field Fakta Singkat Spesies');
         return;
     }
 
     // Get form data
     const formData = {
-        image: uploadedImage,
         speciesId: speciesId,
-        uploaderName: document.getElementById('uploaderName').value || 'Anonim',
+        speciesName: speciesName,
+        image: uploadedImage.dataUrl, // Store base64 image
         location: selectedLocation,
         locationName: document.getElementById('locationName').value || 'Lokasi tidak disebutkan',
-        notes: document.getElementById('observationNotes').value || '',
-        date: document.getElementById('observationDate').value,
-        status: 'pending',
-        submittedAt: new Date().toISOString()
+        observationNotes: document.getElementById('observationNotes').value || '',
+        observationDate: document.getElementById('observationDate').value,
+        quickFacts: {
+            size: speciesSize,
+            diet: speciesDiet,
+            lifespan: speciesLifespan,
+            reproduction: speciesReproduction
+        }
     };
 
     console.log('Form submitted:', formData);
 
-    // Simulate submission (in real app, this would be an API call)
+    // Submit using auth system
     submitFinding(formData);
 }
 
 function submitFinding(data) {
-    // Show loading (you could add a loading spinner here)
+    // Show loading
     const submitBtn = document.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<span>Mengirim...</span>';
     submitBtn.disabled = true;
 
-    // Simulate API call
+    // Save using auth system
     setTimeout(() => {
-        // Store in localStorage for demo purposes
-        const findings = JSON.parse(localStorage.getItem('findings') || '[]');
-        findings.push(data);
-        localStorage.setItem('findings', JSON.stringify(findings));
+        const result = saveSubmission(data);
 
-        // Show success message
-        const successMessage = document.getElementById('successMessage');
-        successMessage.classList.add('active');
+        if (result.success) {
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            const successText = successMessage.querySelector('.success-text');
+            successText.textContent = result.message + ' Admin akan mereview submission Anda dalam 1-3 hari kerja.';
+            successMessage.classList.add('active');
 
-        // Scroll to success message
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            resetForm();
-            successMessage.classList.remove('active');
+            // Reset form after 4 seconds
+            setTimeout(() => {
+                resetForm();
+                successMessage.classList.remove('active');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 4000);
+        } else {
+            // Show error
+            alert('❌ Error: ' + result.message);
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-        }, 3000);
-    }, 1500);
+        }
+    }, 1000);
 }
 
 function resetForm() {
@@ -352,6 +499,10 @@ function resetForm() {
 
     // Reset form fields
     document.getElementById('submitForm').reset();
+
+    // Clear autocomplete
+    document.getElementById('speciesId').value = '';
+    document.getElementById('speciesDropdown').classList.remove('active');
 
     // Reset location
     selectedLocation = null;

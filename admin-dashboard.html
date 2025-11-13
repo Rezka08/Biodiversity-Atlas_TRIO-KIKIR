@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Biodiversity Atlas</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#2d7a3e',
+                            600: '#1f5a2c',
+                            700: '#16451f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Poppins', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', system-ui, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <span class="text-2xl">🌿</span>
+                        <span class="text-xl font-bold text-gray-900">
+                            Biodiversity<span class="text-primary-500">Atlas</span>
+                        </span>
+                    </a>
+                    <span class="ml-4 px-3 py-1 text-xs font-semibold text-primary-700 bg-primary-100 rounded-full">
+                        Admin Dashboard
+                    </span>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <div class="text-sm text-gray-600">
+                        <span id="adminName" class="font-medium"></span>
+                    </div>
+                    <a href="index.html" class="text-gray-600 hover:text-gray-900 text-sm font-medium transition">
+                        🏠 Kembali ke Website
+                    </a>
+                    <button onclick="logout()" class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 transition shadow-sm">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Page Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Dashboard Admin</h1>
+            <p class="mt-2 text-gray-600">Kelola submission temuan dari user</p>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6 border border-gray-100">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Total Submission</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-2" id="totalSubmissions">0</p>
+                    </div>
+                    <div class="p-3 bg-blue-100 rounded-lg">
+                        <span class="text-2xl">📊</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6 border border-gray-100">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Pending</p>
+                        <p class="text-3xl font-bold text-yellow-600 mt-2" id="pendingSubmissions">0</p>
+                    </div>
+                    <div class="p-3 bg-yellow-100 rounded-lg">
+                        <span class="text-2xl">⏳</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6 border border-gray-100">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Approved</p>
+                        <p class="text-3xl font-bold text-green-600 mt-2" id="approvedSubmissions">0</p>
+                    </div>
+                    <div class="p-3 bg-green-100 rounded-lg">
+                        <span class="text-2xl">✅</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6 border border-gray-100">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Rejected</p>
+                        <p class="text-3xl font-bold text-red-600 mt-2" id="rejectedSubmissions">0</p>
+                    </div>
+                    <div class="p-3 bg-red-100 rounded-lg">
+                        <span class="text-2xl">❌</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="mb-6">
+            <div class="border-b border-gray-200">
+                <nav class="flex space-x-8" role="tablist">
+                    <button onclick="filterSubmissions('all')" class="filter-tab border-primary-500 text-primary-600 py-4 px-1 border-b-2 font-medium text-sm transition">
+                        Semua <span class="ml-2 px-2 py-0.5 bg-gray-100 rounded-full text-xs" id="countAll">0</span>
+                    </button>
+                    <button onclick="filterSubmissions('pending')" class="filter-tab border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm transition">
+                        Pending <span class="ml-2 px-2 py-0.5 bg-yellow-100 rounded-full text-xs" id="countPending">0</span>
+                    </button>
+                    <button onclick="filterSubmissions('approved')" class="filter-tab border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm transition">
+                        Approved <span class="ml-2 px-2 py-0.5 bg-green-100 rounded-full text-xs" id="countApproved">0</span>
+                    </button>
+                    <button onclick="filterSubmissions('rejected')" class="filter-tab border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm transition">
+                        Rejected <span class="ml-2 px-2 py-0.5 bg-red-100 rounded-full text-xs" id="countRejected">0</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Submissions List -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h2 class="text-lg font-semibold text-gray-900">Daftar Submission</h2>
+            </div>
+
+            <div id="submissionsList" class="divide-y divide-gray-200">
+                <!-- Submissions will be loaded here -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="px-6 py-12 text-center hidden">
+                <span class="text-6xl">📭</span>
+                <p class="mt-4 text-lg font-medium text-gray-900">Tidak ada submission</p>
+                <p class="mt-2 text-gray-600">Belum ada submission yang perlu direview</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div id="detailModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col">
+            <!-- Modal Header - Fixed -->
+            <div class="px-6 py-4 border-b border-gray-200 flex items-center justify-between bg-white rounded-t-xl flex-shrink-0">
+                <h3 class="text-xl font-bold text-gray-900">Detail Submission</h3>
+                <button onclick="closeDetailModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal Body - Scrollable -->
+            <div class="px-6 py-6 overflow-y-auto flex-1" id="detailContent">
+                <!-- Content will be inserted here -->
+            </div>
+
+            <!-- Modal Footer - Fixed -->
+            <div class="px-6 py-4 border-t border-gray-200 flex justify-end space-x-3 bg-white rounded-b-xl flex-shrink-0" id="detailActions">
+                <!-- Actions will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Rejection Modal -->
+    <div id="rejectionModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-900">Alasan Penolakan</h3>
+            </div>
+            <div class="px-6 py-4">
+                <textarea
+                    id="rejectionReason"
+                    rows="4"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none"
+                    placeholder="Masukkan alasan penolakan..."
+                ></textarea>
+            </div>
+            <div class="px-6 py-4 border-t border-gray-200 flex justify-end space-x-3">
+                <button onclick="closeRejectionModal()" class="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition font-medium">
+                    Batal
+                </button>
+                <button onclick="confirmRejection()" class="px-4 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition font-medium shadow-sm">
+                    Tolak Submission
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script>
+        // Check admin access
+        if (!requireAdmin()) {
+            // Will redirect if not admin
+        }
+
+        // Display admin name
+        const admin = getCurrentUser();
+        if (admin) {
+            document.getElementById('adminName').textContent = admin.name;
+        }
+
+        let currentFilter = 'all';
+        let currentSubmissionId = null;
+
+        // Load and display submissions
+        function loadSubmissions() {
+            const submissions = getAllSubmissions();
+            const stats = getSubmissionStats();
+
+            // Update stats
+            document.getElementById('totalSubmissions').textContent = stats.total;
+            document.getElementById('pendingSubmissions').textContent = stats.pending;
+            document.getElementById('approvedSubmissions').textContent = stats.approved;
+            document.getElementById('rejectedSubmissions').textContent = stats.rejected;
+
+            // Update counts
+            document.getElementById('countAll').textContent = stats.total;
+            document.getElementById('countPending').textContent = stats.pending;
+            document.getElementById('countApproved').textContent = stats.approved;
+            document.getElementById('countRejected').textContent = stats.rejected;
+
+            // Filter submissions based on current filter
+            let filteredSubmissions = submissions;
+            if (currentFilter !== 'all') {
+                filteredSubmissions = submissions.filter(s => s.status === currentFilter);
+            }
+
+            // Sort by date (newest first)
+            filteredSubmissions.sort((a, b) => new Date(b.submittedAt) - new Date(a.submittedAt));
+
+            // Display submissions
+            displaySubmissions(filteredSubmissions);
+        }
+
+        function displaySubmissions(submissions) {
+            const container = document.getElementById('submissionsList');
+            const emptyState = document.getElementById('emptyState');
+
+            if (submissions.length === 0) {
+                container.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            container.innerHTML = submissions.map(submission => {
+                const statusBadge = getStatusBadge(submission.status);
+                const actionButtons = getActionButtons(submission);
+
+                return `
+                    <div class="px-6 py-6 hover:bg-gray-50 transition">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <h3 class="text-lg font-semibold text-gray-900">
+                                        ${submission.speciesName || 'Spesies Tidak Diketahui'}
+                                    </h3>
+                                    ${statusBadge}
+                                    <button
+                                        onclick="showDetailModal('${submission.id}')"
+                                        class="ml-auto px-3 py-1.5 text-sm font-medium text-primary-600 bg-primary-50 rounded-lg hover:bg-primary-100 transition"
+                                    >
+                                        👁️ Lihat Detail
+                                    </button>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                    <div>
+                                        <p class="text-gray-600 mb-1">Disubmit oleh:</p>
+                                        <p class="font-medium text-gray-900">${submission.userName}</p>
+                                        <p class="text-gray-500">${submission.userEmail}</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-600 mb-1">Tanggal Submit:</p>
+                                        <p class="font-medium text-gray-900">${formatDate(submission.submittedAt)}</p>
+                                    </div>
+                                    ${submission.locationName ? `
+                                    <div>
+                                        <p class="text-gray-600 mb-1">Lokasi:</p>
+                                        <p class="font-medium text-gray-900">${submission.locationName}</p>
+                                    </div>
+                                    ` : ''}
+                                    ${submission.observationDate ? `
+                                    <div>
+                                        <p class="text-gray-600 mb-1">Tanggal Observasi:</p>
+                                        <p class="font-medium text-gray-900">${formatDate(submission.observationDate)}</p>
+                                    </div>
+                                    ` : ''}
+                                    ${submission.observationNotes ? `
+                                    <div class="col-span-2">
+                                        <p class="text-gray-600 mb-1">Catatan:</p>
+                                        <p class="text-gray-900">${submission.observationNotes}</p>
+                                    </div>
+                                    ` : ''}
+                                </div>
+
+                                ${submission.status === 'rejected' && submission.rejectionReason ? `
+                                <div class="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                                    <p class="text-sm font-semibold text-red-800 mb-1">Alasan Penolakan:</p>
+                                    <p class="text-sm text-red-700">${submission.rejectionReason}</p>
+                                </div>
+                                ` : ''}
+
+                                ${submission.reviewedAt ? `
+                                <div class="mt-3 text-xs text-gray-500">
+                                    Direview oleh <span class="font-medium">${submission.reviewedBy}</span> pada ${formatDate(submission.reviewedAt)}
+                                </div>
+                                ` : ''}
+                            </div>
+
+                            ${actionButtons}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function getStatusBadge(status) {
+            const badges = {
+                pending: '<span class="inline-flex items-center px-3 py-1 text-xs font-semibold text-yellow-700 bg-yellow-100 rounded-full"><span class="mr-1">⏳</span> Pending</span>',
+                approved: '<span class="inline-flex items-center px-3 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded-full"><span class="mr-1">✅</span> Approved</span>',
+                rejected: '<span class="inline-flex items-center px-3 py-1 text-xs font-semibold text-red-700 bg-red-100 rounded-full"><span class="mr-1">❌</span> Rejected</span>'
+            };
+            return badges[status] || '';
+        }
+
+        function getActionButtons(submission) {
+            if (submission.status === 'pending') {
+                return `
+                    <div class="ml-6 flex flex-col space-y-2">
+                        <button
+                            onclick="approveSubmission('${submission.id}')"
+                            class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 transition flex items-center space-x-2 shadow-sm"
+                        >
+                            <span>✅</span>
+                            <span>Approve</span>
+                        </button>
+                        <button
+                            onclick="openRejectionModal('${submission.id}')"
+                            class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 transition flex items-center space-x-2 shadow-sm"
+                        >
+                            <span>❌</span>
+                            <span>Reject</span>
+                        </button>
+                    </div>
+                `;
+            } else {
+                return `
+                    <div class="ml-6">
+                        <button
+                            onclick="deleteSubmissionConfirm('${submission.id}')"
+                            class="px-4 py-2 text-sm font-medium text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition shadow-sm"
+                        >
+                            🗑️ Hapus
+                        </button>
+                    </div>
+                `;
+            }
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('id-ID', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        function filterSubmissions(filter) {
+            currentFilter = filter;
+
+            // Update active tab
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.classList.remove('border-primary-500', 'text-primary-600');
+                tab.classList.add('border-transparent', 'text-gray-500');
+            });
+
+            event.target.classList.remove('border-transparent', 'text-gray-500');
+            event.target.classList.add('border-primary-500', 'text-primary-600');
+
+            loadSubmissions();
+        }
+
+        function approveSubmission(id) {
+            if (confirm('Approve submission ini?')) {
+                const result = updateSubmissionStatus(id, 'approved');
+                if (result.success) {
+                    alert('✅ ' + result.message);
+                    loadSubmissions();
+                } else {
+                    alert('❌ Error: ' + result.message);
+                }
+            }
+        }
+
+        function openRejectionModal(id) {
+            currentSubmissionId = id;
+            document.getElementById('rejectionModal').classList.remove('hidden');
+            document.getElementById('rejectionModal').classList.add('flex');
+            document.getElementById('rejectionReason').value = '';
+            document.getElementById('rejectionReason').focus();
+        }
+
+        function closeRejectionModal() {
+            document.getElementById('rejectionModal').classList.add('hidden');
+            document.getElementById('rejectionModal').classList.remove('flex');
+            currentSubmissionId = null;
+        }
+
+        function confirmRejection() {
+            const reason = document.getElementById('rejectionReason').value.trim();
+
+            if (!reason) {
+                alert('⚠️ Mohon masukkan alasan penolakan!');
+                return;
+            }
+
+            const result = updateSubmissionStatus(currentSubmissionId, 'rejected', reason);
+            if (result.success) {
+                alert('✅ ' + result.message);
+                loadSubmissions();
+                closeRejectionModal();
+            } else {
+                alert('❌ Error: ' + result.message);
+            }
+        }
+
+        function deleteSubmissionConfirm(id) {
+            if (confirm('⚠️ Hapus submission ini? Tindakan ini tidak dapat dibatalkan!')) {
+                const result = window.deleteSubmission(id);
+                if (result.success) {
+                    alert('✅ ' + result.message);
+                    loadSubmissions();
+                } else {
+                    alert('❌ Error: ' + result.message);
+                }
+            }
+        }
+
+        // Show detail modal
+        function showDetailModal(id) {
+            const submissions = getAllSubmissions();
+            const submission = submissions.find(s => s.id === id);
+
+            if (!submission) {
+                alert('Submission tidak ditemukan!');
+                return;
+            }
+
+            const detailContent = document.getElementById('detailContent');
+            const detailActions = document.getElementById('detailActions');
+            const statusBadge = getStatusBadge(submission.status);
+
+            // Build detail content
+            detailContent.innerHTML = `
+                <div class="space-y-6">
+                    <!-- Status Badge -->
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-2xl font-bold text-gray-900">${submission.speciesName || 'Spesies Tidak Diketahui'}</h2>
+                        ${statusBadge}
+                    </div>
+
+                    <!-- Image -->
+                    ${submission.image ? `
+                    <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                        <img src="${submission.image}" alt="${submission.speciesName}" class="w-full h-auto max-h-96 object-contain bg-gray-50">
+                    </div>
+                    ` : `
+                    <div class="rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 p-12 text-center">
+                        <p class="text-gray-500">📷 Tidak ada foto</p>
+                    </div>
+                    `}
+
+                    <!-- Details Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- User Info -->
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                <span class="mr-2">👤</span> Informasi Pengamat
+                            </h4>
+                            <div class="space-y-2 text-sm">
+                                <div>
+                                    <p class="text-gray-600">Nama:</p>
+                                    <p class="font-medium text-gray-900">${submission.userName}</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600">Email:</p>
+                                    <p class="font-medium text-gray-900">${submission.userEmail}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date Info -->
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                <span class="mr-2">📅</span> Informasi Waktu
+                            </h4>
+                            <div class="space-y-2 text-sm">
+                                <div>
+                                    <p class="text-gray-600">Tanggal Observasi:</p>
+                                    <p class="font-medium text-gray-900">${submission.observationDate ? formatDate(submission.observationDate) : 'Tidak disebutkan'}</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600">Tanggal Submit:</p>
+                                    <p class="font-medium text-gray-900">${formatDate(submission.submittedAt)}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location Info -->
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                <span class="mr-2">📍</span> Informasi Lokasi
+                            </h4>
+                            <div class="space-y-2 text-sm">
+                                <div>
+                                    <p class="text-gray-600">Nama Lokasi:</p>
+                                    <p class="font-medium text-gray-900">${submission.locationName || 'Tidak disebutkan'}</p>
+                                </div>
+                                ${submission.location ? `
+                                <div>
+                                    <p class="text-gray-600">Koordinat:</p>
+                                    <p class="font-mono text-xs text-gray-900">${submission.location.lat}, ${submission.location.lng}</p>
+                                </div>
+                                ` : ''}
+                            </div>
+                        </div>
+
+                        <!-- Species Info -->
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                <span class="mr-2">🦎</span> Informasi Spesies
+                            </h4>
+                            <div class="space-y-2 text-sm">
+                                <div>
+                                    <p class="text-gray-600">Nama Spesies:</p>
+                                    <p class="font-medium text-gray-900">${submission.speciesName || 'Tidak Diketahui'}</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600">ID Spesies:</p>
+                                    <p class="font-mono text-xs text-gray-900">${submission.speciesId || '-'}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Observation Notes -->
+                    ${submission.observationNotes ? `
+                    <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                        <h4 class="font-semibold text-gray-900 mb-2 flex items-center">
+                            <span class="mr-2">📝</span> Catatan Pengamatan
+                        </h4>
+                        <p class="text-gray-700 text-sm leading-relaxed">${submission.observationNotes}</p>
+                    </div>
+                    ` : ''}
+
+                    <!-- Rejection Reason -->
+                    ${submission.status === 'rejected' && submission.rejectionReason ? `
+                    <div class="bg-red-50 rounded-lg p-4 border border-red-200">
+                        <h4 class="font-semibold text-red-900 mb-2 flex items-center">
+                            <span class="mr-2">❌</span> Alasan Penolakan
+                        </h4>
+                        <p class="text-red-700 text-sm leading-relaxed">${submission.rejectionReason}</p>
+                    </div>
+                    ` : ''}
+
+                    <!-- Review Info -->
+                    ${submission.reviewedAt ? `
+                    <div class="bg-gray-100 rounded-lg p-4">
+                        <p class="text-sm text-gray-600">
+                            Direview oleh <span class="font-semibold text-gray-900">${submission.reviewedBy}</span> pada ${formatDate(submission.reviewedAt)}
+                        </p>
+                    </div>
+                    ` : ''}
+                </div>
+            `;
+
+            // Build action buttons
+            if (submission.status === 'pending') {
+                detailActions.innerHTML = `
+                    <button onclick="closeDetailModal()" class="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition font-medium">
+                        Tutup
+                    </button>
+                    <button
+                        onclick="approveSubmissionFromDetail('${submission.id}')"
+                        class="px-6 py-2 text-white bg-green-600 rounded-lg hover:bg-green-700 transition font-medium shadow-sm flex items-center space-x-2"
+                    >
+                        <span>✅</span>
+                        <span>Approve</span>
+                    </button>
+                    <button
+                        onclick="openRejectionModalFromDetail('${submission.id}')"
+                        class="px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition font-medium shadow-sm flex items-center space-x-2"
+                    >
+                        <span>❌</span>
+                        <span>Reject</span>
+                    </button>
+                `;
+            } else {
+                detailActions.innerHTML = `
+                    <button onclick="closeDetailModal()" class="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition font-medium">
+                        Tutup
+                    </button>
+                    <button
+                        onclick="deleteSubmissionFromDetail('${submission.id}')"
+                        class="px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition font-medium shadow-sm"
+                    >
+                        🗑️ Hapus Submission
+                    </button>
+                `;
+            }
+
+            // Show modal
+            document.getElementById('detailModal').classList.remove('hidden');
+            document.getElementById('detailModal').classList.add('flex');
+        }
+
+        function closeDetailModal() {
+            document.getElementById('detailModal').classList.add('hidden');
+            document.getElementById('detailModal').classList.remove('flex');
+        }
+
+        function approveSubmissionFromDetail(id) {
+            if (confirm('Approve submission ini?')) {
+                const result = updateSubmissionStatus(id, 'approved');
+                if (result.success) {
+                    alert('✅ ' + result.message);
+                    closeDetailModal();
+                    loadSubmissions();
+                } else {
+                    alert('❌ Error: ' + result.message);
+                }
+            }
+        }
+
+        function openRejectionModalFromDetail(id) {
+            closeDetailModal();
+            openRejectionModal(id);
+        }
+
+        function deleteSubmissionFromDetail(id) {
+            if (confirm('⚠️ Hapus submission ini? Tindakan ini tidak dapat dibatalkan!')) {
+                const result = window.deleteSubmission(id);
+                if (result.success) {
+                    alert('✅ ' + result.message);
+                    closeDetailModal();
+                    loadSubmissions();
+                } else {
+                    alert('❌ Error: ' + result.message);
+                }
+            }
+        }
+
+        // Close detail modal when clicking outside
+        document.getElementById('detailModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDetailModal();
+            }
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('rejectionModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeRejectionModal();
+            }
+        });
+
+        // Load submissions on page load
+        loadSubmissions();
+    </script>
+</body>
+</html>
