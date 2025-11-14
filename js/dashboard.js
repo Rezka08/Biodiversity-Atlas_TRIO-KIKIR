@@ -443,31 +443,31 @@ function renderActivityTimeline() {
             type: 'Temuan Baru',
             description: 'Pengguna melaporkan Harimau Sumatera di Taman Nasional Kerinci',
             time: '2 jam yang lalu',
-            icon: '📸'
+            icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278E29" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3l2-3h6l2 3h3a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>'
         },
         {
             type: 'Kuis Selesai',
             description: '15 pengguna menyelesaikan kuis keanekaragaman hayati',
             time: '5 jam yang lalu',
-            icon: '🎓'
+            icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278E29" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M12 2l9 4-9 4-9-4 9-4z"/><path d="M12 10v10"/></svg>'
         },
         {
             type: 'Spesies Ditambahkan',
             description: 'Data Kupu-kupu Sayap Burung diperbarui dengan lokasi baru',
             time: '1 hari yang lalu',
-            icon: '🦋'
+            icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278E29" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M2 12c4-4 8 0 10 0s4-4 8-4c-2 4-6 4-10 4S6 16 2 12z"/><path d="M12 12v4"/></svg>'
         },
         {
             type: 'Milestone',
             description: 'Platform mencapai 1000 temuan yang diverifikasi!',
             time: '2 hari yang lalu',
-            icon: '🎉'
+            icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278E29" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M12 2l2.9 6.26L21 9.27l-5 3.64L17.8 21 12 17.77 6.2 21 8 12.91 3 9.27l6.1-1.01L12 2z"/></svg>'
         },
         {
             type: 'Temuan Baru',
             description: 'Jalak Bali terlihat di Taman Nasional Bali Barat',
             time: '3 hari yang lalu',
-            icon: '📸'
+            icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278E29" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3l2-3h6l2 3h3a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>'
         }
     ];
     

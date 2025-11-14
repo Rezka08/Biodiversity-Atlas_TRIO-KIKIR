@@ -30,7 +30,22 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-card-header">
-                        <div class="stat-icon">🦎</div>
+                        <div class="stat-icon" aria-hidden="true">
+                            <!-- Tiger icon (Tailwind-friendly sizing); primary color #278E29 -->
+                            <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+                                <!-- face -->
+                                <circle cx="32" cy="32" r="20" fill="#278E29"/>
+                                <!-- subtle darker stripe accent -->
+                                <path d="M20 22c4-6 20-6 24 0" fill="#1F6F23"/>
+                                <!-- white facial details: eyes & muzzle -->
+                                <circle cx="24" cy="28" r="2" fill="#ffffff"/>
+                                <circle cx="40" cy="28" r="2" fill="#ffffff"/>
+                                <ellipse cx="32" cy="36" rx="5" ry="3" fill="#ffffff"/>
+                                <!-- simple stripe lines -->
+                                <path d="M18 26c3-3 10-3 14 0" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+                                <path d="M46 26c-3-3-10-3-14 0" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
                         <div class="stat-trend up">
                             <span>↑</span>
                             <span>+5</span>
@@ -42,7 +57,16 @@
 
                 <div class="stat-card">
                     <div class="stat-card-header">
-                        <div class="stat-icon">⚠️</div>
+                        <div class="stat-icon" aria-hidden="true">
+                            <!-- Telwin icon (use class if telwin CSS is loaded); colored with #278E29 -->
+                            <i class="telwin telwin-warning" style="color: #278E29; font-size: 1.5rem;" aria-hidden="true"></i>
+
+                            <!-- Fallback inline SVG (triangle warning) using the same palette -->
+                            <svg class="telwin-fallback" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="display:inline-block; vertical-align:middle;">
+                                <path d="M1 21h22L12 2 1 21z" fill="#278E29"/>
+                                <path d="M12 16a1.25 1.25 0 100 2.5A1.25 1.25 0 0012 16zm0-7a1 1 0 01.993.883L13 10v3a1 1 0 01-1.993.117L11 13v-3a1 1 0 011-1z" fill="#ffffff"/>
+                            </svg>
+                        </div>
                         <div class="stat-trend down">
                             <span>↓</span>
                             <span>18%</span>
@@ -54,7 +78,15 @@
 
                 <div class="stat-card">
                     <div class="stat-card-header">
-                        <div class="stat-icon">📍</div>
+                        <div class="stat-icon" aria-hidden="true">
+                            <i class="telwin telwin-location" style="color: #278E29; font-size: 1.5rem;" aria-hidden="true"></i>
+
+                            <!-- Fallback inline SVG (map pin) using palette #278E29 -->
+                            <svg class="telwin-fallback" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="display:inline-block; vertical-align:middle;">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#278E29"/>
+                                <path d="M12 8a2.5 2.5 0 100 5 2.5 2.5 0 000-5z" fill="#ffffff"/>
+                            </svg>
+                        </div>
                         <div class="stat-trend up">
                             <span>↑</span>
                             <span>+12</span>
@@ -66,7 +98,22 @@
 
                 <div class="stat-card">
                     <div class="stat-card-header">
-                        <div class="stat-icon">📸</div>
+                        <div class="stat-icon" aria-hidden="true">
+                            <!-- Telwin camera icon (preferred) styled with palette #278E29 -->
+                            <i class="telwin telwin-camera" style="color: #278E29; font-size: 1.5rem;" aria-hidden="true"></i>
+
+                            <!-- Fallback inline SVG camera using the same palette -->
+                            <svg class="telwin-fallback" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="display:inline-block; vertical-align:middle;">
+                                <!-- camera body -->
+                                <rect x="2" y="6" width="20" height="12" rx="2" fill="#278E29"/>
+                                <!-- top flash/bumper -->
+                                <rect x="6" y="3" width="4" height="4" rx="1" fill="#278E29"/>
+                                <!-- lens -->
+                                <circle cx="12" cy="12" r="4" fill="#ffffff"/>
+                                <!-- small inner ring to hint aperture using slightly darker green -->
+                                <circle cx="12" cy="12" r="2.2" fill="#1F6F23"/>
+                            </svg>
+                        </div>
                         <div class="stat-trend up">
                             <span>↑</span>
                             <span>+23</span>
@@ -149,8 +196,22 @@
             <div class="activity-log">
                 <div class="activity-header">
                     <h3 class="activity-title">Aktivitas Terkini</h3>
-                    <button class="btn btn-secondary btn-small" onclick="window.location.reload()">
-                        🔄 Refresh
+                    <button class="btn btn-secondary btn-small" onclick="window.location.reload()" aria-label="Refresh" title="Refresh">
+                        <!-- Improved refresh icon: smooth circular arrow with subtle gradient using palette #278E29 -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="display:inline-block; vertical-align:middle;">
+                            <defs>
+                                <linearGradient id="gradRefresh" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0" stop-color="#3FB055"/>
+                                    <stop offset="1" stop-color="#278E29"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Circular stroke -->
+                            <path d="M21.65 13.35A8 8 0 1 1 11 4" fill="none" stroke="url(#gradRefresh)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Arrowhead -->
+                            <path d="M21 3v6h-6" fill="none" stroke="url(#gradRefresh)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                        <span style="margin-left: 0.5rem;">Refresh</span>
                     </button>
                 </div>
                 <div class="activity-timeline" id="activityTimeline">

@@ -36,7 +36,12 @@
                 <aside class="catalog-sidebar" id="catalogSidebar">
                     <div class="sidebar-header">
                         <h3 class="sidebar-title">
-                            <span class="sidebar-icon">🔍</span>
+                            <span class="sidebar-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" role="img" aria-label="Search icon">
+                                    <circle cx="11" cy="11" r="6" stroke="#278E29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 21l-4.35-4.35" stroke="#278E29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
                             Filter & Pencarian
                         </h3>
                         <button class="filter-reset" id="resetFilters">Reset</button>
@@ -46,7 +51,12 @@
                     <div class="filter-group">
                         <label class="filter-label">Pencarian</label>
                         <div class="search-input-wrapper">
-                            <span class="search-icon">🔎</span>
+                            <span class="search-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" role="img" aria-label="Search icon small">
+                                    <circle cx="11" cy="11" r="6" stroke="#278E29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 21l-4.35-4.35" stroke="#278E29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
                             <input type="text" class="search-input" id="catalogSearch" placeholder="Cari nama spesies...">
                         </div>
                     </div>
@@ -111,40 +121,90 @@
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="habitat" value="rainforest">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🌳 Hutan Hujan</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hutan Hujan">
+                                            <path d="M12 2c-1.7 0-3 1.3-3 3 0 .3.1.6.2.9C7.9 6.4 6 8.6 6 11c0 2.8 2.2 5 5 5 .8 0 1.6-.2 2.3-.6l.7.7c.4.4 1 .6 1.6.6 1.3 0 2.4-1.1 2.4-2.4 0-.6-.2-1.2-.6-1.6l-1.1-1.1c.5-.7.8-1.5.8-2.4 0-2.2-1.8-4-4-4-.2 0-.4 0-.6.1C14.6 3.2 13.4 2 12 2zM7 20v2h10v-2H7z"/>
+                                        </svg>
+                                    </span>
+                                    Hutan Hujan
+                                </span>
+                            </label>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="habitat" value="coastal">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🏖️ Pesisir</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pesisir">
+                                            <path d="M2 17c1.5-1 3.5-1.5 6-1.5s4.5.5 6 1.5 4.5 1.5 6 1.5v3H2v-3zM3 13c2-1 4-1.5 6-1.5s4 .5 6 1.5 4 1.5 6 1.5V8c-4 0-6-5-12-5S3 8 3 8v5z"/>
+                                        </svg>
+                                    </span>
+                                    Pesisir
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="habitat" value="mangrove">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🌴 Mangrove</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mangrove">
+                                            <path d="M12 2c-1.7 0-3 1.3-3 3 0 .4.1.7.3 1C7.6 6.6 6 8.7 6 11c0 3 2.5 5.5 5.5 5.5.7 0 1.4-.1 2-.4V22h1v-5.4c.6.2 1.3.4 2 .4 3 0 5.5-2.5 5.5-5.5 0-2.3-1.6-4.4-3.3-5.9.2-.3.3-.7.3-1 0-1.7-1.3-3-3-3-1.1 0-2 .6-2.6 1.5C14.3 2.5 13.2 2 12 2z"/>
+                                        </svg>
+                                    </span>
+                                    Mangrove
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="habitat" value="mountain-forest">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">⛰️ Hutan Pegunungan</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hutan Pegunungan">
+                                            <path d="M2 20h20L12 6 2 20zm6-2l4-6 4 6H8z"/>
+                                        </svg>
+                                    </span>
+                                    Hutan Pegunungan
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="habitat" value="savanna">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🌾 Savana</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Savana">
+                                            <path d="M4 21h16v-2s-3-3-8-3-8 3-8 3v2zM12 2c1.7 0 3 1.3 3 3 0 .4-.1.8-.3 1.1C15.9 7 18 9.4 18 12c0 2.8-2.2 5-5 5s-5-2.2-5-5c0-2.6 2.1-5 3.3-5.9-.2-.3-.3-.7-.3-1.1 0-1.7 1.3-3 3-3z"/>
+                                        </svg>
+                                    </span>
+                                    Savana
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="habitat" value="freshwater">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">💧 Air Tawar</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Air Tawar">
+                                            <path d="M12 2s-6 6-6 10a6 6 0 0012 0c0-4-6-10-6-10zM12 20a4 4 0 01-4-4c0-2.2 2.7-5.6 4-7.2 1.3 1.6 4 5 4 7.2a4 4 0 01-4 4z"/>
+                                        </svg>
+                                    </span>
+                                    Air Tawar
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="habitat" value="peat-swamp">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🌿 Rawa Gambut</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rawa Gambut">
+                                            <path d="M12 3C8 7 4 8.5 4 12c0 3.9 3.6 7 8 7s8-3.1 8-7c0-3.5-4-5-8-9zM7.5 13.5C7.9 12.9 9 12 12 12s4.1.9 4.5 1.5c-.8.6-2.4 1-4.5 1s-3.7-.4-4.5-1z"/>
+                                        </svg>
+                                    </span>
+                                    Rawa Gambut
+                                </span>
                             </label>
                         </div>
-                    </div>
+                    </div></svg>
 
                     <!-- Tags/Categories -->
                     <div class="filter-group">
@@ -156,55 +216,125 @@
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="tags" value="endemic">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">⭐ Endemik</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Endemik">
+                                            <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.177L12 18.897l-7.336 3.877 1.402-8.177L.132 9.21l8.2-1.192L12 .587z"/>
+                                        </svg>
+                                    </span>
+                                    Endemik
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="tags" value="mammal">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🦁 Mamalia</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mamalia">
+                                            <path d="M12 13c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm4.5-8c.83 0 1.5-.67 1.5-1.5S17.33 2 16.5 2 15 2.67 15 3.5 15.67 5 16.5 5zM7.5 2C6.67 2 6 2.67 6 3.5S6.67 5 7.5 5 9 4.33 9 3.5 8.33 2 7.5 2zM4 7c-.83 0-1.5.67-1.5 1.5S3.17 10 4 10s1.5-.67 1.5-1.5S4.83 7 4 7zM20 18c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2 0-2 4-4 8-4s8 2 8 4z"/>
+                                        </svg>
+                                    </span>
+                                    Mamalia
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="tags" value="bird">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🦅 Burung</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Burung">
+                                            <path d="M21 8c0-1.1-.9-2-2-2-1 0-1.8.69-1.97 1.63L16 8H9c-1.1 0-2 .9-2 2v3c0 .55.45 1 1 1h9l2.5 2.5c.2.2.5.3.77.3.28 0 .55-.11.75-.31.39-.39.39-1.02 0-1.41L18.5 14H18v-2l3-3z"/>
+                                        </svg>
+                                    </span>
+                                    Burung
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="tags" value="reptile">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🦎 Reptil</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reptil">
+                                            <path d="M4 14c0-3 3-6 8-6s8 3 8 6v4h-2v-2H6v2H4v-4zM9 8c0-1.66 1.79-3 3-3s3 1.34 3 3-1.79 3-3 3-3-1.34-3-3z"/>
+                                        </svg>
+                                    </span>
+                                    Reptil
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="tags" value="amphibian">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🐸 Amfibi</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Amfibi">
+                                            <path d="M12 2C8.13 2 5 5.13 5 9c0 2.21 1.79 4 4 4h.5c.28 0 .5.22.5.5V16c0 .83.67 1.5 1.5 1.5S13 16.83 13 16v-2.5c0-.28.22-.5.5-.5H14c2.21 0 4-1.79 4-4 0-3.87-3.13-7-7-7z"/>
+                                        </svg>
+                                    </span>
+                                    Amfibi
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="tags" value="fish">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🐟 Ikan</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ikan">
+                                            <path d="M21 12c0-1.1-.9-2-2-2-.48 0-.91.18-1.25.5L14 12l3.75 1.5c.34.32.77.5 1.25.5 1.1 0 2-.9 2-2zM2 12c0 3.31 4.03 6 9 6s9-2.69 9-6-4.03-6-9-6S2 8.69 2 12z"/>
+                                        </svg>
+                                    </span>
+                                    Ikan
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="tags" value="insect">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🦋 Serangga</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Serangga">
+                                            <path d="M12 5c1.66 0 3-1.34 3-3S13.66-1 12-1 9 0.34 9 2s1.34 3 3 3zm5 4c.55 0 1-.45 1-1s-.45-1-1-1h-2.2C14.9 7.7 13.5 8 12 8s-2.9-.3-2.8.0H7c-.55 0-1 .45-1 1s.45 1 1 1h2.2C9.1 11.3 10.5 11 12 11s2.9.3 2.8 0H17zM6 18c0-2 4-4 6-4s6 2 6 4v2H6v-2z"/>
+                                        </svg>
+                                    </span>
+                                    Serangga
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="tags" value="plant">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🌺 Tumbuhan</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tumbuhan">
+                                            <path d="M12 2C9.79 2 8 3.79 8 6c0 1.54.87 2.87 2.12 3.5C9.08 10.06 7.5 12 7.5 14h9c0-2-1.58-3.94-2.62-4.5C15.13 8.87 16 7.54 16 6c0-2.21-1.79-4-4-4zM6 20v2h12v-2c0-2.2-3.58-4-6-4s-6 1.8-6 4z"/>
+                                        </svg>
+                                    </span>
+                                    Tumbuhan
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="tags" value="nocturnal">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">🌙 Nokturnal</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nokturnal">
+                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                                        </svg>
+                                    </span>
+                                    Nokturnal
+                                </span>
                             </label>
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="tags" value="migratory">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">✈️ Migrasi</span>
+                                <span class="checkbox-label">
+                                    <span class="icon-telwin" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Migrasi">
+                                            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                                        </svg>
+                                    </span>
+                                    Migrasi
+                                </span>
                             </label>
                         </div>
-                    </div>
+                    </div></span></label></svg></span></svg>
 
                     <!-- Active Filters Summary -->
                     <div class="active-filters" id="activeFilters">
@@ -260,7 +390,7 @@
                     <div class="empty-state" id="emptyState" style="display: none;">
                         <div class="empty-icon">🔍</div>
                         <h3 class="empty-title">Tidak ada spesies ditemukan</h3>
-                        <p class="empty-description">Coba ubah filter atau kata kunci pencarian Anda</p>
+                       </svg> <p class="empty-description">Coba ubah filter atau kata kunci pencarian Anda</p>
                         <button class="btn btn-primary" id="resetEmptyState">Reset Semua Filter</button>
                     </div>
 
@@ -276,11 +406,11 @@
                             <span>←</span>
                             <span>Sebelumnya</span>
                         </button>
-                        <div class="pagination-pages" id="paginationPages">
+      </span>                  <div class="pagination-pages" id="paginationPages">
                             <!-- Populated by JS -->
                         </div>
                         <button class="pagination-btn" id="nextPage">
-                            <span>Selanjutnya</span>
+                       </svg>     <span>Selanjutnya</span>
                             <span>→</span>
                         </button>
                     </div>
@@ -293,7 +423,13 @@
     <div class="modal" id="speciesModal">
         <div class="modal-overlay" id="modalOverlay"></div>
         <div class="modal-content">
-            <button class="modal-close" id="modalClose">×</button>
+            <button class="modal-close" id="modalClose" aria-label="Tutup dialog">
+                <span class="icon-telwin" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ikon tutup">
+                        <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.177L12 18.897 4.332 23.174l1.402-8.177L0 9.21l8.2-1.192L12 .587z"/>
+                    </svg>
+                </span>
+            </button>
             <div class="modal-body" id="modalBody">
                 <!-- Populated by JavaScript -->
             </div>
@@ -308,4 +444,4 @@
     <script src="js/script.js"></script>
     <script src="js/catalog.js"></script>
 </body>
-</html>
+</html></label></span>

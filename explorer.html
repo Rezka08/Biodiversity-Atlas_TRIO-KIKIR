@@ -93,14 +93,36 @@
             
             <!-- Map Controls -->
             <div class="map-controls">
-                <button class="map-control-btn" id="resetView" title="Reset View">
-                    🎯
+                <button class="map-control-btn" id="resetView" title="Reset View" aria-label="Reset View">
+                    <!-- Target / Reset view (Heroicon-style inline SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278E29" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="M4.93 4.93l1.414 1.414"></path>
+                        <path d="M17.657 17.657l1.414 1.414"></path>
+                        <path d="M17.657 6.343l1.414-1.414"></path>
+                        <path d="M4.93 19.07l1.414-1.414"></path>
+                    </svg>
                 </button>
-                <button class="map-control-btn" id="toggleClusters" title="Toggle Clusters">
-                    📍
+
+                <button class="map-control-btn" id="toggleClusters" title="Toggle Clusters" aria-label="Toggle Clusters">
+                    <!-- Map pin / clusters -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278E29" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
                 </button>
-                <button class="map-control-btn" id="toggleHeatmap" title="Toggle Heatmap">
-                    🗺️
+
+                <button class="map-control-btn" id="toggleHeatmap" title="Toggle Heatmap" aria-label="Toggle Heatmap">
+                    <!-- Map / heatmap (stylized map pin + waves) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#278E29" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M20.5 3.5l-5 2-7-2-5 2v13l5-2 7 2 5-2v-13z"></path>
+                        <path d="M7 8v8"></path>
+                        <path d="M17 6v8"></path>
+                    </svg>
                 </button>
             </div>
 

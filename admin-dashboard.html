@@ -86,53 +86,65 @@
         <!-- Stats Cards -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
             <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6 border border-gray-100">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <p class="text-sm font-medium text-gray-600">Total Submission</p>
-                        <p class="text-3xl font-bold text-gray-900 mt-2" id="totalSubmissions">0</p>
-                    </div>
-                    <div class="p-3 bg-blue-100 rounded-lg">
-                        <span class="text-2xl">📊</span>
-                    </div>
+            <div class="flex items-center justify-between">
+                <div>
+                <p class="text-sm font-medium text-gray-600">Total Submission</p>
+                <p class="text-3xl font-bold text-gray-900 mt-2" id="totalSubmissions">0</p>
                 </div>
+                <div class="p-3 bg-blue-100 rounded-lg">
+                <!-- Chart icon (fill uses #278E29) -->
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M3 13h3v8H3v-8zM9 7h3v14H9V7zM15 3h3v18h-3V3z"/>
+                </svg>
+                </div>
+            </div>
             </div>
 
             <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6 border border-gray-100">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <p class="text-sm font-medium text-gray-600">Pending</p>
-                        <p class="text-3xl font-bold text-yellow-600 mt-2" id="pendingSubmissions">0</p>
-                    </div>
-                    <div class="p-3 bg-yellow-100 rounded-lg">
-                        <span class="text-2xl">⏳</span>
-                    </div>
+            <div class="flex items-center justify-between">
+                <div>
+                <p class="text-sm font-medium text-gray-600">Pending</p>
+                <p class="text-3xl font-bold text-yellow-600 mt-2" id="pendingSubmissions">0</p>
                 </div>
+                <div class="p-3 bg-yellow-100 rounded-lg">
+                <!-- Hourglass icon (fill uses #278E29) -->
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
+                    <path d="M6 2h12v2l-3 4 3 4v6H6v-6l3-4L6 4V2zm2 4.238L9.382 8 8 9.762V6.238zM16 17.762L14.618 16 16 14.238v3.524z"/>
+                </svg>
+                </div>
+            </div>
             </div>
 
             <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6 border border-gray-100">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <p class="text-sm font-medium text-gray-600">Approved</p>
-                        <p class="text-3xl font-bold text-green-600 mt-2" id="approvedSubmissions">0</p>
-                    </div>
-                    <div class="p-3 bg-green-100 rounded-lg">
-                        <span class="text-2xl">✅</span>
-                    </div>
+            <div class="flex items-center justify-between">
+                <div>
+                <p class="text-sm font-medium text-gray-600">Approved</p>
+                <p class="text-3xl font-bold text-green-600 mt-2" id="approvedSubmissions">0</p>
                 </div>
+                <div class="p-3 bg-green-100 rounded-lg">
+                <!-- Check icon (fill uses #278E29) -->
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M9 16.2L4.8 12 3.4 13.4 9 19l12-12L19.6 5.6 9 16.2z"/>
+                </svg>
+                </div>
+            </div>
             </div>
 
             <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6 border border-gray-100">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <p class="text-sm font-medium text-gray-600">Rejected</p>
-                        <p class="text-3xl font-bold text-red-600 mt-2" id="rejectedSubmissions">0</p>
-                    </div>
-                    <div class="p-3 bg-red-100 rounded-lg">
-                        <span class="text-2xl">❌</span>
-                    </div>
+            <div class="flex items-center justify-between">
+                <div>
+                <p class="text-sm font-medium text-gray-600">Rejected</p>
+                <p class="text-3xl font-bold text-red-600 mt-2" id="rejectedSubmissions">0</p>
+                </div>
+                <div class="p-3 bg-red-100 rounded-lg">
+                <!-- X / close icon (fill uses #278E29) -->
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#278E29" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M18.3 5.71L12 12.01 5.7 5.71 4.29 7.12 10.59 13.41 4.29 19.71 5.7 21.12 12 14.83 18.3 21.12 19.71 19.71 13.41 13.41 19.71 7.12z"/>
+                </svg>
                 </div>
             </div>
-        </div>
+            </div>
+        </div></svg>
 
         <!-- Filter Tabs -->
         <div class="mb-6">
