@@ -6,10 +6,11 @@
 }
 
 .gradient-text {
-    background: var(--gradient-primary);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #fef3c7 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .text-content {

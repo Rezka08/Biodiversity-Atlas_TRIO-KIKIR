@@ -192,6 +192,14 @@
 .step-icon {
     font-size: 3rem;
     margin: var(--spacing-lg) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-icon svg {
+    width: 64px;
+    height: 64px;
 }
 
 .step-title {

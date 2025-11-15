@@ -50,20 +50,26 @@ async function loadAllComponents() {
  * This is called AFTER components are loaded
  */
 function initComponentDependentFeatures() {
-    // Re-initialize theme (dark mode toggle is in navbar)
-    if (typeof initTheme === 'function') {
-        initTheme();
-    }
+    // Wait for browser to finish parsing and rendering the inserted HTML
+    // Use requestAnimationFrame for more reliable timing
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            // Re-initialize theme (dark mode toggle is in navbar)
+            if (typeof initTheme === 'function') {
+                initTheme();
+            }
 
-    // Re-initialize mobile navigation
-    if (typeof initMobileNav === 'function') {
-        initMobileNav();
-    }
+            // Re-initialize mobile navigation
+            if (typeof initMobileNav === 'function') {
+                initMobileNav();
+            }
 
-    // Initialize navbar authentication UI
-    initNavbarAuth();
+            // Initialize navbar authentication UI
+            initNavbarAuth();
 
-    console.log('✅ Component-dependent features initialized');
+            console.log('✅ Component-dependent features initialized');
+        });
+    });
 }
 
 /**
@@ -90,7 +96,6 @@ function setupNavbarAuth() {
     const userProfile = document.getElementById('userProfile');
     const profileToggle = document.getElementById('profileToggle');
     const profileDropdown = document.getElementById('profileDropdown');
-    const logoutBtn = document.getElementById('logoutBtn');
 
     if (!loginBtn || !userProfile) {
         console.warn('Navbar auth elements not found');
@@ -105,50 +110,111 @@ function setupNavbarAuth() {
         loginBtn.style.display = 'none';
         userProfile.style.display = 'block';
 
-        // Populate user info
-        document.getElementById('profileName').textContent = user.name;
-        document.getElementById('dropdownName').textContent = user.name;
-        document.getElementById('dropdownEmail').textContent = user.email;
-        document.getElementById('dropdownRole').textContent = user.role;
+        // Function to populate user info with retry mechanism
+        function populateUserInfo(attempts = 0) {
+            const maxAttempts = 5;
 
-        // Show admin dashboard link if user is admin
-        if (user.role === 'admin') {
-            const adminLink = document.getElementById('adminDashboardLink');
-            if (adminLink) {
-                adminLink.classList.add('show');
+            // Try to find elements
+            const profileName = document.querySelector('#profileName');
+            const dropdownName = document.querySelector('#dropdownName');
+            const dropdownEmail = document.querySelector('#dropdownEmail');
+            const dropdownRole = document.querySelector('#dropdownRole');
+            const adminLink = document.querySelector('#adminDashboardLink');
+            const logoutBtn = document.querySelector('#logoutBtn');
+
+            console.log(`🔍 Attempt ${attempts + 1}: Searching for dropdown elements...`);
+            console.log('Elements found:', {
+                profileName: !!profileName,
+                dropdownName: !!dropdownName,
+                dropdownEmail: !!dropdownEmail,
+                dropdownRole: !!dropdownRole,
+                adminLink: !!adminLink,
+                logoutBtn: !!logoutBtn
+            });
+
+            // If elements not found and haven't exceeded max attempts, retry
+            if (!dropdownName && attempts < maxAttempts) {
+                console.warn(`⚠️ Elements not found, retrying in 100ms...`);
+                setTimeout(() => populateUserInfo(attempts + 1), 100);
+                return;
+            }
+
+            // Populate elements
+            if (profileName) {
+                profileName.textContent = user.name;
+                console.log('✅ Set profileName:', user.name);
+            }
+            if (dropdownName) {
+                dropdownName.textContent = user.name;
+                console.log('✅ Set dropdownName:', user.name);
+            }
+            if (dropdownEmail) {
+                dropdownEmail.textContent = user.email;
+                console.log('✅ Set dropdownEmail:', user.email);
+            }
+            if (dropdownRole) {
+                dropdownRole.textContent = user.role;
+                console.log('✅ Set dropdownRole:', user.role);
+            }
+
+            // Show/hide elements based on user role
+            if (user.role === 'admin') {
+                // Show admin dashboard link
+                if (adminLink) {
+                    adminLink.classList.add('show');
+                    adminLink.style.display = 'flex';
+                    console.log('✅ Admin dashboard link shown');
+                }
+
+                // Hide user-only links (Submit Temuan & Quiz) from navbar and dropdown
+                const userOnlyLinks = document.querySelectorAll('.user-only');
+                userOnlyLinks.forEach(link => {
+                    link.classList.add('hide');
+                    link.style.display = 'none';
+                });
+                console.log('✅ User-only links hidden for admin');
+            } else {
+                // For regular users, show user-only links
+                const userOnlyLinks = document.querySelectorAll('.user-only');
+                userOnlyLinks.forEach(link => {
+                    link.classList.remove('hide');
+                    link.style.display = '';
+                });
+                console.log('✅ User-only links shown for regular user');
+            }
+
+            // Handle logout button
+            if (logoutBtn) {
+                logoutBtn.onclick = function() {
+                    if (confirm('Apakah Anda yakin ingin logout?')) {
+                        logout();
+                    }
+                };
+                console.log('✅ Logout button handler attached');
             }
         }
 
-        // Handle profile dropdown toggle (remove old listeners first)
-        if (profileToggle && profileDropdown) {
-            // Clone to remove old event listeners
-            const newProfileToggle = profileToggle.cloneNode(true);
-            profileToggle.parentNode.replaceChild(newProfileToggle, profileToggle);
+        // Start populating after a short delay
+        setTimeout(() => populateUserInfo(), 100);
 
-            newProfileToggle.addEventListener('click', (e) => {
+        // Handle profile dropdown toggle
+        if (profileToggle && profileDropdown) {
+            // Remove existing active classes
+            profileToggle.classList.remove('active');
+            profileDropdown.classList.remove('active');
+
+            // Add click handler (using named function to avoid duplicates)
+            profileToggle.onclick = function(e) {
                 e.stopPropagation();
-                newProfileToggle.classList.toggle('active');
+                this.classList.toggle('active');
                 profileDropdown.classList.toggle('active');
-            });
+            };
 
             // Close dropdown when clicking outside
             document.addEventListener('click', (e) => {
                 if (!userProfile.contains(e.target)) {
-                    newProfileToggle.classList.remove('active');
+                    profileToggle.classList.remove('active');
                     profileDropdown.classList.remove('active');
-                }
-            });
-        }
-
-        // Handle logout
-        if (logoutBtn) {
-            // Clone to remove old event listeners
-            const newLogoutBtn = logoutBtn.cloneNode(true);
-            logoutBtn.parentNode.replaceChild(newLogoutBtn, logoutBtn);
-
-            newLogoutBtn.addEventListener('click', () => {
-                if (confirm('Apakah Anda yakin ingin logout?')) {
-                    logout();
                 }
             });
         }

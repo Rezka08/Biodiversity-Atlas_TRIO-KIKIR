@@ -55,6 +55,9 @@ async function initCatalog() {
         // Initialize view toggle
         initViewToggle();
 
+        // Initialize filter collapse
+        initFilterCollapse();
+
         // Initial render
         applyFilters();
     } catch (error) {
@@ -244,20 +247,54 @@ function initViewToggle() {
     const gridView = document.getElementById('gridView');
     const listView = document.getElementById('listView');
     const speciesGrid = document.getElementById('speciesGrid');
-    
+
     if (!gridView || !listView || !speciesGrid) return;
-    
+
     gridView.addEventListener('click', () => {
         gridView.classList.add('active');
         listView.classList.remove('active');
         speciesGrid.classList.remove('list-view');
     });
-    
+
     listView.addEventListener('click', () => {
         listView.classList.add('active');
         gridView.classList.remove('active');
         speciesGrid.classList.add('list-view');
     });
+}
+
+// ============================================
+// FILTER COLLAPSE TOGGLE
+// ============================================
+
+function initFilterCollapse() {
+    // Get all filter groups
+    const filterGroups = document.querySelectorAll('.filter-group');
+
+    filterGroups.forEach(group => {
+        const label = group.querySelector('.filter-label');
+
+        if (!label) return;
+
+        // Add click event to toggle collapse
+        label.addEventListener('click', () => {
+            group.classList.toggle('collapsed');
+
+            // Save state to localStorage
+            const groupIndex = Array.from(filterGroups).indexOf(group);
+            const isCollapsed = group.classList.contains('collapsed');
+            localStorage.setItem(`filterGroup${groupIndex}Collapsed`, isCollapsed);
+        });
+
+        // Restore collapse state from localStorage
+        const groupIndex = Array.from(filterGroups).indexOf(group);
+        const savedState = localStorage.getItem(`filterGroup${groupIndex}Collapsed`);
+        if (savedState === 'true') {
+            group.classList.add('collapsed');
+        }
+    });
+
+    console.log('✅ Filter collapse initialized');
 }
 
 // ============================================

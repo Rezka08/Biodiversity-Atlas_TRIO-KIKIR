@@ -11,8 +11,8 @@
                 <a href="index.html" class="nav-link">Beranda</a>
                 <a href="catalog.html" class="nav-link">Katalog</a>
                 <a href="explorer.html" class="nav-link">Peta</a>
-                <a href="submit.html" class="nav-link">Submit Temuan</a>
-                <a href="quiz.html" class="nav-link">Kuis</a>
+                <a href="submit.html" class="nav-link user-only">Submit Temuan</a>
+                <a href="quiz.html" class="nav-link user-only">Kuis</a>
                 <a href="dashboard.html" class="nav-link">Statistik</a>
             </div>
             <div class="nav-actions">
@@ -42,8 +42,11 @@
                         <a href="admin-dashboard.html" class="dropdown-item admin-only" id="adminDashboardLink">
                             <span>📊</span> Admin Dashboard
                         </a>
-                        <a href="submit.html" class="dropdown-item">
+                        <a href="submit.html" class="dropdown-item user-only" id="submitTemuanLink">
                             <span>📸</span> Submit Temuan
+                        </a>
+                        <a href="quiz.html" class="dropdown-item user-only" id="quizLink">
+                            <span>🎯</span> Kuis
                         </a>
                         <div class="dropdown-divider"></div>
                         <button class="dropdown-item logout-btn" id="logoutBtn">

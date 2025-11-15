@@ -8,6 +8,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Admin Protection -->
+    <script>
+        // Protect page from admin access
+        (function() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                if (user.role === 'admin') {
+                    alert('⚠️ Halaman ini hanya untuk user biasa. Admin tidak dapat mengakses halaman Kuis.');
+                    window.location.href = 'admin-dashboard.html';
+                }
+            }
+        })();
+    </script>
 </head>
 <body>
     <div id="navbar-placeholder"></div>

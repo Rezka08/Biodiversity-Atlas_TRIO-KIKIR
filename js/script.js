@@ -34,15 +34,20 @@ function initTheme() {
 function toggleTheme() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
+
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
-    
+
     // Add smooth transition
     document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
     setTimeout(() => {
         document.body.style.transition = '';
     }, 300);
+
+    // Dispatch custom event for charts and other components to listen
+    window.dispatchEvent(new CustomEvent('themeChanged', {
+        detail: { theme: newTheme }
+    }));
 }
 
 // ============================================

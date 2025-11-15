@@ -28,12 +28,12 @@ async function initFeaturedCarousel() {
     
     // Initialize carousel dots
     initCarouselDots(featured.length);
-    
+
     // Initialize carousel controls
     initCarouselControls();
-    
-    // Auto-play carousel
-    startCarouselAutoPlay();
+
+    // Auto-play carousel - DISABLED to prevent auto-scroll
+    // startCarouselAutoPlay();
 }
 
 function initCarouselDots(count) {
@@ -135,11 +135,11 @@ function stopCarouselAutoPlay() {
 function initConservationChart() {
     const canvas = document.getElementById('conservationChart');
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
-    
+
     // Count species by status
     const statusCounts = {
         'Critically Endangered': 0,
@@ -148,13 +148,25 @@ function initConservationChart() {
         'Near Threatened': 0,
         'Least Concern': 0
     };
-    
+
     speciesData.forEach(species => {
         if (statusCounts.hasOwnProperty(species.conservationStatus)) {
             statusCounts[species.conservationStatus]++;
         }
     });
-    
+
+    // Filter out statuses with 0 count
+    const activeStatuses = Object.entries(statusCounts).filter(([_, count]) => count > 0);
+
+    // If no data, show message
+    if (activeStatuses.length === 0) {
+        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-text-secondary').trim();
+        ctx.font = '16px Inter';
+        ctx.textAlign = 'center';
+        ctx.fillText('Tidak ada data', canvas.width / 2, canvas.height / 2);
+        return;
+    }
+
     // Draw simple bar chart
     const colors = {
         'Critically Endangered': '#dc2626',
@@ -163,31 +175,33 @@ function initConservationChart() {
         'Near Threatened': '#84cc16',
         'Least Concern': '#10b981'
     };
-    
-    const maxCount = Math.max(...Object.values(statusCounts));
+
+    const maxCount = Math.max(...activeStatuses.map(([_, count]) => count));
     const barHeight = 40;
     const barSpacing = 20;
     const startY = 50;
     const maxBarWidth = canvas.width - 200;
-    
-    Object.entries(statusCounts).forEach(([status, count], index) => {
+
+    activeStatuses.forEach(([status, count], index) => {
         const y = startY + (barHeight + barSpacing) * index;
-        const barWidth = (count / maxCount) * maxBarWidth;
-        
+        const barWidth = maxCount > 0 ? (count / maxCount) * maxBarWidth : 0;
+
         // Draw bar
         ctx.fillStyle = colors[status];
-        ctx.fillRect(120, y, barWidth, barHeight);
-        
+        ctx.fillRect(120, y, Math.max(barWidth, 20), barHeight); // Minimum 20px width
+
         // Draw label
         ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-text-primary').trim();
         ctx.font = '14px Inter';
         ctx.textAlign = 'right';
         ctx.fillText(status, 110, y + 25);
-        
+
         // Draw count
         ctx.textAlign = 'left';
-        ctx.fillText(count, 130 + barWidth, y + 25);
+        ctx.fillText(count, 130 + Math.max(barWidth, 20), y + 25);
     });
+
+    console.log('✅ Conservation chart rendered with statuses:', activeStatuses.map(([s]) => s).join(', '));
 }
 
 // ============================================
@@ -308,6 +322,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         initFeaturedCarousel();
         initConservationChart();
         initHeroSearch();
+
+        // Re-draw chart on theme change to update colors
+        window.addEventListener('themeChanged', () => {
+            initConservationChart();
+        });
         initScrollIndicator();
 
         // Pause carousel on hover

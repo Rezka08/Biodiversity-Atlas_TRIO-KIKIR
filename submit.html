@@ -11,6 +11,21 @@
 
     <!-- Leaflet CSS for map picker -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Admin Protection -->
+    <script>
+        // Protect page from admin access
+        (function() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                if (user.role === 'admin') {
+                    alert('⚠️ Halaman ini hanya untuk user biasa. Admin tidak dapat mengakses halaman Submit Temuan.');
+                    window.location.href = 'admin-dashboard.html';
+                }
+            }
+        })();
+    </script>
 </head>
 <body>
     <div id="navbar-placeholder"></div>

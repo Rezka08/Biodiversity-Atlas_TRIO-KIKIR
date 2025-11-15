@@ -99,29 +99,52 @@ function updateStatsCards() {
 
 function initConservationChart() {
     const ctx = document.getElementById('conservationChart');
-    
-    // Count species by status
-    const statusCounts = {};
-    speciesData.forEach(species => {
-        statusCounts[species.conservationStatus] = (statusCounts[species.conservationStatus] || 0) + 1;
-    });
-    
-    // Chart colors
-    const colors = {
+
+    // Define all IUCN Red List categories
+    const allStatuses = {
         'Critically Endangered': '#dc2626',
         'Endangered': '#ea580c',
         'Vulnerable': '#f59e0b',
         'Near Threatened': '#84cc16',
         'Least Concern': '#10b981'
     };
-    
+
+    // Count species by status
+    const statusCounts = {};
+
+    // Initialize all statuses with 0
+    Object.keys(allStatuses).forEach(status => {
+        statusCounts[status] = 0;
+    });
+
+    // Count actual species
+    speciesData.forEach(species => {
+        const status = species.conservationStatus;
+        if (allStatuses[status] !== undefined) {
+            statusCounts[status]++;
+        }
+    });
+
+    // Only show statuses that have at least 1 species
+    const activeLabels = [];
+    const activeData = [];
+    const activeColors = [];
+
+    Object.keys(statusCounts).forEach(status => {
+        if (statusCounts[status] > 0) {
+            activeLabels.push(status);
+            activeData.push(statusCounts[status]);
+            activeColors.push(allStatuses[status]);
+        }
+    });
+
     charts.conservation = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: Object.keys(statusCounts),
+            labels: activeLabels,
             datasets: [{
-                data: Object.values(statusCounts),
-                backgroundColor: Object.keys(statusCounts).map(status => colors[status]),
+                data: activeData,
+                backgroundColor: activeColors,
                 borderWidth: 2,
                 borderColor: getComputedStyle(document.documentElement)
                     .getPropertyValue('--color-surface').trim()
@@ -502,27 +525,84 @@ function renderActivityTimeline() {
 }
 
 // ============================================
+// UPDATE CHART COLORS ON THEME CHANGE
+// ============================================
+
+function updateChartColors() {
+    // Get current theme colors
+    const textPrimaryColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--color-text-primary').trim();
+    const textSecondaryColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--color-text-secondary').trim();
+    const surfaceColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--color-surface').trim();
+    const borderColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--color-border').trim();
+
+    // Update all charts
+    Object.values(charts).forEach(chart => {
+        if (chart && chart.options) {
+            // Update legend labels color
+            if (chart.options.plugins && chart.options.plugins.legend && chart.options.plugins.legend.labels) {
+                chart.options.plugins.legend.labels.color = textPrimaryColor;
+            }
+
+            // Update scales color for bar/line charts
+            if (chart.options.scales) {
+                if (chart.options.scales.x && chart.options.scales.x.ticks) {
+                    chart.options.scales.x.ticks.color = textSecondaryColor;
+                }
+                if (chart.options.scales.x && chart.options.scales.x.grid) {
+                    chart.options.scales.x.grid.color = borderColor;
+                }
+                if (chart.options.scales.y && chart.options.scales.y.ticks) {
+                    chart.options.scales.y.ticks.color = textSecondaryColor;
+                }
+                if (chart.options.scales.y && chart.options.scales.y.grid) {
+                    chart.options.scales.y.grid.color = borderColor;
+                }
+            }
+
+            // Update border colors for pie/doughnut charts
+            if (chart.data && chart.data.datasets) {
+                chart.data.datasets.forEach(dataset => {
+                    // Only update borderColor for pie/doughnut, not for bar/line charts
+                    if (chart.config.type === 'pie' || chart.config.type === 'doughnut') {
+                        dataset.borderColor = surfaceColor;
+                    }
+                });
+            }
+
+            // Update the chart
+            chart.update('none'); // 'none' prevents animation for smooth update
+        }
+    });
+
+    console.log('✅ Chart colors updated for theme change');
+}
+
+// ============================================
 // UTILITY FUNCTIONS
 // ============================================
 
 function timeAgo(date) {
     const seconds = Math.floor((new Date() - date) / 1000);
-    
+
     let interval = seconds / 31536000;
     if (interval > 1) return Math.floor(interval) + " tahun yang lalu";
-    
+
     interval = seconds / 2592000;
     if (interval > 1) return Math.floor(interval) + " bulan yang lalu";
-    
+
     interval = seconds / 86400;
     if (interval > 1) return Math.floor(interval) + " hari yang lalu";
-    
+
     interval = seconds / 3600;
     if (interval > 1) return Math.floor(interval) + " jam yang lalu";
-    
+
     interval = seconds / 60;
     if (interval > 1) return Math.floor(interval) + " menit yang lalu";
-    
+
     return "Baru saja";
 }
 
@@ -531,3 +611,8 @@ function timeAgo(date) {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', initDashboard);
+
+// Listen for theme changes
+window.addEventListener('themeChanged', () => {
+    updateChartColors();
+});
