@@ -25,8 +25,19 @@
     color: var(--color-text-primary);
 }
 
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+
 .logo-icon {
-    font-size: 1.5rem;
+    width: auto;
+    height: 2rem;
+    object-fit: contain;
+    display: block;
 }
 
 .logo .highlight {

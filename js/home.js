@@ -81,14 +81,18 @@ function goToSlide(slideIndex) {
     
     currentSlide = slideIndex;
     
-    // Update carousel position (smooth scroll)
+    // Update carousel position (smooth scroll - horizontal only)
     const cards = carousel.querySelectorAll('.species-card');
     if (cards[slideIndex * 3]) {
-        cards[slideIndex * 3].scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest',
-            inline: 'start'
-        });
+        // Scroll horizontally without affecting vertical scroll position
+        const targetCard = cards[slideIndex * 3];
+        const carousel = targetCard.closest('#featuredCarousel');
+        if (carousel) {
+            carousel.scrollTo({
+                left: targetCard.offsetLeft,
+                behavior: 'smooth'
+            });
+        }
     }
     
     // Update dots
@@ -98,10 +102,10 @@ function goToSlide(slideIndex) {
     
     // Update button states
     updateCarouselButtons();
-    
-    // Reset auto-play
-    stopCarouselAutoPlay();
-    startCarouselAutoPlay();
+
+    // Reset auto-play - DISABLED to prevent auto-scroll
+    // stopCarouselAutoPlay();
+    // startCarouselAutoPlay();
 }
 
 function updateCarouselButtons() {
@@ -271,7 +275,6 @@ function initScrollIndicator() {
     });
     
     // Hide scroll indicator after scrolling
-    let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         if (currentScroll > 100) {
@@ -279,7 +282,6 @@ function initScrollIndicator() {
         } else {
             scrollIndicator.style.opacity = '1';
         }
-        lastScroll = currentScroll;
     });
 }
 
