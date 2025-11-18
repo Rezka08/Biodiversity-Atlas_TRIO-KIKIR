@@ -259,10 +259,10 @@ function initQuiz() {
     // Load quiz history from localStorage
     quizHistory = JSON.parse(localStorage.getItem('quizHistory') || '[]');
     badges = JSON.parse(localStorage.getItem('badges') || '[]');
-    
+
     // Update stats
     updateStartScreenStats();
-    
+
     // Event listeners
     document.getElementById('startQuizBtn').addEventListener('click', startQuiz);
     document.getElementById('nextBtn').addEventListener('click', nextQuestion);
@@ -331,8 +331,11 @@ function loadQuestion() {
         questionImage.style.display = 'none';
     }
 
-    // Hide explanation
-    document.getElementById('explanation').classList.remove('active');
+    // Hide and clear explanation from previous question
+    const explanationElement = document.getElementById('explanation');
+    const explanationText = document.getElementById('explanationText');
+    explanationElement.classList.remove('active');
+    explanationText.textContent = ''; // Clear previous explanation
 
     // Load options based on question type
     const optionsContainer = document.getElementById('answerOptions');

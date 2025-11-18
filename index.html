@@ -404,6 +404,10 @@
                     conservationChart.destroy();
                 }
 
+                // Get current theme color for labels
+                const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+                const labelColor = isDarkMode ? '#f1f5f9' : '#0f172a'; // Light text for dark mode, dark text for light mode
+
                 // Create new chart
                 conservationChart = new Chart(ctx, {
                     type: 'doughnut',
@@ -420,11 +424,19 @@
                                         size: 12,
                                         family: "'Inter', sans-serif"
                                     },
+                                    color: labelColor, // Dynamic color based on theme
                                     usePointStyle: true,
                                     pointStyle: 'circle'
                                 }
                             },
                             tooltip: {
+                                backgroundColor: isDarkMode ? 'rgba(30, 41, 59, 0.95)' : 'rgba(15, 23, 42, 0.95)',
+                                titleColor: '#ffffff',
+                                bodyColor: '#ffffff',
+                                borderColor: isDarkMode ? '#475569' : '#cbd5e1',
+                                borderWidth: 1,
+                                padding: 12,
+                                displayColors: true,
                                 callbacks: {
                                     label: function(context) {
                                         const label = context.label || '';

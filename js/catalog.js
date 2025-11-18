@@ -482,12 +482,9 @@ function renderSpecies() {
     const pageSpecies = filteredSpecies.slice(startIndex, endIndex);
     
     // Render species cards
-    grid.innerHTML = pageSpecies.map(species => 
+    grid.innerHTML = pageSpecies.map(species =>
         BiodiversityAtlas.createSpeciesCard(species)
     ).join('');
-    
-    // Scroll to top of results
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // ============================================
@@ -573,6 +570,9 @@ function goToPage(page) {
     currentPage = page;
     renderSpecies();
     renderPagination();
+
+    // Scroll to top only when changing pages (pagination)
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // Make goToPage available globally

@@ -183,17 +183,36 @@
     font-size: 0.75rem;
     font-weight: 600;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
     transition: all var(--transition-fast);
 }
 
 .popup-btn-primary {
     background: var(--color-primary);
-    color: white;
+    color: white !important;
+}
+
+.popup-btn-primary:hover {
+    background: var(--color-primary-dark, #1e5a2b);
+    color: white !important;
+}
+
+.popup-btn-primary:visited,
+.popup-btn-primary:link,
+.popup-btn-primary:active {
+    color: white !important;
 }
 
 .popup-btn-secondary {
     background: var(--color-background);
     color: var(--color-text-primary);
+}
+
+.popup-btn-secondary:hover {
+    background: var(--color-surface);
 }
 
 .map-legend {

@@ -2,9 +2,6 @@
 // HOME PAGE SPECIFIC FUNCTIONALITY
 // ============================================
 
-let currentSlide = 0;
-let carouselInterval;
-
 // ============================================
 // FEATURED SPECIES CAROUSEL
 // ============================================
@@ -12,125 +9,24 @@ let carouselInterval;
 async function initFeaturedCarousel() {
     const carousel = document.getElementById('featuredCarousel');
     if (!carousel) return;
-    
+
     // Get featured species (first 6 with high priority conservation status)
     const featured = speciesData
         .filter(s => ['Critically Endangered', 'Endangered'].includes(s.conservationStatus))
         .slice(0, 6);
-    
+
     if (featured.length === 0) {
         carousel.innerHTML = '<p>Tidak ada spesies unggulan tersedia.</p>';
         return;
     }
-    
-    // Render carousel items
+
+    // Render all carousel items in grid (no pagination)
     carousel.innerHTML = featured.map(species => createSpeciesCard(species)).join('');
-    
-    // Initialize carousel dots
-    initCarouselDots(featured.length);
 
-    // Initialize carousel controls
-    initCarouselControls();
-
-    // Auto-play carousel - DISABLED to prevent auto-scroll
-    // startCarouselAutoPlay();
+    console.log(`✅ Featured carousel loaded with ${featured.length} species`);
 }
 
-function initCarouselDots(count) {
-    const dotsContainer = document.getElementById('carouselDots');
-    if (!dotsContainer) return;
-    
-    dotsContainer.innerHTML = Array.from({ length: Math.ceil(count / 3) }, (_, i) => 
-        `<div class="carousel-dot ${i === 0 ? 'active' : ''}" data-slide="${i}"></div>`
-    ).join('');
-    
-    // Add click handlers
-    dotsContainer.querySelectorAll('.carousel-dot').forEach(dot => {
-        dot.addEventListener('click', () => {
-            const slide = parseInt(dot.getAttribute('data-slide'));
-            goToSlide(slide);
-        });
-    });
-}
-
-function initCarouselControls() {
-    const prevBtn = document.getElementById('carouselPrev');
-    const nextBtn = document.getElementById('carouselNext');
-    
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            goToSlide(currentSlide - 1);
-        });
-    }
-    
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            goToSlide(currentSlide + 1);
-        });
-    }
-}
-
-function goToSlide(slideIndex) {
-    const carousel = document.getElementById('featuredCarousel');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const maxSlide = dots.length - 1;
-    
-    // Boundary checks
-    if (slideIndex < 0) slideIndex = 0;
-    if (slideIndex > maxSlide) slideIndex = maxSlide;
-    
-    currentSlide = slideIndex;
-    
-    // Update carousel position (smooth scroll - horizontal only)
-    const cards = carousel.querySelectorAll('.species-card');
-    if (cards[slideIndex * 3]) {
-        // Scroll horizontally without affecting vertical scroll position
-        const targetCard = cards[slideIndex * 3];
-        const carousel = targetCard.closest('#featuredCarousel');
-        if (carousel) {
-            carousel.scrollTo({
-                left: targetCard.offsetLeft,
-                behavior: 'smooth'
-            });
-        }
-    }
-    
-    // Update dots
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-    });
-    
-    // Update button states
-    updateCarouselButtons();
-
-    // Reset auto-play - DISABLED to prevent auto-scroll
-    // stopCarouselAutoPlay();
-    // startCarouselAutoPlay();
-}
-
-function updateCarouselButtons() {
-    const prevBtn = document.getElementById('carouselPrev');
-    const nextBtn = document.getElementById('carouselNext');
-    const maxSlide = document.querySelectorAll('.carousel-dot').length - 1;
-    
-    if (prevBtn) prevBtn.disabled = currentSlide === 0;
-    if (nextBtn) nextBtn.disabled = currentSlide === maxSlide;
-}
-
-function startCarouselAutoPlay() {
-    stopCarouselAutoPlay();
-    carouselInterval = setInterval(() => {
-        const maxSlide = document.querySelectorAll('.carousel-dot').length - 1;
-        const nextSlide = currentSlide < maxSlide ? currentSlide + 1 : 0;
-        goToSlide(nextSlide);
-    }, 5000);
-}
-
-function stopCarouselAutoPlay() {
-    if (carouselInterval) {
-        clearInterval(carouselInterval);
-    }
-}
+// Carousel pagination functions removed - displaying all cards in grid now
 
 // ============================================
 // CONSERVATION STATUS CHART
@@ -295,6 +191,44 @@ function openSpeciesModal(speciesId) {
 }
 
 // ============================================
+// SCROLL ANIMATIONS
+// ============================================
+
+function initScrollAnimations() {
+    // Create Intersection Observer
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% of element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add animate-in class when element comes into view
+                entry.target.classList.add('animate-in');
+
+                // Optionally unobserve after animation to improve performance
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all animated elements
+    const animatedElements = document.querySelectorAll(
+        '.stat-card, .step-card, .species-card, .section-header, ' +
+        '.conservation-content, .conservation-chart, .scroll-animate, ' +
+        '.fade-in, .slide-up, .slide-left, .slide-right, .scale-in'
+    );
+
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+
+    console.log(`✅ Scroll animations initialized for ${animatedElements.length} elements`);
+}
+
+// ============================================
 // INITIALIZE HOME PAGE
 // ============================================
 
@@ -324,25 +258,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         initFeaturedCarousel();
         initConservationChart();
         initHeroSearch();
+        initScrollAnimations(); // Initialize scroll animations
 
         // Re-draw chart on theme change to update colors
         window.addEventListener('themeChanged', () => {
             initConservationChart();
         });
         initScrollIndicator();
-
-        // Pause carousel on hover
-        const carousel = document.getElementById('featuredCarousel');
-        if (carousel) {
-            carousel.addEventListener('mouseenter', stopCarouselAutoPlay);
-            carousel.addEventListener('mouseleave', startCarouselAutoPlay);
-        }
     } catch (error) {
         console.error('Error initializing home page:', error);
     }
-});
-
-// Clean up on page unload
-window.addEventListener('beforeunload', () => {
-    stopCarouselAutoPlay();
 });
