@@ -185,6 +185,13 @@
                             </div>
                         </div>
                         <div class="status-item">
+                            <div class="status-badge status-nt">NT</div>
+                            <div class="status-info">
+                                <strong>Near Threatened</strong>
+                                <span>Hampir Terancam - Berisiko menjadi terancam di masa depan</span>
+                            </div>
+                        </div>
+                        <div class="status-item">
                             <div class="status-badge status-lc">LC</div>
                             <div class="status-info">
                                 <strong>Least Concern</strong>
@@ -196,6 +203,17 @@
                         <span>Lihat Semua Spesies</span>
                         <span class="btn-icon">→</span>
                     </a>
+                </div>
+                <div class="conservation-chart">
+                    <div class="chart-container">
+                        <canvas id="conservationChart"></canvas>
+                    </div>
+                    <div class="chart-stats">
+                        <div class="chart-stat-item">
+                            <span class="chart-stat-number" id="totalSpecies">25</span>
+                            <span class="chart-stat-label">Total Spesies</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -307,5 +325,134 @@
 
     <!-- Flowbite JS for Dropdown Component -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+    <!-- Chart.js for Conservation Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        // Conservation Status Chart
+        let conservationChart = null;
+
+        // Function to load and update chart with real data
+        async function loadConservationChart() {
+            const ctx = document.getElementById('conservationChart');
+            if (!ctx) return;
+
+            try {
+                // Load species data including approved submissions
+                await BiodiversityAtlas.loadSpeciesData();
+                const speciesData = BiodiversityAtlas.speciesData;
+
+                // Count species by conservation status
+                const statusCount = {
+                    'Critically Endangered': 0,
+                    'Endangered': 0,
+                    'Vulnerable': 0,
+                    'Near Threatened': 0,
+                    'Least Concern': 0,
+                    'Data Deficient': 0,
+                    'Not Evaluated': 0
+                };
+
+                // Count each species
+                speciesData.forEach(species => {
+                    const status = species.conservationStatus;
+                    if (statusCount.hasOwnProperty(status)) {
+                        statusCount[status]++;
+                    }
+                });
+
+                const total = Object.values(statusCount).reduce((a, b) => a + b, 0);
+                document.getElementById('totalSpecies').textContent = total;
+
+                // Chart data - only show categories with data > 0
+                const chartLabels = [];
+                const chartValues = [];
+                const chartColors = [];
+                const chartBorders = [];
+
+                const statusConfig = [
+                    { name: 'Critically Endangered', bg: 'rgba(220, 38, 38, 0.8)', border: 'rgb(220, 38, 38)' },
+                    { name: 'Endangered', bg: 'rgba(234, 88, 12, 0.8)', border: 'rgb(234, 88, 12)' },
+                    { name: 'Vulnerable', bg: 'rgba(245, 158, 11, 0.8)', border: 'rgb(245, 158, 11)' },
+                    { name: 'Near Threatened', bg: 'rgba(132, 204, 22, 0.8)', border: 'rgb(132, 204, 22)' },
+                    { name: 'Least Concern', bg: 'rgba(16, 185, 129, 0.8)', border: 'rgb(16, 185, 129)' },
+                    { name: 'Data Deficient', bg: 'rgba(156, 163, 175, 0.8)', border: 'rgb(156, 163, 175)' },
+                    { name: 'Not Evaluated', bg: 'rgba(209, 213, 219, 0.8)', border: 'rgb(209, 213, 219)' }
+                ];
+
+                statusConfig.forEach(config => {
+                    if (statusCount[config.name] > 0) {
+                        chartLabels.push(config.name);
+                        chartValues.push(statusCount[config.name]);
+                        chartColors.push(config.bg);
+                        chartBorders.push(config.border);
+                    }
+                });
+
+                const chartData = {
+                    labels: chartLabels,
+                    datasets: [{
+                        data: chartValues,
+                        backgroundColor: chartColors,
+                        borderColor: chartBorders,
+                        borderWidth: 2
+                    }]
+                };
+
+                // If chart already exists, destroy and recreate it
+                if (conservationChart) {
+                    conservationChart.destroy();
+                }
+
+                // Create new chart
+                conservationChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: chartData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 15,
+                                    font: {
+                                        size: 12,
+                                        family: "'Inter', sans-serif"
+                                    },
+                                    usePointStyle: true,
+                                    pointStyle: 'circle'
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const label = context.label || '';
+                                        const value = context.parsed || 0;
+                                        const percentage = ((value / total) * 100).toFixed(1);
+                                        return label + ': ' + value + ' spesies (' + percentage + '%)';
+                                    }
+                                }
+                            }
+                        },
+                        cutout: '65%'
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading conservation chart:', error);
+            }
+        }
+
+        // Load chart on page load
+        document.addEventListener('DOMContentLoaded', loadConservationChart);
+
+        // Reload chart when theme changes
+        window.addEventListener('themeChanged', function() {
+            loadConservationChart();
+        });
+
+        // Make function available globally for reloading after submit
+        window.reloadConservationChart = loadConservationChart;
+    </script>
 </body>
 </html>

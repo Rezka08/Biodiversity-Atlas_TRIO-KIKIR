@@ -332,6 +332,93 @@
     align-items: center;
 }
 
+.conservation-content {
+    max-width: 600px;
+}
+
+.status-legend {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-2xl) 0;
+}
+
+.status-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+}
+
+.status-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.status-info strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.status-info span {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.text-content {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+.conservation-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xl);
+}
+
+.chart-container {
+    max-width: 400px;
+    width: 100%;
+    padding: var(--spacing-lg);
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.chart-stats {
+    text-align: center;
+}
+
+.chart-stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-lg);
+    background: var(--color-background);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-primary);
+}
+
+.chart-stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.chart-stat-label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero {
@@ -354,6 +441,14 @@
         grid-template-columns: 1fr;
     }
 
+    .conservation-content {
+        max-width: 100%;
+    }
+
+    .chart-container {
+        max-width: 100%;
+    }
+
     .hero-cta {
         flex-direction: column;
     }
@@ -362,5 +457,9 @@
 @media (max-width: 480px) {
     .stats-grid {
         grid-template-columns: 1fr;
+    }
+
+    .chart-stat-number {
+        font-size: 2rem;
     }
 }

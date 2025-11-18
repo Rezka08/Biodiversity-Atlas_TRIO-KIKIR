@@ -5,30 +5,63 @@
 let mapPicker;
 let selectedLocation = null;
 let uploadedImage = null;
+// speciesData is declared in script.js and shared globally
+let filteredSpecies = [];
+let selectedSpeciesIndex = -1;
+
+// ============================================
+// HELPER FUNCTIONS
+// ============================================
+
+function setDefaultDateTime() {
+    const now = new Date();
+    // Format: YYYY-MM-DDTHH:mm for datetime-local input
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+
+    const datetimeLocal = `${year}-${month}-${day}T${hours}:${minutes}`;
+    document.getElementById('observationDate').value = datetimeLocal;
+}
 
 // ============================================
 // INITIALIZE
 // ============================================
 
 async function initSubmitPage() {
+    console.log('🚀 Initializing Submit Page...');
+
     try {
         // Load species data
+        console.log('📥 Loading species data...');
         await BiodiversityAtlas.loadSpeciesData();
         speciesData = BiodiversityAtlas.speciesData;
 
-        console.log('Submit - Species data loaded:', speciesData.length, 'species');
+        if (!speciesData || speciesData.length === 0) {
+            console.error('❌ Failed to load species data!');
+            alert('⚠️ Gagal memuat data spesies. Harap refresh halaman atau hubungi admin.');
+            return;
+        }
+
+        console.log('✅ Submit - Species data loaded:', speciesData.length, 'species');
 
         // Initialize form components
+        console.log('🔧 Initializing form components...');
         initImageUpload();
         initSpeciesSelect();
         initMapPicker();
         initFormHandlers();
-        
-        // Set default date to today
-        document.getElementById('observationDate').valueAsDate = new Date();
+
+        // Set default date and time to now
+        setDefaultDateTime();
+
+        console.log('✅ Submit page initialized successfully!');
 
     } catch (error) {
-        console.error('Error initializing submit page:', error);
+        console.error('❌ Error initializing submit page:', error);
+        alert('⚠️ Terjadi kesalahan saat memuat halaman. Harap refresh halaman.');
     }
 }
 
@@ -133,15 +166,22 @@ function clearImage() {
 // SPECIES AUTOCOMPLETE
 // ============================================
 
-let selectedSpeciesIndex = -1;
-let filteredSpecies = [];
-
 function initSpeciesSelect() {
     const speciesInput = document.getElementById('speciesInput');
     const speciesDropdown = document.getElementById('speciesDropdown');
     const speciesIdInput = document.getElementById('speciesId');
 
-    if (!speciesInput) return;
+    if (!speciesInput) {
+        console.warn('⚠️ speciesInput not found');
+        return;
+    }
+
+    if (!speciesData || speciesData.length === 0) {
+        console.error('❌ speciesData is empty or not loaded');
+        return;
+    }
+
+    console.log('✅ initSpeciesSelect - Species data available:', speciesData.length, 'species');
 
     // Sort species by name
     const sortedSpecies = [...speciesData].sort((a, b) =>
@@ -151,6 +191,7 @@ function initSpeciesSelect() {
     // Input event - search as user types
     speciesInput.addEventListener('input', (e) => {
         const searchTerm = e.target.value.toLowerCase().trim();
+        console.log('🔍 Search term:', searchTerm);
 
         if (searchTerm.length === 0) {
             speciesDropdown.classList.remove('active');
@@ -163,6 +204,8 @@ function initSpeciesSelect() {
             species.commonName.toLowerCase().includes(searchTerm) ||
             species.scientificName.toLowerCase().includes(searchTerm)
         );
+
+        console.log('📋 Filtered results:', filteredSpecies.length, 'species');
 
         // Add "Unknown" option if search matches
         if ('tidak diketahui'.includes(searchTerm) || 'unknown'.includes(searchTerm)) {
@@ -314,12 +357,13 @@ function initMapPicker() {
                         align-items: center;
                         justify-content: center;
                     ">
-                        <span style="
+                        <div style="
                             transform: rotate(45deg);
-                            color: white;
-                            font-weight: bold;
-                            font-size: 16px;
-                        ">📍</span>
+                            width: 10px;
+                            height: 10px;
+                            background: white;
+                            border-radius: 50%;
+                        "></div>
                     </div>
                 `,
                 iconSize: [30, 30],
@@ -357,14 +401,18 @@ function updateLocationDisplay() {
     if (selectedLocation) {
         coordsEl.textContent = `${selectedLocation.lat}, ${selectedLocation.lng}`;
         statusEl.innerHTML = `
-            <span>✅</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 1.25rem; height: 1.25rem;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
             <span>Lokasi dipilih</span>
         `;
         statusEl.classList.add('selected');
     } else {
         coordsEl.textContent = 'Klik pada peta untuk menandai lokasi';
         statusEl.innerHTML = `
-            <span>⚠️</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 1.25rem; height: 1.25rem;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
             <span>Belum dipilih</span>
         `;
         statusEl.classList.remove('selected');
@@ -378,6 +426,32 @@ function updateLocationDisplay() {
 function initFormHandlers() {
     const form = document.getElementById('submitForm');
     const resetBtn = document.getElementById('resetBtn');
+    const modeDatabase = document.getElementById('modeDatabase');
+    const modeManual = document.getElementById('modeManual');
+    const databaseModeFields = document.getElementById('databaseModeFields');
+    const manualModeFields = document.getElementById('manualModeFields');
+
+    // Handle species input mode toggle
+    modeDatabase.addEventListener('change', () => {
+        if (modeDatabase.checked) {
+            databaseModeFields.style.display = 'block';
+            manualModeFields.style.display = 'none';
+            // Clear manual fields
+            document.getElementById('speciesNameManual').value = '';
+            document.getElementById('scientificNameManual').value = '';
+        }
+    });
+
+    modeManual.addEventListener('change', () => {
+        if (modeManual.checked) {
+            databaseModeFields.style.display = 'none';
+            manualModeFields.style.display = 'block';
+            // Clear database fields
+            document.getElementById('speciesInput').value = '';
+            document.getElementById('speciesId').value = '';
+            document.getElementById('speciesDropdown').classList.remove('active');
+        }
+    });
 
     // Form submission
     form.addEventListener('submit', (e) => {
@@ -401,26 +475,54 @@ function handleFormSubmit() {
         return;
     }
 
+    // Get current user info
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (!currentUser || !currentUser.name) {
+        alert('⚠️ Data user tidak valid. Silakan login kembali.');
+        window.location.href = 'login.html';
+        return;
+    }
+
     // Validate required fields
     if (!uploadedImage) {
         alert('⚠️ Harap upload foto pengamatan');
         return;
     }
 
-    const speciesId = document.getElementById('speciesId').value;
-    const speciesInput = document.getElementById('speciesInput').value;
-    if (!speciesId || !speciesInput) {
-        alert('⚠️ Harap pilih spesies dari daftar');
-        return;
+    // Check which mode is selected
+    const modeManual = document.getElementById('modeManual').checked;
+    let speciesId, speciesName, scientificName, isNewSpecies;
+
+    if (modeManual) {
+        // Manual mode - validate manual input
+        const speciesNameManual = document.getElementById('speciesNameManual').value.trim();
+        if (!speciesNameManual) {
+            alert('⚠️ Harap masukkan nama spesies');
+            return;
+        }
+        speciesName = speciesNameManual;
+        scientificName = document.getElementById('scientificNameManual').value.trim() || 'Belum teridentifikasi';
+        speciesId = 'new-' + Date.now(); // Generate temporary ID for new species
+        isNewSpecies = true;
+    } else {
+        // Database mode - validate species selection
+        speciesId = document.getElementById('speciesId').value;
+        const speciesInput = document.getElementById('speciesInput').value;
+        if (!speciesId || !speciesInput) {
+            alert('⚠️ Harap pilih spesies dari daftar');
+            return;
+        }
+        speciesName = speciesInput;
+        // Get scientific name from selected species
+        const selectedSpecies = speciesData.find(s => s.id === speciesId);
+        scientificName = selectedSpecies ? selectedSpecies.scientificName : 'Unknown';
+        isNewSpecies = false;
     }
 
     if (!selectedLocation) {
         alert('⚠️ Harap pilih lokasi di peta');
         return;
     }
-
-    // Get species name from input
-    const speciesName = speciesInput;
 
     // Validate Quick Facts fields
     const speciesSize = document.getElementById('speciesSize').value;
@@ -433,10 +535,13 @@ function handleFormSubmit() {
         return;
     }
 
-    // Get form data
+    // Get form data with observer name from logged in user
     const formData = {
         speciesId: speciesId,
         speciesName: speciesName,
+        scientificName: scientificName,
+        isNewSpecies: isNewSpecies, // Flag to indicate if this is a new species not in database
+        observerName: currentUser.name, // Auto from logged in user
         image: uploadedImage.dataUrl, // Store base64 image
         location: selectedLocation,
         locationName: document.getElementById('locationName').value || 'Lokasi tidak disebutkan',
@@ -477,6 +582,12 @@ function submitFinding(data) {
             // Scroll to success message
             successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
+            // Reload conservation chart on home page if function exists
+            if (typeof window.reloadConservationChart === 'function') {
+                window.reloadConservationChart();
+                console.log('✅ Conservation chart reloaded after submission');
+            }
+
             // Reset form after 4 seconds
             setTimeout(() => {
                 resetForm();
@@ -511,8 +622,8 @@ function resetForm() {
     // Re-center map
     mapPicker.setView([-2.5, 118.0], 5);
 
-    // Set default date
-    document.getElementById('observationDate').valueAsDate = new Date();
+    // Set default date and time
+    setDefaultDateTime();
 
     // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });

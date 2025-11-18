@@ -121,6 +121,8 @@
 .status-vu { background: rgba(245, 158, 11, 0.1); color: var(--status-vu); }
 .status-nt { background: rgba(132, 204, 22, 0.1); color: var(--status-nt); }
 .status-lc { background: rgba(16, 185, 129, 0.1); color: var(--status-lc); }
+.status-dd { background: rgba(156, 163, 175, 0.1); color: var(--status-dd); }
+.status-ne { background: rgba(209, 213, 219, 0.1); color: var(--status-ne); }
 
 /* Stat Cards */
 .stat-card {

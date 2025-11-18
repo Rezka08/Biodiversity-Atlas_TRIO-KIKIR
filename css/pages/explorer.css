@@ -49,6 +49,17 @@
     transform: scale(1.05);
 }
 
+.map-control-btn.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.map-control-btn.active svg {
+    stroke: white;
+    fill: white;
+}
+
 .sidebar-section {
     margin-bottom: var(--spacing-xl);
 }

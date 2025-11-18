@@ -66,6 +66,45 @@
     color: var(--color-danger);
 }
 
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.radio-option:hover {
+    border-color: var(--color-primary);
+    background: var(--color-surface);
+}
+
+.radio-option input[type="radio"] {
+    margin-right: var(--spacing-sm);
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+}
+
+.radio-option input[type="radio"]:checked + span {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.radio-option:has(input[type="radio"]:checked) {
+    border-color: var(--color-primary);
+    background: rgba(45, 122, 62, 0.05);
+}
+
 .form-input,
 .form-select,
 .form-textarea {
